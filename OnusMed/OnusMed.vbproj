@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CFB7E910-46BF-46D2-9650-F4C3C6A31604}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>OnusMed.My.MyApplication</StartupObject>
+    <RootNamespace>OnusMed</RootNamespace>
+    <AssemblyName>OnusMed</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>OnusMed.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>OnusMed.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MySQL.Data.EntityFrameworkCore, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\MySQL.Data.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="MySQL.Data.EntityFrameworkCore.Design, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\MySQL.Data.EntityFrameworkCore.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminMenu.Designer.vb">
+      <DependentUpon>AdminMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment.Designer.vb">
+      <DependentUpon>Appointment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Appointment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateConfig.Designer.vb">
+      <DependentUpon>CreateConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreateConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditPayment.Designer.vb">
+      <DependentUpon>CreditPayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreditPayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditReport.Designer.vb">
+      <DependentUpon>CreditReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreditReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeManager.Designer.vb">
+      <DependentUpon>EmployeeManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GSTR3BReport.Designer.vb">
+      <DependentUpon>GSTR3BReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GSTR3BReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GSTReport.Designer.vb">
+      <DependentUpon>GSTReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GSTReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryManual.Designer.vb">
+      <DependentUpon>InventoryManual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryManual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainScreen.Designer.vb">
+      <DependentUpon>MainScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="NewDoctor.Designer.vb">
+      <DependentUpon>NewDoctor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewDoctor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewItem.Designer.vb">
+      <DependentUpon>NewItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPatient.Designer.vb">
+      <DependentUpon>NewPatient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewPatient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSupplier.Designer.vb">
+      <DependentUpon>NewSupplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ODocManager.Designer.vb">
+      <DependentUpon>ODocManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ODocManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatInfoManager.Designer.vb">
+      <DependentUpon>PatInfoManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PatInfoManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductData.vb" />
+    <Compile Include="ProductKey.Designer.vb">
+      <DependentUpon>ProductKey.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProductKey.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseEntry.Designer.vb">
+      <DependentUpon>PurchaseEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseOrder.Designer.vb">
+      <DependentUpon>PurchaseOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseReport.Designer.vb">
+      <DependentUpon>PurchaseReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseReturn.Designer.vb">
+      <DependentUpon>PurchaseReturn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseReturn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseReturnReport.Designer.vb">
+      <DependentUpon>PurchaseReturnReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseReturnReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaleEntry.Designer.vb">
+      <DependentUpon>SaleEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SaleEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaleReturn.Designer.vb">
+      <DependentUpon>SaleReturn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SaleReturn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesReport.Designer.vb">
+      <DependentUpon>SalesReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SalesReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchedFilter.Designer.vb">
+      <DependentUpon>SchedFilter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SchedFilter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchedPurFilter.Designer.vb">
+      <DependentUpon>SchedPurFilter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SchedPurFilter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchItem.Designer.vb">
+      <DependentUpon>SearchItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SearchItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SilverNexusPlatform.vb" />
+    <Compile Include="SplashScreen1.Designer.vb">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockReport.Designer.vb">
+      <DependentUpon>StockReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StockReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockTransfer.Designer.vb">
+      <DependentUpon>StockTransfer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StockTransfer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AdminMenu.resx">
+      <DependentUpon>AdminMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Appointment.resx">
+      <DependentUpon>Appointment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateConfig.resx">
+      <DependentUpon>CreateConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditPayment.resx">
+      <DependentUpon>CreditPayment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditReport.resx">
+      <DependentUpon>CreditReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeManager.resx">
+      <DependentUpon>EmployeeManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GSTR3BReport.resx">
+      <DependentUpon>GSTR3BReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GSTReport.resx">
+      <DependentUpon>GSTReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryManual.resx">
+      <DependentUpon>InventoryManual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen.resx">
+      <DependentUpon>MainScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewDoctor.resx">
+      <DependentUpon>NewDoctor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewItem.resx">
+      <DependentUpon>NewItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewPatient.resx">
+      <DependentUpon>NewPatient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSupplier.resx">
+      <DependentUpon>NewSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ODocManager.resx">
+      <DependentUpon>ODocManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatInfoManager.resx">
+      <DependentUpon>PatInfoManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductKey.resx">
+      <DependentUpon>ProductKey.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseEntry.resx">
+      <DependentUpon>PurchaseEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseOrder.resx">
+      <DependentUpon>PurchaseOrder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseReport.resx">
+      <DependentUpon>PurchaseReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseReturn.resx">
+      <DependentUpon>PurchaseReturn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseReturnReport.resx">
+      <DependentUpon>PurchaseReturnReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaleEntry.resx">
+      <DependentUpon>SaleEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaleReturn.resx">
+      <DependentUpon>SaleReturn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesReport.resx">
+      <DependentUpon>SalesReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchedFilter.resx">
+      <DependentUpon>SchedFilter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchedPurFilter.resx">
+      <DependentUpon>SchedPurFilter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchItem.resx">
+      <DependentUpon>SearchItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockReport.resx">
+      <DependentUpon>StockReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockTransfer.resx">
+      <DependentUpon>StockTransfer.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Google.Protobuf.dll" />
+    <Content Include="MySql.Data.dll" />
+    <Content Include="MySql.Data.EntityFramework.dll" />
+    <Content Include="MySQL.Data.EntityFrameworkCore.Design.dll" />
+    <Content Include="MySQL.Data.EntityFrameworkCore.dll" />
+    <Content Include="MySql.Web.dll" />
+    <Content Include="Redist\db_code.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Redist\netfx45-x86-x64.exe" />
+    <Content Include="Redist\vc_redist_2015_x64.exe" />
+    <Content Include="Redist\vc_redist_2015_x86.exe" />
+    <Content Include="Resources\blinkist-ios-icon_b.png" />
+    <None Include="Redist\mysql-installer-community-5.7.21.0.msi" />
+    <None Include="Redist\mysql-workbench-community-6.3.10-winx64.msi" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\blinkist-ios-icon_b1.png" />
+    <None Include="Resources\OnusMed_Banner0.png" />
+    <None Include="Resources\DNA1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
