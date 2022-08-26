@@ -9,7 +9,7 @@ Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms
 
 Public Class SchedPurFilter
-    Private Sub btnReport_Click(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub btnReport_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnReport.Click
         Dim value As DateTime = dateFrom.Value
         Dim dfrom As String = value.ToString("yyyy-MM-dd")
         value = dateTo.Value
@@ -67,8 +67,7 @@ Public Class SchedPurFilter
 
             End If
         Catch exception As System.Exception
-            ProjectData.SetProjectError(exception)
-            ProjectData.ClearProjectError()
+
         End Try
         file.WriteLine("</table>")
         file.WriteLine("</body>")
@@ -77,7 +76,15 @@ Public Class SchedPurFilter
         Process.Start(filepath)
     End Sub
 
-    Private Sub SchedFilter_Load(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles Timer1.Tick
+        If (DateTime.Compare(dateFrom.Value, dateTo.Value) <= 0) Then
+            btnReport.Enabled = True
+        Else
+            btnReport.Enabled = False
+        End If
+    End Sub
+
+    Private Sub SchedPurFilter_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim sched As DataSet = New DataSet()
         selectData("select distinct sched from medicine", sched)
         Try
@@ -91,18 +98,9 @@ Public Class SchedPurFilter
 
             End If
         Catch exception As System.Exception
-            ProjectData.SetProjectError(exception)
-            ProjectData.ClearProjectError()
+
         End Try
         Timer1.Interval = 50
         Timer1.Start()
-    End Sub
-
-    Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As EventArgs)
-        If (DateTime.Compare(dateFrom.Value, dateTo.Value) <= 0) Then
-            btnReport.Enabled = True
-        Else
-            btnReport.Enabled = False
-        End If
     End Sub
 End Class
