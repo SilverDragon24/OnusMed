@@ -437,12 +437,7 @@
     <Content Include="Redist\db_code.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Redist\netfx45-x86-x64.exe" />
-    <Content Include="Redist\vc_redist_2015_x64.exe" />
-    <Content Include="Redist\vc_redist_2015_x86.exe" />
     <Content Include="Resources\blinkist-ios-icon_b.png" />
-    <None Include="Redist\mysql-installer-community-5.7.21.0.msi" />
-    <None Include="Redist\mysql-workbench-community-6.3.10-winx64.msi" />
     <None Include="Resources\search.png" />
     <None Include="Resources\blinkist-ios-icon_b1.png" />
     <None Include="Resources\OnusMed_Banner0.png" />

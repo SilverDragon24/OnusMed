@@ -93,6 +93,9 @@ Partial Class SchedFilter
         Me.btnReport.Text = "Get Report"
         Me.btnReport.UseVisualStyleBackColor = True
         '
+        'Timer1
+        '
+        '
         'SchedFilter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
