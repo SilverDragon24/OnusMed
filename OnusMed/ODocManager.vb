@@ -8,7 +8,7 @@ Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms
 
 Public Class ODocManager
-    Private docs As DataSet
+    Private docs As DataSet = New DataSet
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Dim days As String = ""
