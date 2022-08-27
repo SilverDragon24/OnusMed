@@ -846,21 +846,23 @@ Public Class PurchaseEntry
             If (DataGridView1.SelectedCells(0).RowIndex >= 0) Then
                 btnRemove.Enabled = True
             End If
-        Catch argumentOutOfRangeException As System.ArgumentOutOfRangeException
-            ProjectData.SetProjectError(argumentOutOfRangeException)
+        Catch argumentOutOfRangeException As System.ArgumentOutOfRangeException\
             btnRemove.Enabled = False
-            ProjectData.ClearProjectError()
         End Try
         Dim i As Integer = 0
-        Do
-            If (Not valid(i)) Then
-                btnAdd.Enabled = False
-                Exit Do
-            Else
-                btnAdd.Enabled = True
-                i = i + 1
-            End If
-        Loop While i <= 16
+        Try
+            Do
+                If (Not valid(i)) Then
+                    btnAdd.Enabled = False
+                    Exit Do
+                Else
+                    btnAdd.Enabled = True
+                    i = i + 1
+                End If
+            Loop While i <= 16
+        Catch ex As Exception
+            btnAdd.Enabled = False
+        End Try
     End Sub
 
     Private Sub txtBatchCode_TextChanged(sender As Object, e As EventArgs) Handles txtBatchCode.TextChanged
