@@ -123,3 +123,7 @@ select * from cardtypes
 select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
 select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
 select id,name,pwd,post from salesman
+select * from salesman
+select distinct state from salesman
+select distinct city from salesman
+select distinct post from salesman
