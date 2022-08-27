@@ -359,10 +359,10 @@ Public Module SilverNexusPlatform
             lfile.WriteLine(query)
             lfile.Close()
             If (conn IsNot Nothing) Then
-                ds = New DataSet()
                 Dim mySqlCommand As MySqlCommand = New MySqlCommand()
                 ds.Clear()
                 ds.Tables.Clear()
+                ds = New DataSet()
                 mySqlCommand.CommandType = CommandType.Text
                 mySqlCommand.CommandText = query
                 mySqlCommand.Connection = conn
@@ -372,9 +372,9 @@ Public Module SilverNexusPlatform
             Else
                 ConnectDB(db)
                 Dim cmd As MySqlCommand = New MySqlCommand()
-                ds = New DataSet()
                 ds.Clear()
                 ds.Tables.Clear()
+                ds = New DataSet()
                 cmd.CommandType = CommandType.Text
                 cmd.CommandText = query
                 cmd.Connection = conn
