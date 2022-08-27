@@ -12,7 +12,7 @@ Public Class EmployeeManager
     Private state As DataSet = New DataSet
     Private city As DataSet = New DataSet
     Private post As DataSet = New DataSet
-    Private valid As Boolean()
+    Private valid(10) As Boolean
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Dim text() As String = {"insert into salesman values('", txtEmpId.Text, "','", encrypt(txtPwd.Text), "','", txtName.Text, "','", txtAddr1.Text, "','", txtAddr2.Text, "','", cmbCity.Text, "','", cmbState.Text, "',", txtPin.Text, ",'", cmbPost.Text, "','", txtPhone.Text, "','", txtEmail.Text, "',", Nothing, Nothing}
