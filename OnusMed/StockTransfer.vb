@@ -11,17 +11,17 @@ Imports System.Windows.Forms
 
 Public Class StockTransfer
 
-    Private inventory As DataSet
+    Private inventory As DataSet = New DataSet()
 
-    Private items As DataSet
+    Private items As DataSet = New DataSet()
 
-    Private list As Dictionary(Of String, String)
+    Private list As Dictionary(Of String, String) = New Dictionary(Of String, String)
 
     Private stripc As Integer
 
     Private packc As Integer
 
-    Private Sub btnFind_Click(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub btnFind_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnFind.Click
         Dim code As String = ""
         If (cmbItem.Text.Length > 0) Then
             code = DirectCast(cmbItem.SelectedItem, KeyValuePair(Of String, String)).Key.ToString()
@@ -34,7 +34,7 @@ Public Class StockTransfer
         stripc = Integer.Parse(Conversions.ToString(counts.Tables(0).Rows(0)(2)))
     End Sub
 
-    Private Sub btnToGD_Click(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub btnToGD_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnToGD.Click
         Dim num As Decimal
         Dim tmp As DataSet = New DataSet()
         Dim tmp0 As DataSet = New DataSet()
@@ -111,7 +111,7 @@ Public Class StockTransfer
         numQtyPiece.Value = Decimal.Zero
     End Sub
 
-    Private Sub btnToSTO_Click(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub btnToSTO_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnToSTO.Click
         Dim num As Decimal
         Dim tmp As DataSet = New DataSet()
         Dim tmp0 As DataSet = New DataSet()
@@ -188,7 +188,7 @@ Public Class StockTransfer
         numQtyPiece.Value = Decimal.Zero
     End Sub
 
-    Private Sub DataGridView1_Click(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub DataGridView1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles DataGridView1.Click
         txtItemCode.Text = DataGridView1.SelectedRows(0).Cells(1).Value.ToString()
         txtItemName.Text = DataGridView1.SelectedRows(0).Cells(2).Value.ToString()
         txtBatchCode.Text = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
@@ -200,7 +200,7 @@ Public Class StockTransfer
         numQtyPiece.Maximum = Math.Round(Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.SelectedRows(0).Cells(5).Value)), 2)
     End Sub
 
-    Private Sub numQtyPack_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numQtyPack_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numQtyPack.ValueChanged
         Try
             numQtyStrip.Value = Decimal.Multiply(numQtyPack.Value, New Decimal(packc))
             numQtyPiece.Value = Decimal.Multiply(Decimal.Multiply(numQtyPack.Value, New Decimal(packc)), New Decimal(stripc))
@@ -209,7 +209,7 @@ Public Class StockTransfer
         End Try
     End Sub
 
-    Private Sub NumQtyPiece_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub NumQtyPiece_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numQtyPiece.ValueChanged
         Try
             numQtyPack.Value = Decimal.Divide(Decimal.Divide(numQtyPiece.Value, New Decimal(stripc)), New Decimal(packc))
             numQtyStrip.Value = Decimal.Divide(numQtyPiece.Value, New Decimal(stripc))
@@ -218,7 +218,7 @@ Public Class StockTransfer
         End Try
     End Sub
 
-    Private Sub numQtyStrip_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numQtyStrip_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numQtyStrip.ValueChanged
         Try
             numQtyPack.Value = Decimal.Divide(numQtyStrip.Value, New Decimal(packc))
             numQtyPiece.Value = Decimal.Multiply(numQtyStrip.Value, New Decimal(stripc))
@@ -227,7 +227,7 @@ Public Class StockTransfer
         End Try
     End Sub
 
-    Private Sub StockTransfer_Load(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub StockTransfer_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         selectData("select i.code,(select m0.name from medicine m0 where m0.code=i.code) from inventory i", items)
         If (items.Tables(0).Rows.Count > 0) Then
             Dim count As Integer = items.Tables(0).Rows.Count - 1
@@ -246,7 +246,7 @@ Public Class StockTransfer
         Timer1.Start()
     End Sub
 
-    Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles Timer1.Tick
         Try
             Dim location As String = DataGridView1.SelectedRows(0).Cells(6).Value.ToString()
             If (Operators.CompareString(location, "GD", False) = 0) Then
