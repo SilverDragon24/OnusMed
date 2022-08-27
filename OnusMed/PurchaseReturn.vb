@@ -273,12 +273,12 @@ Public Class PurchaseReturn
         numQtyStrip.Value = New Decimal(Convert.ToDouble(numQtyPiece.Value) / stripc)
     End Sub
 
-    Private Sub numQtyStrip_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numQtyStrip_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numQtyStrip.ValueChanged
         numQtyPack.Value = New Decimal(Convert.ToDouble(numQtyStrip.Value) / packc)
         numQtyPiece.Value = New Decimal(Convert.ToDouble(numQtyStrip.Value) * stripc)
     End Sub
 
-    Private Sub PurchaseReturn_Load(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub PurchaseReturn_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         selectData("select distinct batchcode from purchase", batches)
         selectData("select distinct suppl from purchase", suppliers)
         selectData("select distinct invoice_no from purchase", invoices)
@@ -292,7 +292,7 @@ Public Class PurchaseReturn
         Timer1.Start()
     End Sub
 
-    Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles Timer1.Tick
         If (Not (cmbBatchCode.Text.Length = 0 And cmbSupplier.Text.Length = 0 And cmbInvoice.Text.Length = 0)) Then
             btnFInd.Enabled = True
         Else
