@@ -9,9 +9,9 @@ Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms
 
 Public Class SearchItem
-    Private comps1 As DataSet
+    Private comps1 As DataSet = New DataSet
 
-    Private comps2 As DataSet
+    Private comps2 As DataSet = New DataSet
 
     Private Sub btnSearch_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnSearch.Click
         If (cmbComp.Text.Length > 0) Then
