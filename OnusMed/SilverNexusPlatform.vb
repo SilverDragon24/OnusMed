@@ -287,7 +287,7 @@ Public Module SilverNexusPlatform
     Public Function readConfig() As Boolean
         Dim flag As Boolean
         Dim filepath As String = String.Concat(Application.StartupPath, "\SilverNexus.cfg")
-        If (File.Exists(filepath)) Then
+        If (File.Exists(filepath) = True) Then
             Dim reader As StreamReader = New StreamReader(filepath)
             Dim i As Integer = 0
             Do

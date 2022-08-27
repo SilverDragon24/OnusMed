@@ -14,6 +14,7 @@
             ProgressBar1.Value = ProgressBar1.Value + 1
         Else
             Timer1.Stop()
+            Me.Hide()
         End If
     End Sub
 End Class
