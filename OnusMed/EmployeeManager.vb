@@ -8,10 +8,10 @@ Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms
 
 Public Class EmployeeManager
-    Private emp As DataSet
-    Private state As DataSet
-    Private city As DataSet
-    Private post As DataSet
+    Private emp As DataSet = New DataSet
+    Private state As DataSet = New DataSet
+    Private city As DataSet = New DataSet
+    Private post As DataSet = New DataSet
     Private valid As Boolean()
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
