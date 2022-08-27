@@ -846,7 +846,7 @@ Public Class PurchaseEntry
             If (DataGridView1.SelectedCells(0).RowIndex >= 0) Then
                 btnRemove.Enabled = True
             End If
-        Catch argumentOutOfRangeException As System.ArgumentOutOfRangeException\
+        Catch argumentOutOfRangeException As System.ArgumentOutOfRangeException
             btnRemove.Enabled = False
         End Try
         Dim i As Integer = 0
