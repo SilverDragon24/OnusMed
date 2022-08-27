@@ -7,7 +7,7 @@ Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms
 
 Public Class NewDoctor
-    Private valid As Boolean()
+    Private valid(30) As Boolean
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         manipulateData(String.Concat(New String() {"insert into pdoctor values('", txtReg.Text, "','", txtName.Text, "','", txtDocSpec.Text, "','", txtHospital.Text, "');commit;"}))
         Me.Dispose()
