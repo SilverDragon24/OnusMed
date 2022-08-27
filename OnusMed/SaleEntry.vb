@@ -29,7 +29,7 @@ Public Class SaleEntry
 
     Private instru As String
 
-    Private gst As Double(2)
+    Private gst As Double
 
     Private exd As Double
 
