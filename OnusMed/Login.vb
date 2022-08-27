@@ -11,7 +11,7 @@ Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms
 
 Public Class Login
-    Private users As DataSet = New DataSet
+    Private users As DataSet
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Application.Exit()
     End Sub
