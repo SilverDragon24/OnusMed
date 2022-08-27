@@ -127,3 +127,4 @@ select * from salesman
 select distinct state from salesman
 select distinct city from salesman
 select distinct post from salesman
+select id,name,pwd,post from salesman
