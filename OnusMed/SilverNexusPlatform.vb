@@ -362,7 +362,7 @@ Public Module SilverNexusPlatform
                 Dim mySqlCommand As MySqlCommand = New MySqlCommand()
                 ds.Clear()
                 ds.Tables.Clear()
-                ds = New DataSet()
+                'ds = New DataSet()
                 mySqlCommand.CommandType = CommandType.Text
                 mySqlCommand.CommandText = query
                 mySqlCommand.Connection = conn
@@ -374,7 +374,7 @@ Public Module SilverNexusPlatform
                 Dim cmd As MySqlCommand = New MySqlCommand()
                 ds.Clear()
                 ds.Tables.Clear()
-                ds = New DataSet()
+                'ds = New DataSet()
                 cmd.CommandType = CommandType.Text
                 cmd.CommandText = query
                 cmd.Connection = conn
