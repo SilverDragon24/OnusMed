@@ -77,7 +77,7 @@ Public Class Login
         End If
     End Sub
 
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles Load
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not -readConfig() Then
             Interaction.MsgBox("Config Does Not Exist", MsgBoxStyle.Critical, Nothing)
             MyProject.Forms.CreateConfig.Show()

@@ -301,5 +301,4 @@ Public Class ODocManager
             End If
         Loop While i <= 9
     End Sub
-    End Sub
 End Class
