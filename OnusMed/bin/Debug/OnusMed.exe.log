@@ -113,3 +113,5 @@ select * from medicine where code='8010276025';
 select * from medicine where code='80102760253';
 select * from medicine where code='801027602534';
 select * from medicine where code='8010276025340';
+insert into medicine values('8010276025340','Vetlife Gastrointestinal Feline','Farmina','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
