@@ -20,7 +20,7 @@ Public Class PurchaseEntry
     Private credit As Double
     Private hsn As String
     Private gst As Double
-    Private valid As Boolean()
+    Private valid As Boolean(16)
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Dim str(4) As String
