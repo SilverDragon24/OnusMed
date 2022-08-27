@@ -274,19 +274,19 @@ Public Class SaleReturn
         End Try
     End Sub
 
-    Private Sub numBank_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numBank_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numBank.ValueChanged
         numCredit.Value = Decimal.Subtract(numNet.Value, Decimal.Add(numCash.Value, numBank.Value))
     End Sub
 
-    Private Sub numCash_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numCash_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numCash.ValueChanged
         numCredit.Value = Decimal.Subtract(numNet.Value, Decimal.Add(numCash.Value, numBank.Value))
     End Sub
 
-    Private Sub numNet_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numNet_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numNet.ValueChanged
         numCredit.Value = Decimal.Subtract(numNet.Value, Decimal.Add(numCash.Value, numBank.Value))
     End Sub
 
-    Private Sub numQtyPacks_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numQtyPacks_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numQtyPacks.ValueChanged
         Try
             numQtyStrips.Value = Decimal.Multiply(numQtyPacks.Value, New Decimal(packc))
             numQtyPieces.Value = Decimal.Multiply(Decimal.Multiply(numQtyPacks.Value, New Decimal(packc)), New Decimal(stripc))
@@ -295,17 +295,16 @@ Public Class SaleReturn
         End Try
     End Sub
 
-    Private Sub numQtyPieces_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numQtyPieces_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numQtyPieces.ValueChanged
         Try
             numQtyPacks.Value = Decimal.Divide(Decimal.Divide(numQtyPieces.Value, New Decimal(stripc)), New Decimal(packc))
             numQtyStrips.Value = Decimal.Divide(numQtyPieces.Value, New Decimal(stripc))
         Catch exception As System.Exception
-            ProjectData.SetProjectError(exception)
-            ProjectData.ClearProjectError()
+
         End Try
     End Sub
 
-    Private Sub numQtyStrips_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numQtyStrips_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numQtyStrips.ValueChanged
         Try
             numQtyPacks.Value = Decimal.Divide(numQtyStrips.Value, New Decimal(packc))
             numQtyPieces.Value = Decimal.Multiply(numQtyStrips.Value, New Decimal(stripc))
@@ -314,7 +313,7 @@ Public Class SaleReturn
         End Try
     End Sub
 
-    Private Sub SaleReturn_Load(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub SaleReturn_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         selectData("select distinct invoice_no from sales where not pid='N/A'", invoice)
         selectData("select distinct pid from sales where not pid='N/A'", patient)
         selectData("select * from cardtypes", cards)
@@ -327,7 +326,7 @@ Public Class SaleReturn
         Timer1.Start()
     End Sub
 
-    Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles Timer1.Tick
         Try
             If (Not radioNA.Checked) Then
                 txtInstruNo.Enabled = True
