@@ -360,14 +360,9 @@ Public Module SilverNexusPlatform
             lfile.Close()
             If (conn IsNot Nothing) Then
                 Dim mySqlCommand As MySqlCommand = New MySqlCommand()
-                Try
-                    ds.Clear()
+                ds.Clear()
                     ds.Tables.Clear()
-                Catch ex As Exception
-                    MsgBox(ex.ToString)
-                End Try
-                'ds = New DataSet()
-                mySqlCommand.CommandType = CommandType.Text
+                    mySqlCommand.CommandType = CommandType.Text
                 mySqlCommand.CommandText = query
                 mySqlCommand.Connection = conn
                 da = New MySqlDataAdapter(mySqlCommand)
@@ -376,14 +371,9 @@ Public Module SilverNexusPlatform
             Else
                 ConnectDB(db)
                 Dim cmd As MySqlCommand = New MySqlCommand()
-                Try
-                    ds.Clear()
+                ds.Clear()
                     ds.Tables.Clear()
-                Catch ex As Exception
-                    MsgBox(ex.ToString)
-                End Try
-                'ds = New DataSet()
-                cmd.CommandType = CommandType.Text
+                    cmd.CommandType = CommandType.Text
                 cmd.CommandText = query
                 cmd.Connection = conn
                 da = New MySqlDataAdapter(cmd)
