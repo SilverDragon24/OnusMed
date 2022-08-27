@@ -254,21 +254,21 @@ Public Class PurchaseReturn
         numFreeStrip.Value = New Decimal(Convert.ToDouble(numFreePiece.Value) / stripc)
     End Sub
 
-    Private Sub numFreeStrip_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numFreeStrip_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numFreeStrip.ValueChanged
         numFreePack.Value = New Decimal(Convert.ToDouble(numFreeStrip.Value) / packc)
         numFreePiece.Value = New Decimal(Convert.ToDouble(numFreeStrip.Value) * stripc)
     End Sub
 
-    Private Sub numNet_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numNet_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numNet.ValueChanged
         numCredit.Value = Decimal.Subtract(numNet.Value, Decimal.Add(Decimal.Add(numCash.Value, numCard.Value), numBank.Value))
     End Sub
 
-    Private Sub numQtyPack_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numQtyPack_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numQtyPack.ValueChanged
         numQtyStrip.Value = New Decimal(Convert.ToDouble(numQtyPack.Value) * packc)
         numQtyPiece.Value = New Decimal(Convert.ToDouble(numQtyPack.Value) * packc * stripc)
     End Sub
 
-    Private Sub numQtyPiece_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numQtyPiece_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numQtyPiece.ValueChanged
         numQtyPack.Value = New Decimal(Convert.ToDouble(numQtyPiece.Value) / stripc / packc)
         numQtyStrip.Value = New Decimal(Convert.ToDouble(numQtyPiece.Value) / stripc)
     End Sub
