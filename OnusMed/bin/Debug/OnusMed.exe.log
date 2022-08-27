@@ -82,3 +82,7 @@ select * from cardtypes
 select * from medicine
 select * from supplier
 select * from cardtypes
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
