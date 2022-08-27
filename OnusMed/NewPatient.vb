@@ -9,7 +9,7 @@ Imports System.Windows.Forms
 
 Public Class NewPatient
     Private valid(30) As String
-    Private state As DataSet
+    Private state As DataSet = New DataSet
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         manipulateData(String.Concat(New String() {"insert into patient values('", txtPatientID.Text, "','", txtName.Text, "','", txtAddress1.Text, "','", txtAddress2.Text, "','", txtCity.Text, "','", cmbState.Text, "','", txtPIN.Text, "','", txtPhone.Text, "','", txtEmail.Text, "',0);commit;"}))
