@@ -99,3 +99,4 @@ select * from medicine where code='8010276030';
 select * from medicine where code='80102760303';
 select * from medicine where code='801027603039';
 select * from medicine where code='8010276030399';
+select * from medicine where code='';
