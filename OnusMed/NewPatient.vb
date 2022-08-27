@@ -8,7 +8,7 @@ Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms
 
 Public Class NewPatient
-    Private valid As String()
+    Private valid(30) As String
     Private state As DataSet
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
