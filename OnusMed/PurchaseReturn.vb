@@ -9,19 +9,19 @@ Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms
 
 Public Class PurchaseReturn
-    Private batches As DataSet
+    Private batches As DataSet = New DataSet()
 
-    Private suppliers As DataSet
+    Private suppliers As DataSet = New DataSet()
 
-    Private invoices As DataSet
+    Private invoices As DataSet = New DataSet()
 
-    Private search As DataSet
+    Private search As DataSet = New DataSet()
 
     Private packc As Double
 
     Private stripc As Double
 
-    Private Sub btnAdd_Click(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub btnAdd_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnAdd.Click
         Dim str(4) As String
         Dim year As Integer = DateTime.Today.Year
         str(0) = year.ToString()
@@ -66,7 +66,7 @@ Public Class PurchaseReturn
         End If
     End Sub
 
-    Private Sub btnComplete_Click(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub btnComplete_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnComplete.Click
         Dim p_return As String = ""
         Dim invent As String = ""
         Dim payment As String = ""
@@ -128,12 +128,12 @@ Public Class PurchaseReturn
         End If
     End Sub
 
-    Private Sub btnExit_Click(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub btnExit_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnExit.Click
         pret = False
         MyBase.Dispose()
     End Sub
 
-    Private Sub btnFind_Click(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub btnFind_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnFInd.Click
         Dim query As String = ""
         If (radioBatch.Checked) Then
             query = String.Concat("select * from purchase where batchcode='", cmbBatchCode.Text, "'")
@@ -146,7 +146,7 @@ Public Class PurchaseReturn
         dgvSearch.DataSource = search.Tables(0)
     End Sub
 
-    Private Sub btnRemove_Click(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub btnRemove_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnRemove.Click
         Dim enumerator As IEnumerator = Nothing
         Try
             Try
@@ -166,7 +166,7 @@ Public Class PurchaseReturn
         End Try
     End Sub
 
-    Private Sub dgvSearch_Click(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub dgvSearch_Click(ByVal sender As Object, ByVal e As EventArgs) Handles dgvSearch.Click
         If (dgvSearch.SelectedRows.Count = 1) Then
             Dim supplier As DataSet = New DataSet()
             Dim item As DataSet = New DataSet()
@@ -232,24 +232,24 @@ Public Class PurchaseReturn
         End If
     End Sub
 
-    Private Sub numBank_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numBank_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numBank.ValueChanged
         numCredit.Value = Decimal.Subtract(numNet.Value, Decimal.Add(Decimal.Add(numCash.Value, numCard.Value), numBank.Value))
     End Sub
 
-    Private Sub numCard_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numCard_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numCard.ValueChanged
         numCredit.Value = Decimal.Subtract(numNet.Value, Decimal.Add(Decimal.Add(numCash.Value, numCard.Value), numBank.Value))
     End Sub
 
-    Private Sub numCash_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numCash_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numCash.ValueChanged
         numCredit.Value = Decimal.Subtract(numNet.Value, Decimal.Add(Decimal.Add(numCash.Value, numCard.Value), numBank.Value))
     End Sub
 
-    Private Sub numFreePack_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numFreePack_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numFreePack.ValueChanged
         numFreeStrip.Value = New Decimal(Convert.ToDouble(numFreePack.Value) * packc)
         numFreePiece.Value = New Decimal(Convert.ToDouble(numFreePack.Value) * packc * stripc)
     End Sub
 
-    Private Sub numFreePiece_ValueChanged(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub numFreePiece_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles numFreePiece.ValueChanged
         numFreePack.Value = New Decimal(Convert.ToDouble(numFreePiece.Value) / stripc / packc)
         numFreeStrip.Value = New Decimal(Convert.ToDouble(numFreePiece.Value) / stripc)
     End Sub
