@@ -10,9 +10,9 @@ Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms
 
 Public Class NewSupplier
-    Private valid As Boolean()
-    Private city As DataSet
-    Private state As DataSet
+    Private valid(30) As Boolean
+    Private city As DataSet = New DataSet
+    Private state As DataSet = New DataSet
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         manipulateData(String.Concat(New String() {"insert into supplier values('", txtSuppID.Text, "','", txtSuppName.Text, "','", txtAddress1.Text, "','", txtAddress2.Text, "','", cmbCity.Text, "','", cmbState.Text, "',", txtPIN.Text, ",", txtContact.Text, ",'", txtEmail.Text, "','", txtDLBio.Text, "','", txtDLNonBio.Text, "','", txtGSTIN.Text, "',", txtCredit.Text, ");commit;"}))
