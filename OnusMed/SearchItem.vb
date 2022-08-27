@@ -26,7 +26,7 @@ Public Class SearchItem
     End Sub
 
     Private Sub btnSelect_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnSelect.Click
-        SaleEntry.cmbItemCode.Text = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
+        selected = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
         Me.Dispose()
     End Sub
 

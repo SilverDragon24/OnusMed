@@ -25,6 +25,7 @@ Public Module SilverNexusPlatform
     Public selling As Boolean = False
     Public pret As Boolean = False
     Public sret As Boolean = False
+    Public selected As String = ""
 
     Public Function choosePeptide(n As String) As String
         Dim str As String = Nothing
