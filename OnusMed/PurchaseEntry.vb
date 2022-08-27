@@ -12,9 +12,9 @@ Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms
 
 Public Class PurchaseEntry
-    Private ds As DataSet
-    Private ds0 As DataSet
-    Private ds1 As DataSet
+    Private ds As DataSet = New DataSet
+    Private ds0 As DataSet = New DataSet
+    Private ds1 As DataSet = New DataSet
     Private s As Double
     Private p As Double
     Private credit As Double
