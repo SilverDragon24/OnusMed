@@ -76,3 +76,6 @@ select * from medicine where code='8010276030399';
 insert into medicine values('8010276030399','Vetlife Hepatic Feline','Farmina','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
 select * from medicine
 select id,name,pwd,post from salesman
+select * from medicine
+select * from supplier
+select * from cardtypes
