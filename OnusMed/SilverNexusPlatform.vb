@@ -380,7 +380,7 @@ Public Module SilverNexusPlatform
                     ds.Clear()
                     ds.Tables.Clear()
                 Catch ex As Exception
-
+                    MsgBox(ex.ToString)
                 End Try
                 'ds = New DataSet()
                 cmd.CommandType = CommandType.Text

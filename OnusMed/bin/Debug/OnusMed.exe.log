@@ -35,3 +35,4 @@ select id,name,pwd,post from salesman
 select id,name,pwd,post from salesman
 select id,name,pwd,post from salesman
 select id,name,pwd,post from salesman
+select id,name,pwd,post from salesman
