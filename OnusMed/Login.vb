@@ -11,7 +11,7 @@ Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms
 
 Public Class Login
-    Private users As DataSet
+    Private users As DataSet = New DataSet
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Application.Exit()
     End Sub
@@ -78,7 +78,7 @@ Public Class Login
     End Sub
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If Not -readConfig() Then
+        If readConfig() = False Then
             Interaction.MsgBox("Config Does Not Exist", MsgBoxStyle.Critical, Nothing)
             MyProject.Forms.CreateConfig.Show()
         ElseIf (ConnectDB(db) = 1) Then
