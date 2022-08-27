@@ -132,3 +132,8 @@ select * from salesman
 select distinct state from salesman
 select distinct city from salesman
 select distinct post from salesman
+insert into salesman values('E20220827180818','d59b77a67ce4f0c32fb4fd110223e8f5','Ion Tarafdar','211 Garia Main Road','GariA','Kolkata','WB',700084,'Admin','9674074507','tarafdar.ion@gmail.com',0);commit;
+select * from salesman
+select distinct state from salesman
+select distinct city from salesman
+select distinct post from salesman
