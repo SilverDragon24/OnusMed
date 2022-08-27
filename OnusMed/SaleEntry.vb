@@ -35,7 +35,7 @@ Public Class SaleEntry
 
     Private credit As Double
 
-    Private valid As Boolean()
+    Private valid(11) As Boolean
 
     Private packc As Double
 
