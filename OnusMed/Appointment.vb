@@ -15,7 +15,7 @@ Public Class Appointment
 
     Private patients As Dictionary(Of String, String)
 
-    Private appointments As DataSet
+    Private appointments As DataSet = New DataSet
 
     Private Sub Appointment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim docs As DataSet = New DataSet()
