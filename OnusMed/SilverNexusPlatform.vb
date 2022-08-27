@@ -81,7 +81,7 @@ Public Module SilverNexusPlatform
     Public Function createConfigFile(s As String, u As String, p As String) As Boolean
         Dim flag As Boolean = False
         Dim filepath As String = String.Concat(Application.StartupPath, "\SilverNexus.cfg")
-        If (System.IO.File.Exists(filepath)) Then
+        If (System.IO.File.Exists(filepath) = True) Then
             System.IO.File.Delete(filepath)
         End If
         Using fileStream As System.IO.FileStream = System.IO.File.Create(filepath)
