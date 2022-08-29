@@ -31,7 +31,7 @@ Public Class NewPatient
         Do
             valid(num) = False
             num = num + 1
-        Loop While num <= 6
+        Loop While num <= 7
         txtPatientID.Text = generateID()
         selectData("select distinct state from patient", state)
         cmbState.Items.Clear()
@@ -49,8 +49,8 @@ Public Class NewPatient
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim i As Integer = 0
         Do
-            If (Conversions.ToBoolean(valid(i))) Then
-                If (Conversions.ToBoolean(valid(i))) Then
+            If (valid(i) = True) Then
+                If (valid(i) = True) Then
                     btnAdd.Enabled = True
                 End If
                 i = i + 1
