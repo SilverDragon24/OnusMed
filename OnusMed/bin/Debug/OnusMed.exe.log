@@ -281,3 +281,7 @@ select * from medicine where code='801027602531';
 select * from medicine where code='8010276025319';
 insert into medicine values('8010276025319','Vetlife Struvite Feline','Farmina','Food','OTC',1,1,1,'NA','NA','20391000',18);commit;
 select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
