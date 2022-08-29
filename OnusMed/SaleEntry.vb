@@ -1024,4 +1024,8 @@ Public Class SaleEntry
             numCredit.Select(0, numCredit.Text.Length)
         End If
     End Sub
+
+    Private Sub numDiscount_ValueChanged(sender As Object, e As EventArgs) Handles numDiscount.ValueChanged
+        numNet.Value = ((100 - numDiscount.Value) / 100) * numGross.Value
+    End Sub
 End Class
