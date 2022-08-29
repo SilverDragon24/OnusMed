@@ -58,7 +58,7 @@ Public Class NewPatient
                 btnAdd.Enabled = False
                 Exit Do
             End If
-        Loop While i <= 6
+        Loop While i <= 7
     End Sub
 
     Private Sub txtAddress1_TextChanged(sender As Object, e As EventArgs) Handles txtAddress1.TextChanged
