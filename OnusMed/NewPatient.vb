@@ -16,7 +16,7 @@ Public Class NewPatient
         Me.Dispose()
     End Sub
 
-    Private Sub cmbState_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbState.SelectedIndexChanged
+    Private Sub cmbState_TextChanged(sender As Object, e As EventArgs) Handles cmbState.TextChanged
         If (cmbState.Text.Length > 0) Then
             cmbState.BackColor = Color.LightGreen
             valid(4) = True
