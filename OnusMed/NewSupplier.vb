@@ -10,7 +10,7 @@ Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms
 
 Public Class NewSupplier
-    Private valid(30) As Boolean
+    Private valid() As Boolean = {True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True}
     Private city As DataSet = New DataSet
     Private state As DataSet = New DataSet
 
@@ -20,7 +20,7 @@ Public Class NewSupplier
     End Sub
 
     Private Sub cmbCity_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCity.SelectedIndexChanged
-        If (Operators.CompareString(cmbCity.Text, "", False) <> 0) Then
+        If (cmbCity.Text.Length > 0) Then
             valid(3) = True
         Else
             valid(3) = False
@@ -28,7 +28,7 @@ Public Class NewSupplier
     End Sub
 
     Private Sub cmbState_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbState.SelectedIndexChanged
-        If (Operators.CompareString(cmbState.Text, "", False) <> 0) Then
+        If (cmbState.Text.Length > 0) Then
             valid(4) = True
         Else
             valid(4) = False
@@ -86,9 +86,9 @@ Public Class NewSupplier
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim num As Integer = 0
         Do
-            If (valid(num)) Then
+            If (valid(num) = True) Then
                 btnAdd.Enabled = True
-            ElseIf (Not valid(num)) Then
+            ElseIf (valid(num) = False) Then
                 btnAdd.Enabled = False
                 Exit Do
             End If
@@ -104,7 +104,7 @@ Public Class NewSupplier
     End Sub
 
     Private Sub txtAddress1_TextChanged(sender As Object, e As EventArgs) Handles txtAddress1.TextChanged
-        If (Operators.CompareString(txtAddress1.Text, "", False) <> 0) Then
+        If (txtAddress1.Text.Length > 0) Then
             valid(2) = True
         Else
             valid(2) = False
@@ -112,9 +112,9 @@ Public Class NewSupplier
     End Sub
 
     Private Sub txtContact_TextChanged(sender As Object, e As EventArgs) Handles txtContact.TextChanged
-        If (txtContact.Text.Length = 0 And Not Versioned.IsNumeric(txtContact.Text)) Then
+        If (txtContact.Text.Length = 0 And IsNumeric(txtContact.Text) = False) Then
             valid(6) = False
-        ElseIf (txtContact.Text.Length > 0 And Versioned.IsNumeric(txtContact.Text)) Then
+        ElseIf (txtContact.Text.Length > 0 And IsNumeric(txtContact.Text) = True) Then
             valid(6) = True
         End If
     End Sub
