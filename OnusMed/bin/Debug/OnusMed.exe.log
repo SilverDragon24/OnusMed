@@ -155,3 +155,8 @@ select * from supplier where id='S000';
 select * from supplier where id='S0001';
 select * from supplier
 select id,name,pwd,post from salesman
+select * from medicine
+select * from supplier
+select * from cardtypes
+select distinct city from supplier
+select distinct state from supplier
