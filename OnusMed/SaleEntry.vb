@@ -35,7 +35,7 @@ Public Class SaleEntry
 
     Private credit As Double
 
-    Private valid(20) As Boolean
+    Private valid(11) As Boolean
 
     Private packc As Double
 
@@ -337,7 +337,7 @@ Public Class SaleEntry
     End Sub
 
     Private Sub btnNewPatient_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNewPatient.Click
-        MyProject.Forms.NewPatient.ShowDialog()
+        NewPatient.ShowDialog()
         selectData("select id,name,contact,email from patient", patient)
         selectData("select * from pdoctor", pdoctor)
         selectData("select * from medicine", item)
