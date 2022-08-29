@@ -355,3 +355,4 @@ select * from medicine where code='8010276025';
 select * from medicine where code='80102760252';
 select * from medicine where code='801027602524';
 select * from medicine where code='8010276025241';
+select * from medicine
