@@ -406,7 +406,7 @@ Public Class SaleEntry
         End If
     End Sub
 
-    Private Sub cmbBatchCode_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cmbBatchCode.SelectedIndexChanged
+    Private Sub cmbBatchCode_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cmbBatchCode.TextChanged
         Try
             cmbLiveBatch.Text = cmbBatchCode.Text
             Dim count As Integer = bitem.Tables(0).Rows.Count - 1
@@ -451,7 +451,7 @@ Public Class SaleEntry
         End If
     End Sub
 
-    Private Sub cmbDocName_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cmbDocName.SelectedIndexChanged
+    Private Sub cmbDocName_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cmbDocName.TextChanged
         Try
             Dim count As Integer = pdoctor.Tables(0).Rows.Count - 1
             Dim i As Integer = 0
@@ -474,7 +474,7 @@ Public Class SaleEntry
         End Try
     End Sub
 
-    Private Sub cmbDocReg_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cmbDocReg.SelectedIndexChanged
+    Private Sub cmbDocReg_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cmbDocReg.TextChanged
         Try
             Dim count As Integer = pdoctor.Tables(0).Rows.Count - 1
             Dim i As Integer = 0
@@ -509,7 +509,7 @@ Public Class SaleEntry
         End If
     End Sub
 
-    Private Sub cmbItemCode_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cmbItemCode.SelectedIndexChanged
+    Private Sub cmbItemCode_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cmbItemCode.TextChanged
         cmbBatchCode.Text = ""
         Try
             Dim count As Integer = item.Tables(0).Rows.Count - 1
@@ -555,7 +555,7 @@ Public Class SaleEntry
         End If
     End Sub
 
-    Private Sub cmbItemName_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cmbItemName.SelectedIndexChanged
+    Private Sub cmbItemName_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cmbItemName.TextChanged
         cmbBatchCode.Text = ""
         Try
             Dim count As Integer = item.Tables(0).Rows.Count - 1
@@ -601,7 +601,7 @@ Public Class SaleEntry
         End If
     End Sub
 
-    Private Sub cmbPatientID_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cmbPatientID.SelectedIndexChanged
+    Private Sub cmbPatientID_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cmbPatientID.TextChanged
         Try
             Dim count As Integer = patient.Tables(0).Rows.Count - 1
             Dim i As Integer = 0
@@ -635,7 +635,7 @@ Public Class SaleEntry
         End If
     End Sub
 
-    Private Sub cmbPatientName_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cmbPatientName.SelectedIndexChanged
+    Private Sub cmbPatientName_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cmbPatientName.TextChanged
         Try
             Dim count As Integer = patient.Tables(0).Rows.Count - 1
             Dim i As Integer = 0
