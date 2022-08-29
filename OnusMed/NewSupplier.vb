@@ -19,7 +19,7 @@ Public Class NewSupplier
         Me.Dispose()
     End Sub
 
-    Private Sub cmbCity_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCity.SelectedIndexChanged
+    Private Sub cmbCity_TextChanged(sender As Object, e As EventArgs) Handles cmbCity.TextChanged
         If (cmbCity.Text.Length > 0) Then
             valid(3) = True
         Else
@@ -27,7 +27,7 @@ Public Class NewSupplier
         End If
     End Sub
 
-    Private Sub cmbState_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbState.SelectedIndexChanged
+    Private Sub cmbState_TextChanged(sender As Object, e As EventArgs) Handles cmbState.TextChanged
         If (cmbState.Text.Length > 0) Then
             valid(4) = True
         Else
