@@ -502,3 +502,4 @@ select distinct state from patient
 select id,name,contact,email from patient
 select * from pdoctor
 select * from medicine
+select id,name,pwd,post from salesman
