@@ -142,3 +142,4 @@ select i.code,(select m0.name from medicine m0 where m0.code=i.code) from invent
 select id,name,pwd,post from salesman
 select id,name,pwd,post from salesman
 select id,name,pwd,post from salesman
+select id,name,pwd,post from salesman
