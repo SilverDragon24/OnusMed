@@ -10,7 +10,7 @@ Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms
 
 Public Class NewSupplier
-    Private valid() As Boolean = {True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True}
+    Private valid(11) As Boolean
     Private city As DataSet = New DataSet
     Private state As DataSet = New DataSet
 
