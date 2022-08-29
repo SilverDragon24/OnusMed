@@ -415,3 +415,45 @@ select id,name,pwd,post from salesman
 select * from medicine
 select * from supplier
 select * from cardtypes
+select batchcode from inventory where batchcode='22046U4113'
+insert into inventory values('22046U4113','8010276030399','2023-8-31',1610.17,1610.17,1610.17,1171.42,1171.42,1171.42,0,0,0,9,9,0,6,6,6,'GD',false,0);commit;
+insert into purchase values('A002851','8010276030399','22046U4113','S0001','2022-8-22','2023-8-31',6,6,6,0,0,0,1610.17,1610.17,1610.17,1171.42,1171.42,1171.42,0,9,9,0,0,8293.6536);commit;
+select batchcode from inventory where batchcode='22033U1787'
+insert into inventory values('22033U1787','8010276031297','2023-8-31',1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('A002851','8010276031297','22033U1787','S0001','2022-8-22','2023-8-31',1,1,1,0,0,0,1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,9,9,0,0,1382.2756);commit;
+select batchcode from inventory where batchcode='22011U0459'
+insert into inventory values('22011U0459','8010276022486','2023-8-31',1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('A002851','8010276022486','22011U0459','S0001','2022-8-22','2023-8-31',1,1,1,0,0,0,1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,9,9,0,0,1382.2756);commit;
+select batchcode from inventory where batchcode='22011U4888'
+insert into inventory values('22011U4888','8010276025227','2023-8-31',1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('A002851','8010276025227','22011U4888','S0001','2022-8-22','2023-8-31',1,1,1,0,0,0,1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,9,9,0,0,1382.2756);commit;
+select batchcode from inventory where batchcode='21350U4810'
+insert into inventory values('21350U4810','8010276025258','2023-8-31',1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('A002851','8010276025258','21350U4810','S0001','2022-8-22','2023-8-31',1,1,1,0,0,0,1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,9,9,0,0,1382.2756);commit;
+select batchcode from inventory where batchcode='22011U0446'
+insert into inventory values('22011U0446','8010276030344','2023-8-31',1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('A002851','8010276030344','22011U0446','S0001','2022-8-22','2023-8-31',1,1,1,0,0,0,1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,9,9,0,0,1382.2756);commit;
+select batchcode from inventory where batchcode='21350U3311'
+insert into inventory values('21350U3311','8010276025289','2023-8-31',1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('A002851','8010276025289','21350U3311','S0001','2022-8-22','2023-8-31',1,1,1,0,0,0,1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,9,9,0,0,1382.2756);commit;
+select batchcode from inventory where batchcode='22033U0484'
+insert into inventory values('22033U0484','8010276025319','2023-8-31',1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('A002851','8010276025319','22033U0484','S0001','2022-8-22','2023-8-31',1,1,1,0,0,0,1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,9,9,0,0,1382.2756);commit;
+select batchcode from inventory where batchcode='22011U2533'
+insert into inventory values('22011U2533','8010276025302','2023-8-31',1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('A002851','8010276025302','22011U2533','S0001','2022-8-22','2023-8-31',1,1,1,0,0,0,1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,9,9,0,0,1382.2756);commit;
+select batchcode from inventory where batchcode='21350U4810'
+select batchcode from inventory where batchcode='21350U4813'
+insert into inventory values('21350U4813','8010276025203','2023-8-31',1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('A002851','8010276025203','21350U4813','S0001','2022-8-22','2023-8-31',1,1,1,0,0,0,1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,9,9,0,0,1382.2756);commit;
+select batchcode from inventory where batchcode='22046U0431'
+insert into inventory values('22046U0431','8010276030368','2023-8-31',1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('A002851','8010276030368','22046U0431','S0001','2022-8-22','2023-8-31',1,1,1,0,0,0,1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,9,9,0,0,1382.2756);commit;
+select batchcode from inventory where batchcode='21350U0416'
+insert into inventory values('21350U0416','8010276025241','2023-8-31',1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('A002851','8010276025241','21350U0416','S0001','2022-8-22','2023-8-31',1,1,1,0,0,0,1610.16,1610.16,1610.16,1171.42,1171.42,1171.42,0,9,9,0,0,1382.2756);commit;
+insert into p_payments values('A002851','2022-8-22',0,0,'AmEx Credit',24881.00,'CHQ','UPI_Ref_223443405701',0.04);commit;
+update supplier set credit=credit+0.04 where id='S0001';commit;
+select * from medicine
+select * from supplier
+select * from cardtypes
