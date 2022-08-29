@@ -266,3 +266,16 @@ select * from medtypes
 select * from schedule
 select distinct comp1 from medicine
 select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='80';
+select * from medicine where code='801';
+select * from medicine where code='8010';
+select * from medicine where code='80102';
+select * from medicine where code='801027';
+select * from medicine where code='8010276';
+select * from medicine where code='80102760';
+select * from medicine where code='801027602';
+select * from medicine where code='8010276025';
+select * from medicine where code='80102760253';
+select * from medicine where code='801027602531';
+select * from medicine where code='8010276025319';
