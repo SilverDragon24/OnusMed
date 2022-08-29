@@ -457,3 +457,6 @@ update supplier set credit=credit+0.04 where id='S0001';commit;
 select * from medicine
 select * from supplier
 select * from cardtypes
+select * from medicine
+select * from supplier
+select * from cardtypes
