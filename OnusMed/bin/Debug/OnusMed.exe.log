@@ -148,3 +148,8 @@ select * from supplier
 select * from cardtypes
 select distinct city from supplier
 select distinct state from supplier
+select * from supplier where id='S';
+select * from supplier where id='S0';
+select * from supplier where id='S00';
+select * from supplier where id='S000';
+select * from supplier where id='S0001';
