@@ -464,3 +464,7 @@ select id from patient where truncate(credit,2)>0;
 select id from supplier where truncate(credit,2)>0;
 select * from cardtypes
 select credit from supplier where id='S0001'
+select id,name,contact,email,credit from patient
+select * from pdoctor
+select * from medicine
+select * from cardtypes
