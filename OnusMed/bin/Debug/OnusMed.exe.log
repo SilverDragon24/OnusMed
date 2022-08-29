@@ -484,3 +484,4 @@ select * from pdoctor
 select * from medicine
 select * from cardtypes
 select distinct state from patient
+select id,name,pwd,post from salesman
