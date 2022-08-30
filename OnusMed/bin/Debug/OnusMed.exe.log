@@ -576,3 +576,4 @@ select * from inventory where code='8010276030399' and expiry>curdate() and stoc
 select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
 select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
 select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
+select id,name,pwd,post from salesman
