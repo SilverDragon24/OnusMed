@@ -1246,6 +1246,7 @@ Partial Class PurchaseEntry
         Me.numSuppCredit.DecimalPlaces = 2
         Me.numSuppCredit.Location = New System.Drawing.Point(84, 92)
         Me.numSuppCredit.Maximum = New Decimal(New Integer() {959315935, 18, 0, 0})
+        Me.numSuppCredit.Minimum = New Decimal(New Integer() {-1352572439, 172, 0, -2147483648})
         Me.numSuppCredit.Name = "numSuppCredit"
         Me.numSuppCredit.Size = New System.Drawing.Size(107, 20)
         Me.numSuppCredit.TabIndex = 1
