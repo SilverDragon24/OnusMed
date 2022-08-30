@@ -162,10 +162,19 @@ Public Class PurchaseEntry
                     Dim stock_pack As Double = Convert.ToDouble(Decimal.Add(Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(i).Cells(7).Value)), Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(i).Cells(10).Value))))
                     Dim stock_strip As Double = Convert.ToDouble(Decimal.Add(Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(i).Cells(8).Value)), Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(i).Cells(11).Value))))
                     Dim stock_piece As Double = Convert.ToDouble(Decimal.Add(Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(i).Cells(9).Value)), Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(i).Cells(12).Value))))
-                    If (Not chkInterState.Checked) Then
-                        inventory = String.Concat(New String() {"insert into inventory values('", DataGridView1.Rows(i).Cells(2).Value.ToString(), "','", DataGridView1.Rows(i).Cells(0).Value.ToString(), "','", DataGridView1.Rows(i).Cells(6).Value.ToString(), "',", DataGridView1.Rows(i).Cells(13).Value.ToString(), ",", DataGridView1.Rows(i).Cells(14).Value.ToString(), ",", DataGridView1.Rows(i).Cells(15).Value.ToString(), ",", DataGridView1.Rows(i).Cells(16).Value.ToString(), ",", DataGridView1.Rows(i).Cells(17).Value.ToString(), ",", DataGridView1.Rows(i).Cells(18).Value.ToString(), ",0,0,0,", DataGridView1.Rows(i).Cells(20).Value.ToString(), ",", DataGridView1.Rows(i).Cells(21).Value.ToString(), ",", DataGridView1.Rows(i).Cells(22).Value.ToString(), ",", stock_pack.ToString(), ",", stock_strip.ToString(), ",", stock_piece.ToString(), ",'GD',false,", DataGridView1.Rows(i).Cells(23).Value.ToString(), ");commit;"})
-                    ElseIf (chkInterState.Checked) Then
-                        inventory = String.Concat(New String() {"insert into inventory values('", DataGridView1.Rows(i).Cells(2).Value.ToString(), "','", DataGridView1.Rows(i).Cells(0).Value.ToString(), "','", DataGridView1.Rows(i).Cells(6).Value.ToString(), "',", DataGridView1.Rows(i).Cells(13).Value.ToString(), ",", DataGridView1.Rows(i).Cells(14).Value.ToString(), ",", DataGridView1.Rows(i).Cells(15).Value.ToString(), ",0,0,0,", DataGridView1.Rows(i).Cells(16).Value.ToString(), ",", DataGridView1.Rows(i).Cells(17).Value.ToString(), ",", DataGridView1.Rows(i).Cells(18).Value.ToString(), ",", DataGridView1.Rows(i).Cells(20).Value.ToString(), ",", DataGridView1.Rows(i).Cells(21).Value.ToString(), ",", DataGridView1.Rows(i).Cells(22).Value.ToString(), ",", stock_pack.ToString(), ",", stock_strip.ToString(), ",", stock_piece.ToString(), ",'GD', false,", DataGridView1.Rows(i).Cells(23).Value.ToString(), ");commit;"})
+                    If (chkInterState.Checked = False) Then
+                        Dim pr_pack_tmp As Double
+                        Dim pr_strip_tmp As Double
+                        Dim pr_piece_tmp As Double
+                        Double.TryParse(DataGridView1.Rows(i).Cells(16).Value, pr_pack_tmp)
+                        Double.TryParse(DataGridView1.Rows(i).Cells(17).Value, pr_strip_tmp)
+                        Double.TryParse(DataGridView1.Rows(i).Cells(18).Value, pr_piece_tmp)
+                        pr_pack_tmp = pr_pack_tmp * 1.18
+                        pr_strip_tmp = pr_strip_tmp * 1.18
+                        pr_piece_tmp = pr_piece_tmp * 1.18
+                        inventory = String.Concat(New String() {"insert into inventory values('", DataGridView1.Rows(i).Cells(2).Value.ToString(), "','", DataGridView1.Rows(i).Cells(0).Value.ToString(), "','", DataGridView1.Rows(i).Cells(6).Value.ToString(), "',", DataGridView1.Rows(i).Cells(13).Value.ToString(), ",", DataGridView1.Rows(i).Cells(14).Value.ToString(), ",", DataGridView1.Rows(i).Cells(15).Value.ToString(), ",", pr_pack_tmp.ToString(), ",", pr_strip_tmp.ToString(), ",", pr_piece_tmp.ToString(), ",0,0,0,", DataGridView1.Rows(i).Cells(20).Value.ToString(), ",", DataGridView1.Rows(i).Cells(21).Value.ToString(), ",", DataGridView1.Rows(i).Cells(22).Value.ToString(), ",", stock_pack.ToString(), ",", stock_strip.ToString(), ",", stock_piece.ToString(), ",'GD',false,", DataGridView1.Rows(i).Cells(23).Value.ToString(), ");commit;"})
+                    ElseIf (chkInterState.Checked = True) Then
+
                     End If
                     manipulateData(inventory)
                     ProgressBar1.Value = ProgressBar1.Value + 1
@@ -176,7 +185,7 @@ Public Class PurchaseEntry
             Loop While i <= count
             Dim text(18) As String
             text(0) = "insert into p_payments values('"
-            text(1) = txtInvoiceNo.Text
+                        Text(1) = txtInvoiceNo.Text
             text(2) = "','"
             text(3) = idate
             text(4) = "',"
