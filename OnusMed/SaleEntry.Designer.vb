@@ -820,6 +820,7 @@ Partial Class SaleEntry
         Me.numWallet.DecimalPlaces = 2
         Me.numWallet.Location = New System.Drawing.Point(52, 116)
         Me.numWallet.Maximum = New Decimal(New Integer() {-476460073, 1738, 0, 0})
+        Me.numWallet.Minimum = New Decimal(New Integer() {-1037150456, 1726, 0, -2147483648})
         Me.numWallet.Name = "numWallet"
         Me.numWallet.Size = New System.Drawing.Size(69, 20)
         Me.numWallet.TabIndex = 18
@@ -829,6 +830,7 @@ Partial Class SaleEntry
         Me.numBank.DecimalPlaces = 2
         Me.numBank.Location = New System.Drawing.Point(70, 66)
         Me.numBank.Maximum = New Decimal(New Integer() {1768176816, 0, 0, 0})
+        Me.numBank.Minimum = New Decimal(New Integer() {-1323884216, 1661, 0, -2147483648})
         Me.numBank.Name = "numBank"
         Me.numBank.Size = New System.Drawing.Size(69, 20)
         Me.numBank.TabIndex = 17
@@ -838,6 +840,7 @@ Partial Class SaleEntry
         Me.numCredit.DecimalPlaces = 2
         Me.numCredit.Location = New System.Drawing.Point(52, 142)
         Me.numCredit.Maximum = New Decimal(New Integer() {2051287385, 1667, 0, 0})
+        Me.numCredit.Minimum = New Decimal(New Integer() {-738428939, 166885, 0, -2147483648})
         Me.numCredit.Name = "numCredit"
         Me.numCredit.Size = New System.Drawing.Size(69, 20)
         Me.numCredit.TabIndex = 16
@@ -847,6 +850,7 @@ Partial Class SaleEntry
         Me.numCard.DecimalPlaces = 2
         Me.numCard.Location = New System.Drawing.Point(70, 40)
         Me.numCard.Maximum = New Decimal(New Integer() {-692480663, 343, 0, 0})
+        Me.numCard.Minimum = New Decimal(New Integer() {850080896, 39040, 0, -2147483648})
         Me.numCard.Name = "numCard"
         Me.numCard.Size = New System.Drawing.Size(69, 20)
         Me.numCard.TabIndex = 15
@@ -856,6 +860,7 @@ Partial Class SaleEntry
         Me.numCash.DecimalPlaces = 2
         Me.numCash.Location = New System.Drawing.Point(70, 14)
         Me.numCash.Maximum = New Decimal(New Integer() {-412252268, 3, 0, 0})
+        Me.numCash.Minimum = New Decimal(New Integer() {1939537358, 390, 0, -2147483648})
         Me.numCash.Name = "numCash"
         Me.numCash.Size = New System.Drawing.Size(69, 20)
         Me.numCash.TabIndex = 14
@@ -1043,6 +1048,7 @@ Partial Class SaleEntry
         Me.numNet.DecimalPlaces = 2
         Me.numNet.Location = New System.Drawing.Point(84, 66)
         Me.numNet.Maximum = New Decimal(New Integer() {1579674698, 16693, 0, 0})
+        Me.numNet.Minimum = New Decimal(New Integer() {2106903384, 1667937, 0, -2147483648})
         Me.numNet.Name = "numNet"
         Me.numNet.Size = New System.Drawing.Size(69, 20)
         Me.numNet.TabIndex = 5
@@ -1060,6 +1066,7 @@ Partial Class SaleEntry
         Me.numGross.DecimalPlaces = 2
         Me.numGross.Location = New System.Drawing.Point(84, 14)
         Me.numGross.Maximum = New Decimal(New Integer() {1018470694, 179, 0, 0})
+        Me.numGross.Minimum = New Decimal(New Integer() {922929376, 1668735, 0, -2147483648})
         Me.numGross.Name = "numGross"
         Me.numGross.Size = New System.Drawing.Size(69, 20)
         Me.numGross.TabIndex = 3
