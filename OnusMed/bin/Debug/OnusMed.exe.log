@@ -648,3 +648,11 @@ select * from inventory where code='8010276030399' and expiry>curdate() and stoc
 select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
 select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
 select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
+insert into sales values('SI20220831164736','8010276030399','22046U4113', curdate(),'20220830044224','P Bhattacharya','0','N/A',1,1,1,1610.16949152542,1610.16949152542,1610.16949152542,11.75,9,9,0,0,1710.80508474576,'E20220827180818');commit;
+update inventory set stock_pack=stock_pack-(1),stock_strip=stock_strip-(1),stock_piece=stock_piece-(1) where batchcode='22046U4113';commit;
+insert into s_payments values('SI20220831164736', curdate(),1710,0,'',0,'',0,'','',0.80508474576);commit;
+update patient set credit=credit+(0.80508474576) where id='20220830044224';commit;
+select * from store
+select * from gstin
+select pid, pname, pdoctor_reg, pdoctor_name from sales where invoice_no='SI20220831164736'
+select s.icode,(select m0.name from medicine m0 where m0.code=s.icode),s.batchcode,(select m1.hsn from medicine m1 where m1.code=s.icode),s.pieceq,s.discount,(s.piece_mrp*s.pieceq),((s.cgst/100)*(s.piece_mrp*s.pieceq)),((s.sgst/100)*(s.piece_mrp*s.pieceq)),((s.igst/100)*(s.piece_mrp*s.pieceq)),((s.ed/100)*(s.piece_mrp*s.pieceq)),((((100-s.discount)/100)*(s.piece_mrp*s.pieceq))+((s.cgst+s.sgst+s.igst+s.ed)/100)*(s.piece_mrp*s.pieceq)) from sales s where invoice_no='SI20220831164736'
