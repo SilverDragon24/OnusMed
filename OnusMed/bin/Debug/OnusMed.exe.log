@@ -631,3 +631,4 @@ select * from pdoctor
 select * from medicine
 select * from cardtypes
 select id,name,pwd,post from salesman
+select id,name,pwd,post from salesman
