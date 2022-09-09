@@ -23,6 +23,83 @@ Public Class PurchaseEntry
     Private valid(16) As Boolean
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        'Dim str(4) As String
+        'Dim value As DateTime = dateInvoiceDate.Value
+        'Dim year As Integer = value.Year
+        'str(0) = year.ToString()
+        'str(1) = "-"
+        'value = dateInvoiceDate.Value
+        'year = value.Month
+        'str(2) = year.ToString()
+        'str(3) = "-"
+        'value = dateInvoiceDate.Value
+        'year = value.Day
+        'str(4) = year.ToString()
+        'Dim idate As String = String.Concat(str)
+        'Dim strArrays(4) As String
+        'value = dateExpiry.Value
+        'year = value.Year
+        'strArrays(0) = year.ToString()
+        'strArrays(1) = "-"
+        'value = dateExpiry.Value
+        'year = value.Month
+        'strArrays(2) = year.ToString()
+        'strArrays(3) = "-"
+        'value = dateExpiry.Value
+        'year = value.Year
+        'Dim [integer] As Integer = Conversions.ToInteger(year.ToString())
+        'value = dateExpiry.Value
+        'year = value.Month
+        'year = DateTime.DaysInMonth([integer], Conversions.ToInteger(year.ToString()))
+        'strArrays(4) = year.ToString()
+        'Dim edate As String = String.Concat(strArrays)
+        'Dim rows As DataGridViewRowCollection = DataGridView1.Rows
+        'Dim text(24) As Object
+        'text(0) = txtItemCode.Text
+        'text(1) = cmbItemName.Text
+        'text(2) = txtBatchCode.Text
+        'text(3) = cmbSuppID.Text
+        'text(4) = cmbSuppName.Text
+        'text(5) = idate
+        'text(6) = edate
+        'Dim num As Decimal = numQtyPack.Value
+        'text(7) = num.ToString()
+        'num = numQtyStrip.Value
+        'text(8) = num.ToString()
+        'num = numQtyPiece.Value
+        'text(9) = num.ToString()
+        'num = numFreePack.Value
+        'text(10) = num.ToString()
+        'num = numFreeStrip.Value
+        'text(11) = num.ToString()
+        'num = numFreePiece.Value
+        'text(12) = num.ToString()
+        'num = numMrpPack.Value
+        'text(13) = num.ToString()
+        'num = numMrpStrip.Value
+        'text(14) = num.ToString()
+        'num = numMrpPiece.Value
+        'text(15) = num.ToString()
+        'num = numPrPack.Value
+        'text(16) = num.ToString()
+        'num = numPrStrip.Value
+        'text(17) = num.ToString()
+        'num = numPrPiece.Value
+        'text(18) = num.ToString()
+        'num = numDiscount.Value
+        'text(19) = num.ToString()
+        'num = numCGST.Value
+        'text(20) = num.ToString()
+        'num = numSGST.Value
+        'text(21) = num.ToString()
+        'num = numIGST.Value
+        'text(22) = num.ToString()
+        'num = numED.Value
+        'text(23) = num.ToString()
+        'num = Decimal.Add(Decimal.Add(Decimal.Add(Decimal.Subtract(Decimal.Multiply(numQtyPack.Value, numPrPack.Value), Decimal.Multiply(Decimal.Divide(numDiscount.Value, New Decimal(CLng(100))), Decimal.Multiply(numQtyPack.Value, numPrPack.Value))), Decimal.Multiply(Decimal.Divide(numCGST.Value, New Decimal(CLng(100))), Decimal.Multiply(numQtyPack.Value, numPrPack.Value))), Decimal.Multiply(Decimal.Divide(numSGST.Value, New Decimal(CLng(100))), Decimal.Multiply(numQtyPack.Value, numPrPack.Value))), Decimal.Multiply(Decimal.Divide(numIGST.Value, New Decimal(CLng(100))), Decimal.Multiply(numQtyPack.Value, numPrPack.Value)))
+        'text(24) = num.ToString()
+        'rows.Add(text)
+
         Dim str(4) As String
         Dim value As DateTime = dateInvoiceDate.Value
         Dim year As Integer = value.Year
@@ -88,6 +165,10 @@ Public Class PurchaseEntry
         text(18) = num.ToString()
         num = numDiscount.Value
         text(19) = num.ToString()
+        Dim tcgst As Double = (numCGST.Value / 100) * numMrpPiece.Value
+        Dim tsgst As Double = (numSGST.Value / 100) * numMrpPiece.Value
+        Dim tigst As Double = (numIGST.Value / 100) * numMrpPiece.Value
+        Dim prnt As Double = numPrPiece.Value - (tcgst + tsgst + tigst)
         num = numCGST.Value
         text(20) = num.ToString()
         num = numSGST.Value
@@ -96,9 +177,11 @@ Public Class PurchaseEntry
         text(22) = num.ToString()
         num = numED.Value
         text(23) = num.ToString()
-        num = Decimal.Add(Decimal.Add(Decimal.Add(Decimal.Subtract(Decimal.Multiply(numQtyPack.Value, numPrPack.Value), Decimal.Multiply(Decimal.Divide(numDiscount.Value, New Decimal(CLng(100))), Decimal.Multiply(numQtyPack.Value, numPrPack.Value))), Decimal.Multiply(Decimal.Divide(numCGST.Value, New Decimal(CLng(100))), Decimal.Multiply(numQtyPack.Value, numPrPack.Value))), Decimal.Multiply(Decimal.Divide(numSGST.Value, New Decimal(CLng(100))), Decimal.Multiply(numQtyPack.Value, numPrPack.Value))), Decimal.Multiply(Decimal.Divide(numIGST.Value, New Decimal(CLng(100))), Decimal.Multiply(numQtyPack.Value, numPrPack.Value)))
+        num = prnt + (tcgst + tsgst + tigst)
+        num = num * s * p
         text(24) = num.ToString()
         rows.Add(text)
+
         txtInvoiceNo.[ReadOnly] = True
         numDiscount.[ReadOnly] = True
         cmbItemName.Text = ""
