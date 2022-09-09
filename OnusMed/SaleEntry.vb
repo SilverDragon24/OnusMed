@@ -939,9 +939,9 @@ Public Class SaleEntry
                 qty = Convert.ToDouble(DataGridView1.Rows(i).Cells(10).Value)
                 mrp = Convert.ToDouble(DataGridView1.Rows(i).Cells(13).Value)
                 discount = Convert.ToDouble(DataGridView1.Rows(i).Cells(14).Value)
-                discount = (100 - discount) / 100
+                discount = 100 - discount
                 gross = mrp * qty
-                amt = discount * gross
+                amt = (discount / 100) * gross
                 i = i + 1
             Loop While i <= count1
             numGross.Value = New Decimal(gross)
