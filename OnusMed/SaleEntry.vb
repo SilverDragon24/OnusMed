@@ -275,8 +275,7 @@ Public Class SaleEntry
                 file.Write(String.Concat("<td>", tamt.ToString(), "</td>"))
                 file.WriteLine("</tr>")
             Catch exception As System.Exception
-                ProjectData.SetProjectError(exception)
-                ProjectData.ClearProjectError()
+
             End Try
             file.WriteLine("</table>")
             Dim i As Integer = 0
