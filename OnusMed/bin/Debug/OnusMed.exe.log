@@ -667,3 +667,4 @@ select * from cardtypes
 select * from medicine
 select * from supplier
 select * from cardtypes
+select id,name,pwd,post from salesman
