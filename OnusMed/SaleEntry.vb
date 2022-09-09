@@ -101,11 +101,11 @@ Public Class SaleEntry
         text(9) = num.ToString()
         num = numQtyPiece.Value
         text(10) = num.ToString()
-        Dim num1 As Double = Convert.ToDouble(Convert.ToDecimal(txtMrpPack.Text)) / ((tempgst(0) + tempgst(1) + tempgst(2) + 100) / 100)
+        Dim num1 As Double = Convert.ToDouble(Convert.ToDecimal(txtMrpPack.Text))
         text(11) = num1.ToString()
-        num1 = Convert.ToDouble(Convert.ToDecimal(txtMrpStrip.Text)) / ((tempgst(0) + tempgst(1) + tempgst(2) + 100) / 100)
+        num1 = Convert.ToDouble(Convert.ToDecimal(txtMrpStrip.Text))
         text(12) = num1.ToString()
-        num1 = Convert.ToDouble(Convert.ToDecimal(txtMrpPiece.Text)) / ((tempgst(0) + tempgst(1) + tempgst(2) + 100) / 100)
+        num1 = Convert.ToDouble(Convert.ToDecimal(txtMrpPiece.Text))
         text(13) = num1.ToString()
         num = numDiscount.Value
         text(14) = num.ToString()
@@ -936,13 +936,12 @@ Public Class SaleEntry
             Dim count1 As Integer = DataGridView1.Rows.Count - 1
             Dim i As Integer = 0
             Do
-                gst = Convert.ToDouble(Decimal.Add(Decimal.Add(Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(i).Cells(15).Value)), Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(i).Cells(16).Value))), Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(i).Cells(17).Value))))
-                expd = Convert.ToDouble(Convert.ToDecimal(Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(i).Cells(18).Value))))
-                discount = Convert.ToDouble(Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(i).Cells(14).Value)))
-                mrp = Convert.ToDouble(Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(i).Cells(13).Value)))
-                qty = Convert.ToDouble(Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(i).Cells(10).Value)))
-                amt = amt + (100 - discount) / 100 * (mrp * qty) + gst / 100 * (mrp * qty) + expd / 100 * (mrp * qty)
-                gross = gross + mrp * qty
+                qty = Convert.ToDouble(DataGridView1.Rows(i).Cells(10).Value)
+                mrp = Convert.ToDouble(DataGridView1.Rows(i).Cells(13).Value)
+                discount = Convert.ToDouble(DataGridView1.Rows(i).Cells(14).Value)
+                discount = (100 - discount) / 100
+                gross = mrp * qty
+                amt = discount * gross
                 i = i + 1
             Loop While i <= count1
             numGross.Value = New Decimal(gross)
