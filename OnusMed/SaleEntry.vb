@@ -335,7 +335,6 @@ Public Class SaleEntry
                 Dim tcredit As Double = 0
                 Try
                     Dim count1 As Integer = DataGridView1.Rows.Count - 1
-                    Dim num1 As Integer = 0
                     For num1 As Integer = 0 To DataGridView1.Rows.Count - 1 Step 1
                         Dim tigst As Double = 0
                         Dim tmrp As Double = 0
