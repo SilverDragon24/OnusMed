@@ -871,3 +871,6 @@ select * from cardtypes
 select * from inventory where code='8010276025203' and expiry>curdate() and stock_pack>0
 select * from inventory where code='8010276025203' and expiry>curdate() and stock_pack>0
 select * from inventory where code='8010276025227' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276025227' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276025258' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276025258' and expiry>curdate() and stock_pack>0
