@@ -992,3 +992,7 @@ select id,name,contact,email,credit from patient
 select * from pdoctor
 select * from medicine
 select * from cardtypes
+select id,name,contact,email,credit from patient
+select * from pdoctor
+select * from medicine
+select * from cardtypes
