@@ -828,3 +828,10 @@ select * from medicine
 select * from cardtypes
 select * from inventory where code='8010276022486' and expiry>curdate() and stock_pack>0
 select * from inventory where code='8010276022486' and expiry>curdate() and stock_pack>0
+insert into sales values('SI20220910235509','8010276022486','22011U0459', curdate(),'20220830044224','P Bhattacharya','0','N/A',1,1,1,1900,1900,1900,10,9,9,0,0,1710,'E20220827180818');commit;
+update inventory set stock_pack=stock_pack-(1),stock_strip=stock_strip-(1),stock_piece=stock_piece-(1) where batchcode='22011U0459';commit;
+insert into s_payments values('SI20220910235509', curdate(),0,0,'',0,'',0,'','',1710);commit;
+update patient set credit=credit+(1710) where id='20220830044224';commit;
+select * from store
+select * from gstin
+select pid, pname, pdoctor_reg, pdoctor_name from sales where invoice_no='SI20220910235509'
