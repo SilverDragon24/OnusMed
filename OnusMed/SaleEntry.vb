@@ -284,6 +284,7 @@ Public Class SaleEntry
                         file.Write(String.Concat("<td>", Math.Round(tasgst, 2).ToString(), "</td>")) 'sgst
                         file.Write(String.Concat("<td>", Math.Round(tamrp, 2).ToString(), "</td>")) 'amt
                         file.WriteLine("</tr>")
+                        tcdisc += tadisc
                         tcmrp += tamrp
                     Next
                     tcamt = tcmrp - tcdisc
