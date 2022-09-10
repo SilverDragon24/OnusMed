@@ -755,3 +755,14 @@ select * from inventory where code='8010276030399' and expiry>curdate() and stoc
 select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
 select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
 select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
+insert into sales values('SI20220910233439','8010276030399','22046U4113', curdate(),'20220830044224','P Bhattacharya','0','N/A',1,1,1,1900,1900,1900,10,9,9,0,0,1710,'E20220827180818');commit;
+update inventory set stock_pack=stock_pack-(1),stock_strip=stock_strip-(1),stock_piece=stock_piece-(1) where batchcode='22046U4113';commit;
+insert into s_payments values('SI20220910233439', curdate(),0,0,'',0,'',0,'','',1710.0);commit;
+update patient set credit=credit+(1710.0) where id='20220830044224';commit;
+select * from store
+select * from gstin
+select pid, pname, pdoctor_reg, pdoctor_name from sales where invoice_no='SI20220910233439'
+select id,name,contact,email,credit from patient
+select * from pdoctor
+select * from medicine
+select * from cardtypes
