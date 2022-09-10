@@ -877,3 +877,7 @@ select * from inventory where code='8010276025258' and expiry>curdate() and stoc
 select * from inventory where code='8010276025241' and expiry>curdate() and stock_pack>0
 select * from inventory where code='8010276025241' and expiry>curdate() and stock_pack>0
 select id,name,pwd,post from salesman
+select id,name,contact,email,credit from patient
+select * from pdoctor
+select * from medicine
+select * from cardtypes
