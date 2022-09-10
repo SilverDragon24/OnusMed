@@ -262,6 +262,7 @@ Public Class SaleEntry
                         Dim tamt As Double = 0
                         Dim tqty As Double = 0
                         Dim tdisc As Double = 0
+                        Dim tadisc As Double = 0
                         Dim tamrp As Double = 0
                         tcgst = Convert.ToDouble(DataGridView1.Rows(num1).Cells(15).Value)
                         tsgst = Convert.ToDouble(DataGridView1.Rows(num1).Cells(16).Value)
@@ -271,6 +272,7 @@ Public Class SaleEntry
                         tacgst = ((tcgst / 100) * tmrp) * tqty
                         tasgst = ((tsgst / 100) * tmrp) * tqty
                         tgross = (tmrp * tqty) - (tacgst + tacgst)
+                        tadisc = (((100 - tdisc) / 100) * tmrp) * tqty
                         tamrp = tmrp * tqty
                         file.Write("<tr>")
                         file.Write(String.Concat("<td>", (num1 + 1).ToString, "</td>")) 'Sl
@@ -282,6 +284,7 @@ Public Class SaleEntry
                         file.Write(String.Concat("<td>", Math.Round(tasgst, 2).ToString(), "</td>")) 'sgst
                         file.Write(String.Concat("<td>", Math.Round(tamrp, 2).ToString(), "</td>")) 'amt
                         file.WriteLine("</tr>")
+                        tcmrp += tamrp
                     Next
                     tcamt = tcmrp - tcdisc
                     file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Total<br>(W/O Discount)</td><td>", Math.Round(tcmrp, 2).ToString, "</td></tr>"))
