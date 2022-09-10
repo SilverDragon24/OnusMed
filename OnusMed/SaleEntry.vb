@@ -1070,8 +1070,8 @@ Public Class SaleEntry
                 tamt += amt
                 i = i + 1
             Loop While i <= count1
-            numGross.Value = New Decimal(gross)
-            numNet.Value = New Decimal(amt)
+            numGross.Value = New Decimal(tgross)
+            numNet.Value = New Decimal(tamt)
         End If
     End Sub
 
