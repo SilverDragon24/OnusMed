@@ -269,8 +269,8 @@ Public Class SaleEntry
                         tmrp = Convert.ToDouble(DataGridView1.Rows(num1).Cells(13).Value)
                         tqty = Convert.ToDouble(DataGridView1.Rows(num1).Cells(10).Value)
                         tdisc = Convert.ToDouble(DataGridView1.Rows(num1).Cells(14).Value)
-                        tacgst = ((tcgst / 100) * tmrp) * tqty
-                        tasgst = ((tsgst / 100) * tmrp) * tqty
+                        tacgst = ((tcgst / 100) * (tmrp / ((100 + tcgst) / 100))) * tqty
+                        tacgst = ((tsgst / 100) * (tmrp / ((100 + tsgst) / 100))) * tqty
                         tgross = (tmrp * tqty) - (tacgst + tacgst)
                         tadisc = (((100 - tdisc) / 100) * tmrp) * tqty
                         tamrp = tmrp * tqty
