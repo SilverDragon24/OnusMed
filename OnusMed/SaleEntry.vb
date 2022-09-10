@@ -254,7 +254,6 @@ Public Class SaleEntry
                 Dim tcredit As Double = 0
                 Try
                     For num1 As Integer = 0 To DataGridView1.Rows.Count - 1
-                        MsgBox(num1.ToString)
                         Dim tcgst As Double = 0
                         Dim tsgst As Double = 0
                         Dim tacgst As Double = 0
@@ -267,7 +266,9 @@ Public Class SaleEntry
                         tcgst = Convert.ToDouble(DataGridView1.Rows(num1).Cells(15).Value)
                         tsgst = Convert.ToDouble(DataGridView1.Rows(num1).Cells(16).Value)
                         tmrp = Convert.ToDouble(DataGridView1.Rows(num1).Cells(13).Value)
+                        MsgBox(tcmrp.ToString)
                         tcmrp = tcmrp + tmrp
+                        MsgBox(tcmrp.ToString)
                         tqty = Convert.ToDouble(DataGridView1.Rows(num1).Cells(10).Value)
                         tdisc = Convert.ToDouble(DataGridView1.Rows(num1).Cells(14).Value)
                         tdisc = (tdisc / 100) * tmrp
