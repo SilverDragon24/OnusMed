@@ -150,7 +150,7 @@ Public Class SaleEntry
                 manipulateData(sales)
                 manipulateData(inventory)
                 num = num + 1
-            Loop While num <= count
+            Loop While num < count
             Dim str(20) As String
             str(0) = "insert into s_payments values('"
             str(1) = invoice
