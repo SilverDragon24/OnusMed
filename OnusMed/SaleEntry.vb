@@ -340,45 +340,50 @@ Public Class SaleEntry
                 Dim walletrem As String = ""
                 Dim tcredit As Double = 0
                 Try
-                    Dim count1 As Integer = DataGridView1.Rows.Count - 1
-                    For num1 As Integer = 0 To DataGridView1.Rows.Count - 1 Step 1
+                    For num1 As Integer = 0 To DataGridView1.Rows.Count - 1
                         Dim tigst As Double = 0
+                        Dim taigst As Double = 0
                         Dim tmrp As Double = 0
                         Dim tgross As Double = 0
                         Dim tamt As Double = 0
                         Dim tqty As Double = 0
                         Dim tdisc As Double = 0
+                        Dim tadisc As Double = 0
+                        Dim tamrp As Double = 0
+                        Dim tgmrp As Double = 0
                         tigst = Convert.ToDouble(DataGridView1.Rows(num1).Cells(17).Value)
                         tmrp = Convert.ToDouble(DataGridView1.Rows(num1).Cells(13).Value)
                         tqty = Convert.ToDouble(DataGridView1.Rows(num1).Cells(10).Value)
                         tdisc = Convert.ToDouble(DataGridView1.Rows(num1).Cells(14).Value)
-                        tdisc = (tdisc / 100) * tmrp
-                        tdisc = tdisc * tqty
-                        tcdisc = tcdisc + tdisc
-                        tigst = (tigst / 100) * (tmrp / ((100 + tigst) / 100))
-                        tgross = tmrp - tigst
-                        tgross = tgross * tqty
-                        tigst = tigst * tqty
-                        tmrp = tmrp * tqty
-                        tcmrp += tmrp
+                        tgmrp = tmrp / ((100 + tigst) / 100)
+                        tgross = tgmrp * tqty
+                        taigst = ((tigst / 100) * tgmrp) * tqty
+                        tadisc = ((tdisc / 100) * tmrp) * tqty
+                        tamrp = tmrp * tqty
                         file.Write("<tr>")
                         file.Write(String.Concat("<td>", (num1 + 1).ToString, "</td>")) 'Sl
                         file.Write(String.Concat("<td>", DataGridView1.Rows(num1).Cells(1).Value.ToString, "</td>")) 'iname
                         file.Write(String.Concat("<td>", DataGridView1.Rows(num1).Cells(2).Value.ToString(), "</td>")) 'bcode
                         file.Write(String.Concat("<td>", Math.Round(tqty, 2).ToString(), "</td>")) 'qty
                         file.Write(String.Concat("<td>", Math.Round(tgross, 2).ToString(), "</td>")) 'gross
-                        file.Write(String.Concat("<td>", Math.Round(tigst, 2).ToString(), "</td>"))  'igst
-                        file.Write(String.Concat("<td>", Math.Round(tmrp, 2).ToString(), "</td>")) 'amt
+                        file.Write(String.Concat("<td>", Math.Round(taigst, 2).ToString(), "</td>"))  'igst
+                        file.Write(String.Concat("<td>", Math.Round(tamrp, 2).ToString(), "</td>")) 'amt
                         file.WriteLine("</tr>")
+                        tcdisc += tadisc
+                        tcmrp += tamrp
                     Next
                     tcamt = tcmrp - tcdisc
                     file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>Total<br>(W/O Discount)</td><td>", Math.Round(tcmrp, 2).ToString, "</td></tr>"))
                     file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>Discount(", Math.Round(numDiscount.Value, 2).ToString, "%)</td><td>", Math.Round(tcdisc, 2).ToString, "</td></tr>"))
                     file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>Total</td><td>", Math.Round(tcamt, 2).ToString, "</td></tr>"))
                     tcash = numCash.Value
-                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>Cash Paid</td><td>", Math.Round(tcash, 2).ToString, "</td></tr>"))
+                    If (tcash > 0) Then
+                        file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>Cash Paid</td><td>", Math.Round(tcash, 2).ToString, "</td></tr>"))
+                    End If
                     tcard = numCard.Value
-                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>by Card</td><td>", Math.Round(tcard, 2).ToString, "</td></tr>"))
+                    If (tcard > 0) Then
+                        file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>by Card</td><td>", Math.Round(tcard, 2).ToString, "</td></tr>"))
+                    End If
                     tbank = numBank.Value
                     bankrem = txtInstruID.Text
                     If (radioInstruCHQ.Checked = True) Then
@@ -389,12 +394,18 @@ Public Class SaleEntry
                         bankrem = String.Concat("Ref No.:", bankrem)
                     Else
                     End If
-                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>by Bank<br>", bankrem, "</td><td>", Math.Round(tbank, 2).ToString, "</td></tr>"))
+                    If (tbank > 0) Then
+                        file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>by Bank<br>", bankrem, "</td><td>", Math.Round(tbank, 2).ToString, "</td></tr>"))
+                    End If
                     twallet = numWallet.Value
                     walletrem = txtWalletRem.Text
-                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>by Wallet<br>", walletrem, "</td><td>", Math.Round(twallet, 2).ToString, "</td></tr>"))
+                    If (twallet > 0) Then
+                        file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>by Wallet<br>", walletrem, "</td><td>", Math.Round(twallet, 2).ToString, "</td></tr>"))
+                    End If
                     tcredit = numCredit.Value
-                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>Due Amt.</td><td>", Math.Round(tcredit, 2).ToString, "</td></tr>"))
+                    If (tcredit > 0) Then
+                        file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>Due Amt.</td><td>", Math.Round(tcredit, 2).ToString, "</td></tr>"))
+                    End If
                 Catch exception As System.Exception
 
                 End Try
