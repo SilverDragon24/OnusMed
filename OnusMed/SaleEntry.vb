@@ -262,25 +262,16 @@ Public Class SaleEntry
                         Dim tamt As Double = 0
                         Dim tqty As Double = 0
                         Dim tdisc As Double = 0
+                        Dim tamrp As Double = 0
                         tcgst = Convert.ToDouble(DataGridView1.Rows(num1).Cells(15).Value)
                         tsgst = Convert.ToDouble(DataGridView1.Rows(num1).Cells(16).Value)
                         tmrp = Convert.ToDouble(DataGridView1.Rows(num1).Cells(13).Value)
-                        MsgBox(tcmrp.ToString)
-                        'tcmrp = tcmrp + tmrp
-                        MsgBox(tcmrp.ToString)
                         tqty = Convert.ToDouble(DataGridView1.Rows(num1).Cells(10).Value)
                         tdisc = Convert.ToDouble(DataGridView1.Rows(num1).Cells(14).Value)
-                        tdisc = (tdisc / 100) * tmrp
-                        tdisc = tdisc * tqty
-                        tcdisc = tcdisc + tdisc
-                        tacgst = (tcgst / 100) * (tmrp / ((100 + tcgst + tsgst) / 100))
-                        tasgst = (tsgst / 100) * (tmrp / ((100 + tcgst + tsgst) / 100))
-                        tgross = tmrp - (tcgst + tsgst)
-                        tgross = tgross * tqty
-                        tcgst = tcgst * tqty
-                        tsgst = tsgst * tqty
-                        tmrp = tmrp * tqty
-                        tcmrp += tmrp
+                        tacgst = ((tcgst / 100) * tmrp) * tqty
+                        tasgst = ((tsgst / 100) * tmrp) * tqty
+                        tgross = (tmrp * tqty) - (tacgst + tacgst)
+                        tamrp = tmrp * tqty
                         file.Write("<tr>")
                         file.Write(String.Concat("<td>", (num1 + 1).ToString, "</td>")) 'Sl
                         file.Write(String.Concat("<td>", DataGridView1.Rows(num1).Cells(1).Value.ToString, "</td>")) 'iname
@@ -289,7 +280,7 @@ Public Class SaleEntry
                         file.Write(String.Concat("<td>", Math.Round(tgross, 2).ToString(), "</td>")) 'gross
                         file.Write(String.Concat("<td>", Math.Round(tacgst, 2).ToString(), "</td>"))  'cgst
                         file.Write(String.Concat("<td>", Math.Round(tasgst, 2).ToString(), "</td>")) 'sgst
-                        file.Write(String.Concat("<td>", Math.Round(tmrp, 2).ToString(), "</td>")) 'amt
+                        file.Write(String.Concat("<td>", Math.Round(tamrp, 2).ToString(), "</td>")) 'amt
                         file.WriteLine("</tr>")
                     Next
                     tcamt = tcmrp - tcdisc
