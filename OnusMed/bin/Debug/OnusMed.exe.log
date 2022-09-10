@@ -771,3 +771,5 @@ select id,name,contact,email,credit from patient
 select * from pdoctor
 select * from medicine
 select * from cardtypes
+select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
