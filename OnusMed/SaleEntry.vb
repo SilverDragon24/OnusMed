@@ -668,9 +668,7 @@ Public Class SaleEntry
                 cmbItemCode.BackColor = Color.LightGreen
             End If
         Catch exception As System.Exception
-            ProjectData.SetProjectError(exception)
-            MsgBox(exception.ToString(), MsgBoxStyle.OkOnly, Nothing)
-            ProjectData.ClearProjectError()
+            MsgBox("Not in Stock")
         End Try
     End Sub
 
@@ -714,9 +712,7 @@ Public Class SaleEntry
                 cmbItemName.BackColor = Color.LightGreen
             End If
         Catch exception As System.Exception
-            ProjectData.SetProjectError(exception)
-            MsgBox(exception.ToString(), MsgBoxStyle.OkOnly, Nothing)
-            ProjectData.ClearProjectError()
+            MsgBox("Not in Stock")
         End Try
     End Sub
 
