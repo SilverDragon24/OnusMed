@@ -272,8 +272,8 @@ Public Class SaleEntry
                         tdisc = (tdisc / 100) * tmrp
                         tdisc = tdisc * tqty
                         tcdisc = tcdisc + tdisc
-                        tcgst = (tcgst / 100) * tmrp
-                        tsgst = (tsgst / 100) * tmrp
+                        tcgst = (tcgst / 100) * (tmrp / ((100 + tcgst + tsgst) / 100))
+                        tsgst = (tsgst / 100) * (tmrp / ((100 + tcgst + tsgst) / 100))
                         tgross = tmrp - (tcgst + tsgst)
                         tgross = tgross * tqty
                         tcgst = tcgst * tqty
@@ -351,7 +351,7 @@ Public Class SaleEntry
                         tdisc = (tdisc / 100) * tmrp
                         tdisc = tdisc * tqty
                         tcdisc = tcdisc + tdisc
-                        tigst = (tigst / 100) * tmrp
+                        tigst = (tigst / 100) * (tmrp / ((100 + tigst) / 100)
                         tgross = tmrp - tigst
                         tgross = tgross * tqty
                         tigst = tigst * tqty
