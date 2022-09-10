@@ -266,7 +266,7 @@ Public Class SaleEntry
                         tsgst = Convert.ToDouble(DataGridView1.Rows(num1).Cells(16).Value)
                         tmrp = Convert.ToDouble(DataGridView1.Rows(num1).Cells(13).Value)
                         MsgBox(tcmrp.ToString)
-                        tcmrp = tcmrp + tmrp
+                        'tcmrp = tcmrp + tmrp
                         MsgBox(tcmrp.ToString)
                         tqty = Convert.ToDouble(DataGridView1.Rows(num1).Cells(10).Value)
                         tdisc = Convert.ToDouble(DataGridView1.Rows(num1).Cells(14).Value)
@@ -280,7 +280,7 @@ Public Class SaleEntry
                         tcgst = tcgst * tqty
                         tsgst = tsgst * tqty
                         tmrp = tmrp * tqty
-                        tcmrp = tcmrp + tmrp
+                        tcmrp += tmrp
                         file.Write("<tr>")
                         file.Write(String.Concat("<td>", (num1 + 1).ToString, "</td>")) 'Sl
                         file.Write(String.Concat("<td>", DataGridView1.Rows(num1).Cells(1).Value.ToString, "</td>")) 'iname
@@ -353,7 +353,6 @@ Public Class SaleEntry
                         Dim tdisc As Double = 0
                         tigst = Convert.ToDouble(DataGridView1.Rows(num1).Cells(17).Value)
                         tmrp = Convert.ToDouble(DataGridView1.Rows(num1).Cells(13).Value)
-                        tcmrp = tcmrp + tmrp
                         tqty = Convert.ToDouble(DataGridView1.Rows(num1).Cells(10).Value)
                         tdisc = Convert.ToDouble(DataGridView1.Rows(num1).Cells(14).Value)
                         tdisc = (tdisc / 100) * tmrp
@@ -364,7 +363,7 @@ Public Class SaleEntry
                         tgross = tgross * tqty
                         tigst = tigst * tqty
                         tmrp = tmrp * tqty
-                        tcmrp = tcmrp + tmrp
+                        tcmrp += tmrp
                         file.Write("<tr>")
                         file.Write(String.Concat("<td>", (num1 + 1).ToString, "</td>")) 'Sl
                         file.Write(String.Concat("<td>", DataGridView1.Rows(num1).Cells(1).Value.ToString, "</td>")) 'iname
