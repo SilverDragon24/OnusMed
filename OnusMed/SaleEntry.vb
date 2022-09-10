@@ -134,18 +134,17 @@ Public Class SaleEntry
             Dim count As Integer = DataGridView1.Rows.Count - 1
             Dim num As Integer = 0
             Do
+                Dim tqty As Double = 0
+                Dim tmrp As Double = 0
+                Dim gross As Double = 0
+                Dim tdisc As Double = 0
                 Dim amt As Double = 0
-                Dim gst As Double = 0
-                Dim mrp As Double = 0
-                Dim discount As Double = 0
-                Dim expd As Double = 0
-                Dim qty As Double = 0
-                gst = Convert.ToDouble(Decimal.Add(Decimal.Add(Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(num).Cells(15).Value)), Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(num).Cells(16).Value))), Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(num).Cells(17).Value))))
-                expd = Convert.ToDouble(Convert.ToDecimal(Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(num).Cells(18).Value))))
-                discount = Convert.ToDouble(Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(num).Cells(14).Value)))
-                mrp = Convert.ToDouble(Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(num).Cells(13).Value)))
-                qty = Convert.ToDouble(Convert.ToDecimal(RuntimeHelpers.GetObjectValue(DataGridView1.Rows(num).Cells(10).Value)))
-                amt = (100 - discount) / 100 * (mrp * qty) + gst / 100 * (mrp * qty) + expd / 100 * (mrp * qty)
+                tqty = Convert.ToDouble(DataGridView1.Rows(num).Cells(10).Value)
+                tmrp = Convert.ToDouble(DataGridView1.Rows(num).Cells(13).Value)
+                gross = tqty * tmrp
+                tdisc = Convert.ToDouble(DataGridView1.Rows(num).Cells(14).Value)
+                tdisc = 100 - tdisc / 100
+                amt = (tdisc / 100) * gross
                 sales = String.Concat(New String() {"insert into sales values('", invoice, "','", DataGridView1.Rows(num).Cells(0).Value.ToString(), "','", DataGridView1.Rows(num).Cells(2).Value.ToString(), "', curdate(),'", DataGridView1.Rows(num).Cells(4).Value.ToString(), "','", DataGridView1.Rows(num).Cells(5).Value.ToString(), "','", DataGridView1.Rows(num).Cells(6).Value.ToString(), "','", DataGridView1.Rows(num).Cells(7).Value.ToString(), "',", DataGridView1.Rows(num).Cells(8).Value.ToString(), ",", DataGridView1.Rows(num).Cells(9).Value.ToString(), ",", DataGridView1.Rows(num).Cells(10).Value.ToString(), ",", DataGridView1.Rows(num).Cells(11).Value.ToString(), ",", DataGridView1.Rows(num).Cells(12).Value.ToString(), ",", DataGridView1.Rows(num).Cells(13).Value.ToString(), ",", DataGridView1.Rows(num).Cells(14).Value.ToString(), ",", DataGridView1.Rows(num).Cells(15).Value.ToString(), ",", DataGridView1.Rows(num).Cells(16).Value.ToString(), ",", DataGridView1.Rows(num).Cells(17).Value.ToString(), ",", DataGridView1.Rows(num).Cells(18).Value.ToString(), ",", amt.ToString(), ",'", employee, "');commit;"})
                 inventory = String.Concat(New String() {"update inventory set stock_pack=stock_pack-(", DataGridView1.Rows(num).Cells(8).Value.ToString(), "),stock_strip=stock_strip-(", DataGridView1.Rows(num).Cells(9).Value.ToString(), "),stock_piece=stock_piece-(", DataGridView1.Rows(num).Cells(10).Value.ToString(), ") where batchcode='", DataGridView1.Rows(num).Cells(2).Value.ToString(), "';commit;"})
                 manipulateData(sales)
@@ -239,57 +238,177 @@ Public Class SaleEntry
             file.WriteLine("</tr>")
             file.WriteLine("</table>")
             file.WriteLine("<table border=1 width=100%>")
-            file.WriteLine("<tr><th>Item Code</th><th>Item Name</th><th>Batch Code</th><th>HSN</th><th>Qty.</th><th>Discount</th><th>Price</th><th>CGST</th><th>SGST</th><th>IGST</th><th>E.D</th><th>Amount</th></tr>")
-            selectData(String.Concat("select s.icode,(select m0.name from medicine m0 where m0.code=s.icode),s.batchcode,(select m1.hsn from medicine m1 where m1.code=s.icode),s.pieceq,s.discount,(s.piece_mrp*s.pieceq),((s.cgst/100)*(s.piece_mrp*s.pieceq)),((s.sgst/100)*(s.piece_mrp*s.pieceq)),((s.igst/100)*(s.piece_mrp*s.pieceq)),((s.ed/100)*(s.piece_mrp*s.pieceq)),((((100-s.discount)/100)*(s.piece_mrp*s.pieceq))+((s.cgst+s.sgst+s.igst+s.ed)/100)*(s.piece_mrp*s.pieceq)) from sales s where invoice_no='", invoice, "'"), sales_invoice)
-            Dim tamt As Double = 0
-            Try
-                Dim count1 As Integer = sales_invoice.Tables(0).Rows.Count - 1
-                Dim num1 As Integer = 0
-                Do
-                    file.Write("<tr>")
-                    file.Write(String.Concat("<td>", sales_invoice.Tables(0).Rows(num1)(0).ToString(), "</td>"))
-                    file.Write(String.Concat("<td>", sales_invoice.Tables(0).Rows(num1)(1).ToString(), "</td>"))
-                    file.Write(String.Concat("<td>", sales_invoice.Tables(0).Rows(num1)(2).ToString(), "</td>"))
-                    file.Write(String.Concat("<td>", sales_invoice.Tables(0).Rows(num1)(3).ToString(), "</td>"))
-                    file.Write(String.Concat("<td>", sales_invoice.Tables(0).Rows(num1)(4).ToString(), "</td>"))
-                    value = Math.Round(Convert.ToDecimal(sales_invoice.Tables(0).Rows(num1)(5).ToString()), 2)
-                    file.Write(String.Concat("<td>", value.ToString(), "</td>"))
-                    value = Math.Round(Convert.ToDecimal(sales_invoice.Tables(0).Rows(num1)(6).ToString()), 2)
-                    file.Write(String.Concat("<td>", value.ToString(), "</td>"))
-                    value = Math.Round(Convert.ToDecimal(sales_invoice.Tables(0).Rows(num1)(7).ToString()), 2)
-                    file.Write(String.Concat("<td>", value.ToString(), "</td>"))
-                    value = Math.Round(Convert.ToDecimal(sales_invoice.Tables(0).Rows(num1)(8).ToString()), 2)
-                    file.Write(String.Concat("<td>", value.ToString(), "</td>"))
-                    value = Math.Round(Convert.ToDecimal(sales_invoice.Tables(0).Rows(num1)(9).ToString()), 2)
-                    file.Write(String.Concat("<td>", value.ToString(), "</td>"))
-                    value = Math.Round(Convert.ToDecimal(sales_invoice.Tables(0).Rows(num1)(10).ToString()), 2)
-                    file.Write(String.Concat("<td>", value.ToString(), "</td>"))
-                    value = Math.Round(Convert.ToDecimal(sales_invoice.Tables(0).Rows(num1)(11).ToString()), 2)
-                    file.Write(String.Concat("<td>", value.ToString(), "</td>"))
-                    file.WriteLine("</tr>")
-                    tamt += Convert.ToDouble(Math.Round(Convert.ToDecimal(sales_invoice.Tables(0).Rows(num1)(11).ToString()), 2))
-                    num1 = num1 + 1
-                Loop While num1 <= count1
-                file.Write("<tr>")
-                file.Write("<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Total</td>")
-                file.Write(String.Concat("<td>", tamt.ToString(), "</td>"))
-                file.WriteLine("</tr>")
-            Catch exception As System.Exception
+            If (chkInterState.Checked = False) Then
+                file.WriteLine("<tr><th>Sl.</th><th>Item Name</th><th>Batch Code</th><th>Qty.</th><th>Gross</th><th>CGST</th><th>SGST</th><th>Amount</th></tr>")
+                'selectData(String.Concat("select s.icode,(select m0.name from medicine m0 where m0.code=s.icode),s.batchcode,(select m1.hsn from medicine m1 where m1.code=s.icode),s.pieceq,s.discount,(s.piece_mrp*s.pieceq),((s.cgst/100)*(s.piece_mrp*s.pieceq)),((s.sgst/100)*(s.piece_mrp*s.pieceq)),((s.igst/100)*(s.piece_mrp*s.pieceq)),((s.ed/100)*(s.piece_mrp*s.pieceq)),((((100-s.discount)/100)*(s.piece_mrp*s.pieceq))+((s.cgst+s.sgst+s.igst+s.ed)/100)*(s.piece_mrp*s.pieceq)) from sales s where invoice_no='", invoice, "'"), sales_invoice)
+                Dim tcamt As Double = 0
+                Dim tcdisc As Double = 0
+                Dim tcmrp As Double = 0
+                Dim tcnet As Double = 0
+                Dim tcash As Double = 0
+                Dim tcard As Double = 0
+                Dim tbank As Double = 0
+                Dim bankrem As String = ""
+                Dim twallet As Double = 0
+                Dim walletrem As String = ""
+                Dim tcredit As Double = 0
+                Try
+                    Dim count1 As Integer = DataGridView1.Rows.Count - 1
+                    Dim num1 As Integer = 0
+                    Do
+                        Dim tcgst As Double = 0
+                        Dim tsgst As Double = 0
+                        Dim tmrp As Double = 0
+                        Dim tgross As Double = 0
+                        Dim tamt As Double = 0
+                        Dim tqty As Double = 0
+                        Dim tdisc As Double = 0
+                        tcgst = Convert.ToDouble(DataGridView1.Rows(num1).Cells(15).Value)
+                        tsgst = Convert.ToDouble(DataGridView1.Rows(num1).Cells(16).Value)
+                        tmrp = Convert.ToDouble(DataGridView1.Rows(num1).Cells(13).Value)
+                        tcmrp = tcmrp + tmrp
+                        tqty = Convert.ToDouble(DataGridView1.Rows(num1).Cells(10).Value)
+                        tdisc = Convert.ToDouble(DataGridView1.Rows(num1).Cells(14).Value)
+                        tdisc = (tdisc / 100) * tmrp
+                        tdisc = tdisc * tqty
+                        tcdisc = tcdisc + tdisc
+                        tcgst = (tcgst / 100) * tmrp
+                        tsgst = (tsgst / 100) * tmrp
+                        tgross = tmrp - (tcgst + tsgst)
+                        tgross = tgross * tqty
+                        tcgst = tcgst * tqty
+                        tsgst = tsgst * tqty
+                        tmrp = tmrp * tqty
+                        tcmrp = tcmrp + tmrp
+                        file.Write("<tr>")
+                        file.Write(String.Concat("<td>", (num1 + 1).ToString, "</td>")) 'Sl
+                        file.Write(String.Concat("<td>", DataGridView1.Rows(num1).Cells(1).Value.ToString, "</td>")) 'iname
+                        file.Write(String.Concat("<td>", DataGridView1.Rows(num1).Cells(2).Value.ToString(), "</td>")) 'bcode
+                        file.Write(String.Concat("<td>", Math.Round(tqty, 2).ToString(), "</td>")) 'qty
+                        file.Write(String.Concat("<td>", Math.Round(tgross, 2).ToString(), "</td>")) 'gross
+                        file.Write(String.Concat("<td>", Math.Round(tcgst, 2).ToString(), "</td>"))  'cgst
+                        file.Write(String.Concat("<td>", Math.Round(tsgst, 2).ToString(), "</td>")) 'sgst
+                        file.Write(String.Concat("<td>", Math.Round(tmrp, 2).ToString(), "</td>")) 'amt
+                        file.WriteLine("</tr>")
+                        num1 = num1 + 1
+                    Loop While num1 <= count1
+                    tcamt = tcmrp - tcdisc
+                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Total<br>(W/O Discount)</td><td>", Math.Round(tcmrp, 2).ToString, "</td></tr>"))
+                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Discount(", Math.Round(numDiscount.Value, 2).ToString, "%)</td><td>", Math.Round(tcdisc, 2).ToString, "</td></tr>"))
+                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Total</td><td>", Math.Round(tcamt, 2).ToString, "</td></tr>"))
+                    tcash = numCash.Value
+                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Cash Paid</td><td>", Math.Round(tcash, 2).ToString, "</td></tr>"))
+                    tcard = numCard.Value
+                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>by Card</td><td>", Math.Round(tcard, 2).ToString, "</td></tr>"))
+                    tbank = numBank.Value
+                    bankrem = txtInstruID.Text
+                    If (radioInstruCHQ.Checked = True) Then
+                        bankrem = String.Concat("CHQ No.:", bankrem)
+                    ElseIf (radioInstruDD.Checked = True) Then
+                        bankrem = String.Concat("DD No.:", bankrem)
+                    ElseIf (radioInstruNA.Checked = True) Then
+                        bankrem = String.Concat("Ref No.:", bankrem)
+                    Else
+                    End If
+                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>by Bank<br>", bankrem, "</td><td>", Math.Round(tbank, 2).ToString, "</td></tr>"))
+                    twallet = numWallet.Value
+                    walletrem = txtWalletRem.Text
+                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>by Wallet<br>", walletrem, "</td><td>", Math.Round(twallet, 2).ToString, "</td></tr>"))
+                    tcredit = numCredit.Value
+                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Due Amt.</td><td>", Math.Round(tcredit, 2).ToString, "</td></tr>"))
+                Catch exception As System.Exception
 
-            End Try
+                End Try
+            ElseIf (chkInterState.Checked = True) Then
+                file.WriteLine("<tr><th>Sl.</th><th>Item Name</th><th>Batch Code</th><th>Qty.</th><th>Gross</th><th>IGST</th><th>Amount</th></tr>")
+                'selectData(String.Concat("select s.icode,(select m0.name from medicine m0 where m0.code=s.icode),s.batchcode,(select m1.hsn from medicine m1 where m1.code=s.icode),s.pieceq,s.discount,(s.piece_mrp*s.pieceq),((s.cgst/100)*(s.piece_mrp*s.pieceq)),((s.sgst/100)*(s.piece_mrp*s.pieceq)),((s.igst/100)*(s.piece_mrp*s.pieceq)),((s.ed/100)*(s.piece_mrp*s.pieceq)),((((100-s.discount)/100)*(s.piece_mrp*s.pieceq))+((s.cgst+s.sgst+s.igst+s.ed)/100)*(s.piece_mrp*s.pieceq)) from sales s where invoice_no='", invoice, "'"), sales_invoice)
+                Dim tcamt As Double = 0
+                Dim tcdisc As Double = 0
+                Dim tcmrp As Double = 0
+                Dim tcnet As Double = 0
+                Dim tcash As Double = 0
+                Dim tcard As Double = 0
+                Dim tbank As Double = 0
+                Dim bankrem As String = ""
+                Dim twallet As Double = 0
+                Dim walletrem As String = ""
+                Dim tcredit As Double = 0
+                Try
+                    Dim count1 As Integer = DataGridView1.Rows.Count - 1
+                    Dim num1 As Integer = 0
+                    Do
+                        Dim tigst As Double = 0
+                        Dim tmrp As Double = 0
+                        Dim tgross As Double = 0
+                        Dim tamt As Double = 0
+                        Dim tqty As Double = 0
+                        Dim tdisc As Double = 0
+                        tigst = Convert.ToDouble(DataGridView1.Rows(num1).Cells(17).Value)
+                        tmrp = Convert.ToDouble(DataGridView1.Rows(num1).Cells(13).Value)
+                        tcmrp = tcmrp + tmrp
+                        tqty = Convert.ToDouble(DataGridView1.Rows(num1).Cells(10).Value)
+                        tdisc = Convert.ToDouble(DataGridView1.Rows(num1).Cells(14).Value)
+                        tdisc = (tdisc / 100) * tmrp
+                        tdisc = tdisc * tqty
+                        tcdisc = tcdisc + tdisc
+                        tigst = (tigst / 100) * tmrp
+                        tgross = tmrp - tigst
+                        tgross = tgross * tqty
+                        tigst = tigst * tqty
+                        tmrp = tmrp * tqty
+                        tcmrp = tcmrp + tmrp
+                        file.Write("<tr>")
+                        file.Write(String.Concat("<td>", (num1 + 1).ToString, "</td>")) 'Sl
+                        file.Write(String.Concat("<td>", DataGridView1.Rows(num1).Cells(1).Value.ToString, "</td>")) 'iname
+                        file.Write(String.Concat("<td>", DataGridView1.Rows(num1).Cells(2).Value.ToString(), "</td>")) 'bcode
+                        file.Write(String.Concat("<td>", Math.Round(tqty, 2).ToString(), "</td>")) 'qty
+                        file.Write(String.Concat("<td>", Math.Round(tgross, 2).ToString(), "</td>")) 'gross
+                        file.Write(String.Concat("<td>", Math.Round(tigst, 2).ToString(), "</td>"))  'igst
+                        file.Write(String.Concat("<td>", Math.Round(tmrp, 2).ToString(), "</td>")) 'amt
+                        file.WriteLine("</tr>")
+                        num1 = num1 + 1
+                    Loop While num1 <= count1
+                    tcamt = tcmrp - tcdisc
+                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>Total<br>(W/O Discount)</td><td>", Math.Round(tcmrp, 2).ToString, "</td></tr>"))
+                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>Discount(", Math.Round(numDiscount.Value, 2).ToString, "%)</td><td>", Math.Round(tcdisc, 2).ToString, "</td></tr>"))
+                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>Total</td><td>", Math.Round(tcamt, 2).ToString, "</td></tr>"))
+                    tcash = numCash.Value
+                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>Cash Paid</td><td>", Math.Round(tcash, 2).ToString, "</td></tr>"))
+                    tcard = numCard.Value
+                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>by Card</td><td>", Math.Round(tcard, 2).ToString, "</td></tr>"))
+                    tbank = numBank.Value
+                    bankrem = txtInstruID.Text
+                    If (radioInstruCHQ.Checked = True) Then
+                        bankrem = String.Concat("CHQ No.:", bankrem)
+                    ElseIf (radioInstruDD.Checked = True) Then
+                        bankrem = String.Concat("DD No.:", bankrem)
+                    ElseIf (radioInstruNA.Checked = True) Then
+                        bankrem = String.Concat("Ref No.:", bankrem)
+                    Else
+                    End If
+                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>by Bank<br>", bankrem, "</td><td>", Math.Round(tbank, 2).ToString, "</td></tr>"))
+                    twallet = numWallet.Value
+                    walletrem = txtWalletRem.Text
+                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>by Wallet<br>", walletrem, "</td><td>", Math.Round(twallet, 2).ToString, "</td></tr>"))
+                    tcredit = numCredit.Value
+                    file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td>Due Amt.</td><td>", Math.Round(tcredit, 2).ToString, "</td></tr>"))
+                Catch exception As System.Exception
+
+                End Try
+            End If
             file.WriteLine("</table>")
-            Dim i As Integer = 0
-            Do
-                file.WriteLine("<br>")
-                i = i + 1
-            Loop While i <= 6
-            file.Write("Authorized Signatory/Stamp")
-            file.WriteLine("</body>")
-            file.WriteLine("</html>")
-            file.Close()
-            Process.Start(filepath)
-        End If
-        selling = True
+                Dim i As Integer = 0
+                Do
+                    file.WriteLine("<br>")
+                    i = i + 1
+                Loop While i <= 6
+                file.Write("Authorized Signatory/Stamp")
+                file.WriteLine("</body>")
+                file.WriteLine("</html>")
+                file.Close()
+                Process.Start(filepath)
+            End If
+            selling = True
         MyBase.Dispose()
     End Sub
 
