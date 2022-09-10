@@ -968,3 +968,7 @@ update patient set credit=credit+(5130) where id='20220830044224';commit;
 select * from store
 select * from gstin
 select pid, pname, pdoctor_reg, pdoctor_name from sales where invoice_no='SI20220911020422'
+select id,name,contact,email,credit from patient
+select * from pdoctor
+select * from medicine
+select * from cardtypes
