@@ -1048,12 +1048,14 @@ Public Class SaleEntry
             btnComplete.Enabled = False
         End If
         Dim amt As Double = 0
+        Dim tamt As Double = 0
         Dim gst As Double = 0
         Dim mrp As Double = 0
         Dim discount As Double = 0
         Dim expd As Double = 0
         Dim qty As Double = 0
         Dim gross As Double = 0
+        Dim tgross As Double = 0
         If (DataGridView1.Rows.Count > 0) Then
             Dim count1 As Integer = DataGridView1.Rows.Count - 1
             Dim i As Integer = 0
@@ -1064,6 +1066,8 @@ Public Class SaleEntry
                 discount = 100 - discount
                 gross = mrp * qty
                 amt = (discount / 100) * gross
+                tgross += gross
+                tamt += amt
                 i = i + 1
             Loop While i <= count1
             numGross.Value = New Decimal(gross)
