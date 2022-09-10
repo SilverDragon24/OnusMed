@@ -698,3 +698,4 @@ select * from cardtypes
 select id from patient where truncate(credit,2)>0;
 select id from supplier where truncate(credit,2)>0;
 select * from cardtypes
+select credit from patient where id='20220830044224'
