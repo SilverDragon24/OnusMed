@@ -289,7 +289,6 @@ Public Class SaleEntry
                         file.Write(String.Concat("<td>", Math.Round(tsgst, 2).ToString(), "</td>")) 'sgst
                         file.Write(String.Concat("<td>", Math.Round(tmrp, 2).ToString(), "</td>")) 'amt
                         file.WriteLine("</tr>")
-                        num1 = num1 + 1
                     Next
                     tcamt = tcmrp - tcdisc
                     file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Total<br>(W/O Discount)</td><td>", Math.Round(tcmrp, 2).ToString, "</td></tr>"))
@@ -349,7 +348,7 @@ Public Class SaleEntry
                         tdisc = (tdisc / 100) * tmrp
                         tdisc = tdisc * tqty
                         tcdisc = tcdisc + tdisc
-                        tigst = (tigst / 100) * (tmrp / ((100 + tigst) / 100)
+                        tigst = (tigst / 100) * (tmrp / ((100 + tigst) / 100))
                         tgross = tmrp - tigst
                         tgross = tgross * tqty
                         tigst = tigst * tqty
