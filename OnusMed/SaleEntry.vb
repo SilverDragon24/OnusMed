@@ -254,8 +254,7 @@ Public Class SaleEntry
                 Dim tcredit As Double = 0
                 Try
                     Dim count1 As Integer = DataGridView1.Rows.Count - 1
-                    Dim num1 As Integer = 0
-                    Do
+                    For num1 As Integer = 0 To DataGridView1.Rows.Count - 1
                         Dim tcgst As Double = 0
                         Dim tsgst As Double = 0
                         Dim tmrp As Double = 0
@@ -291,7 +290,7 @@ Public Class SaleEntry
                         file.Write(String.Concat("<td>", Math.Round(tmrp, 2).ToString(), "</td>")) 'amt
                         file.WriteLine("</tr>")
                         num1 = num1 + 1
-                    Loop While num1 <= count1
+                    Next
                     tcamt = tcmrp - tcdisc
                     file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Total<br>(W/O Discount)</td><td>", Math.Round(tcmrp, 2).ToString, "</td></tr>"))
                     file.Write(String.Concat("<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Discount(", Math.Round(numDiscount.Value, 2).ToString, "%)</td><td>", Math.Round(tcdisc, 2).ToString, "</td></tr>"))
