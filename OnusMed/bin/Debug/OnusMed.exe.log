@@ -699,3 +699,8 @@ select id from patient where truncate(credit,2)>0;
 select id from supplier where truncate(credit,2)>0;
 select * from cardtypes
 select credit from patient where id='20220830044224'
+insert into pcr_payments values(curdate(),0,1.61,'CHQ','BookBalancing',0,'AmEx Credit',0,'');update patient set credit=credit-(1.61) where id='20220830044224';commit;
+select id,name,contact,email,credit from patient
+select * from pdoctor
+select * from medicine
+select * from cardtypes
