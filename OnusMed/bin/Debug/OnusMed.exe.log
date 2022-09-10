@@ -889,3 +889,5 @@ select * from inventory where code='8010276025258' and expiry>curdate() and stoc
 select * from inventory where code='8010276025258' and expiry>curdate() and stock_pack>0
 select * from inventory where code='8010276025302' and expiry>curdate() and stock_pack>0
 select * from inventory where code='8010276025302' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276025258' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276025258' and expiry>curdate() and stock_pack>0
