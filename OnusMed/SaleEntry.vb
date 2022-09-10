@@ -240,7 +240,6 @@ Public Class SaleEntry
             file.WriteLine("<table border=1 width=100%>")
             If (chkInterState.Checked = False) Then
                 file.WriteLine("<tr><th>Sl.</th><th>Item Name</th><th>Batch Code</th><th>Qty.</th><th>Gross</th><th>CGST</th><th>SGST</th><th>Amount</th></tr>")
-                'selectData(String.Concat("select s.icode,(select m0.name from medicine m0 where m0.code=s.icode),s.batchcode,(select m1.hsn from medicine m1 where m1.code=s.icode),s.pieceq,s.discount,(s.piece_mrp*s.pieceq),((s.cgst/100)*(s.piece_mrp*s.pieceq)),((s.sgst/100)*(s.piece_mrp*s.pieceq)),((s.igst/100)*(s.piece_mrp*s.pieceq)),((s.ed/100)*(s.piece_mrp*s.pieceq)),((((100-s.discount)/100)*(s.piece_mrp*s.pieceq))+((s.cgst+s.sgst+s.igst+s.ed)/100)*(s.piece_mrp*s.pieceq)) from sales s where invoice_no='", invoice, "'"), sales_invoice)
                 Dim tcamt As Double = 0
                 Dim tcdisc As Double = 0
                 Dim tcmrp As Double = 0
