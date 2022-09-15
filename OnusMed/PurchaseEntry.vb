@@ -165,10 +165,6 @@ Public Class PurchaseEntry
         text(18) = num.ToString()
         num = numDiscount.Value
         text(19) = num.ToString()
-        Dim tcgst As Double = (numCGST.Value / 100) * numMrpPiece.Value
-        Dim tsgst As Double = (numSGST.Value / 100) * numMrpPiece.Value
-        Dim tigst As Double = (numIGST.Value / 100) * numMrpPiece.Value
-        Dim prnt As Double = numPrPiece.Value - (tcgst + tsgst + tigst)
         num = numCGST.Value
         text(20) = num.ToString()
         num = numSGST.Value
@@ -177,8 +173,7 @@ Public Class PurchaseEntry
         text(22) = num.ToString()
         num = numED.Value
         text(23) = num.ToString()
-        num = prnt + (tcgst + tsgst + tigst)
-        num = num * s * p
+        num = numPrPiece.Value * numQtyPiece.Value
         text(24) = num.ToString()
         rows.Add(text)
 

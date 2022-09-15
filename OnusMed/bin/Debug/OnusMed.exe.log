@@ -1034,3 +1034,1018 @@ select * from pdoctor
 select * from medicine
 select * from cardtypes
 select id,name,pwd,post from salesman
+select id,name,pwd,post from salesman
+select * from medicine
+select * from supplier
+select * from cardtypes
+select distinct city from supplier
+select distinct state from supplier
+select * from supplier
+select distinct city from supplier
+select distinct state from supplier
+select * from supplier where id='S';
+select * from supplier where id='S0';
+select * from supplier where id='S00';
+select * from supplier where id='S002';
+select * from supplier
+select distinct city from supplier
+select distinct state from supplier
+select * from supplier where id='S00';
+select * from supplier where id='S000';
+select * from supplier where id='S0002';
+select * from supplier where id='S000';
+select * from supplier where id='S0003';
+select * from supplier where id='S000';
+select * from supplier where id='S0002';
+select * from supplier where id='S000';
+select * from supplier where id='S0003';
+select * from supplier where id='S000';
+select * from supplier where id='S0002';
+select * from supplier
+select distinct city from supplier
+select distinct state from supplier
+select * from supplier
+select * from medicine
+select * from supplier
+select * from cardtypes
+select distinct city from supplier
+select distinct state from supplier
+select * from supplier
+select id,name,pwd,post from salesman
+select * from medicine
+select * from supplier
+select * from cardtypes
+select distinct city from supplier
+select distinct state from supplier
+select * from supplier where id='S';
+select * from supplier where id='S0';
+select * from supplier where id='S00';
+select * from supplier where id='S000';
+select * from supplier where id='S0002';
+insert into supplier values('S0002','Balaji Agencies','35K Motilal Nehru Road','','Kolkata','WB',700029,9830327705,'balajiagencies99@yahoo.com','na','na','19AADFB8881B1ZE',0.00);commit;
+select * from supplier
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533015';
+select * from medicine where code='885330153';
+select * from medicine where code='8853301530';
+select * from medicine where code='88533015307';
+select * from medicine where code='885330153075';
+select * from medicine where code='8853301530750';
+select * from medicine where code='';
+select * from medicine where code='8';
+select * from medicine where code='89';
+select * from medicine where code='890';
+select * from medicine where code='8906';
+select * from medicine where code='89060';
+select * from medicine where code='890600';
+select * from medicine where code='8906002';
+select * from medicine where code='89060024';
+select * from medicine where code='890600248';
+select * from medicine where code='8906002480';
+select * from medicine where code='89060024800';
+select * from medicine where code='890600248001';
+select * from medicine where code='8906002480012';
+insert into medicine values('8906002480012','Pedigree Chappi Adult 3KG','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='89';
+select * from medicine where code='890';
+select * from medicine where code='8906';
+select * from medicine where code='89060';
+select * from medicine where code='890600';
+select * from medicine where code='8906002';
+select * from medicine where code='89060024';
+select * from medicine where code='890600248';
+select * from medicine where code='8906002480';
+select * from medicine where code='89060024800';
+select * from medicine where code='890600248003';
+select * from medicine where code='8906002480036';
+insert into medicine values('8906002480036','Pedigree CHappi Puppy 3KG','Pedigree','Food','OTC',1,1,1,'NA','NA','20391000',0);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='89';
+select * from medicine where code='890';
+select * from medicine where code='8906';
+select * from medicine where code='89060';
+select * from medicine where code='890600';
+select * from medicine where code='8906002';
+select * from medicine where code='89060024';
+select * from medicine where code='890600248';
+select * from medicine where code='8906002484';
+select * from medicine where code='89060024848';
+select * from medicine where code='890600248484';
+select * from medicine where code='8906002484843';
+insert into medicine values('8906002484843','Pedigree Adult Ch. Veg','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',0);commit;
+select * from medicine
+select id,name,pwd,post from salesman
+select * from medicine
+select * from supplier
+select * from cardtypes
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='89';
+select * from medicine where code='890';
+select * from medicine where code='8906';
+select * from medicine where code='89060';
+select * from medicine where code='890600';
+select * from medicine where code='8906002';
+select * from medicine where code='89060024';
+select * from medicine where code='890600248';
+select * from medicine where code='8906002487';
+select * from medicine where code='89060024877';
+select * from medicine where code='890600248774';
+select * from medicine where code='8906002487745';
+insert into medicine values('8906002487745','Pedigree Adult Meat Rice 3KG','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',0);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533010';
+select * from medicine where code='885330100';
+select * from medicine where code='8853301005';
+select * from medicine where code='88533010052';
+select * from medicine where code='885330100520';
+select * from medicine where code='8853301005203';
+insert into medicine values('8853301005203','Pedigree Puppy Ch Milk 3KG','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',0);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='89';
+select * from medicine where code='890';
+select * from medicine where code='8906';
+select * from medicine where code='89060';
+select * from medicine where code='890600';
+select * from medicine where code='8906002';
+select * from medicine where code='89060024';
+select * from medicine where code='890600248';
+select * from medicine where code='8906002480';
+select * from medicine where code='89060024804';
+select * from medicine where code='890600248044';
+select * from medicine where code='8906002480449';
+insert into medicine values('8906002480449','Pedigree Adult Ch Veg 1.2KG','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',0);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='89';
+select * from medicine where code='890';
+select * from medicine where code='8906';
+select * from medicine where code='89060';
+select * from medicine where code='890600';
+select * from medicine where code='8906002';
+select * from medicine where code='89060024';
+select * from medicine where code='890600248';
+select * from medicine where code='8906002480';
+select * from medicine where code='89060024804';
+select * from medicine where code='890600248045';
+select * from medicine where code='8906002480456';
+insert into medicine values('8906002480456','Pedigree Adult Meat Rice 1.2KG','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',0);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='89';
+select * from medicine where code='890';
+select * from medicine where code='8906';
+select * from medicine where code='89060';
+select * from medicine where code='890600';
+select * from medicine where code='8906002';
+select * from medicine where code='89060024';
+select * from medicine where code='890600248';
+select * from medicine where code='8906002480';
+select * from medicine where code='89060024804';
+select * from medicine where code='890600248043';
+select * from medicine where code='8906002480432';
+insert into medicine values('8906002480432','Pedigree Puppy Ch Milk 1.2KG','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',0);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='89';
+select * from medicine where code='890';
+select * from medicine where code='8906';
+select * from medicine where code='89060';
+select * from medicine where code='890600';
+select * from medicine where code='8906002';
+select * from medicine where code='89060024';
+select * from medicine where code='890600248';
+select * from medicine where code='8906002484';
+select * from medicine where code='89060024846';
+select * from medicine where code='890600248467';
+select * from medicine where code='8906002484676';
+insert into medicine values('8906002484676','Pedigree Pro Adult Small Breed 1.2KG','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medicine
+select * from supplier
+select * from cardtypes
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='89';
+select * from medicine where code='890';
+select * from medicine where code='8906';
+select * from medicine where code='89060';
+select * from medicine where code='890600';
+select * from medicine where code='8906002';
+select * from medicine where code='89060024';
+select * from medicine where code='890600248';
+select * from medicine where code='8906002484';
+select * from medicine where code='89060024844';
+select * from medicine where code='890600248447';
+select * from medicine where code='8906002484478';
+insert into medicine values('8906002484478','Pedigree Pro M&P Starter 1.2KG','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='89';
+select * from medicine where code='890';
+select * from medicine where code='8906';
+select * from medicine where code='89060';
+select * from medicine where code='890600';
+select * from medicine where code='8906002';
+select * from medicine where code='89060024';
+select * from medicine where code='890600248';
+select * from medicine where code='8906002480';
+select * from medicine where code='89060024804';
+select * from medicine where code='890600248048';
+select * from medicine where code='8906002480487';
+insert into medicine values('8906002480487','Pedigree Adult Ch Veg 400gm','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='89';
+select * from medicine where code='890';
+select * from medicine where code='8906';
+select * from medicine where code='89060';
+select * from medicine where code='890600';
+select * from medicine where code='8906002';
+select * from medicine where code='89060024';
+select * from medicine where code='890600248';
+select * from medicine where code='8906002480';
+select * from medicine where code='89060024804';
+select * from medicine where code='890600248047';
+select * from medicine where code='8906002480470';
+insert into medicine values('8906002480470','Pedigree Puppy Ch Milk 400gm','Pedigree','Food','OTC',1,1,1,'NA','NA','230091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='89';
+select * from medicine where code='890';
+select * from medicine where code='8906';
+select * from medicine where code='89060';
+select * from medicine where code='890600';
+select * from medicine where code='8906002';
+select * from medicine where code='89060024';
+select * from medicine where code='890600248';
+select * from medicine where code='8906002484';
+select * from medicine where code='89060024845';
+select * from medicine where code='890600248457';
+select * from medicine where code='8906002484577';
+insert into medicine values('8906002484577','Pedigree Pro Puppy Large Breed 3KG','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533014';
+select * from medicine where code='885330140';
+select * from medicine where code='8853301400';
+select * from medicine where code='88533014001';
+select * from medicine where code='885330140010';
+select * from medicine where code='8853301400107';
+insert into medicine values('8853301400107','Whiskas Adult Ocean Fish 3KG','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533011';
+select * from medicine where code='885330114';
+select * from medicine where code='8853301141';
+select * from medicine where code='88533011410';
+select * from medicine where code='885330114101';
+select * from medicine where code='8853301141017';
+insert into medicine values('8853301141017','Whiskas Adult Mackerel 3KG','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533014';
+select * from medicine where code='885330140';
+select * from medicine where code='8853301400';
+select * from medicine where code='88533014000';
+select * from medicine where code='885330140008';
+select * from medicine where code='8853301400084';
+select * from medicine where code='';
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533014';
+select * from medicine where code='885330140';
+select * from medicine where code='8853301400';
+select * from medicine where code='88533014000';
+select * from medicine where code='885330140008';
+select * from medicine where code='8853301400084';
+insert into medicine values('8853301400084','Whiskas Adult Tuna 3KG','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533010';
+select * from medicine where code='885330100';
+select * from medicine where code='8853301002';
+select * from medicine where code='88533010024';
+select * from medicine where code='885330100243';
+select * from medicine where code='8853301002431';
+insert into medicine values('8853301002431','Whiskas Junior Ocean Fish 3KG','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533011';
+select * from medicine where code='885330114';
+select * from medicine where code='8853301140';
+select * from medicine where code='88533011408';
+select * from medicine where code='885330114081';
+select * from medicine where code='8853301140812';
+insert into medicine values('8853301140812','Whiskas Junior Ocean Fish 1.1KG','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='9';
+select * from medicine where code='93';
+select * from medicine where code='931';
+select * from medicine where code='9310';
+select * from medicine where code='93100';
+select * from medicine where code='931002';
+select * from medicine where code='9310022';
+select * from medicine where code='93100228';
+select * from medicine where code='931002286';
+select * from medicine where code='9310022866';
+select * from medicine where code='93100228662';
+select * from medicine where code='931002286620';
+select * from medicine where code='9310022866203';
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='9';
+select * from medicine where code='93';
+select * from medicine where code='931';
+select * from medicine where code='9310';
+select * from medicine where code='93100';
+select * from medicine where code='931002';
+select * from medicine where code='9310022';
+select * from medicine where code='93100228';
+select * from medicine where code='931002286';
+select * from medicine where code='9310022866';
+select * from medicine where code='93100228662';
+select * from medicine where code='931002286620';
+select * from medicine where code='9310022866203';
+insert into medicine values('9310022866203','Whiskas Adult Tuna 1.2KG','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533011';
+select * from medicine where code='885330114';
+select * from medicine where code='8853301140';
+select * from medicine where code='88533011406';
+select * from medicine where code='885330114065';
+select * from medicine where code='8853301140652';
+insert into medicine values('8853301140652','Whiskas Adult Mackerel 1.2KG','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='9';
+select * from medicine where code='93';
+select * from medicine where code='931';
+select * from medicine where code='9310';
+select * from medicine where code='93100';
+select * from medicine where code='931002';
+select * from medicine where code='9310022';
+select * from medicine where code='93100228';
+select * from medicine where code='931002286';
+select * from medicine where code='9310022866';
+select * from medicine where code='93100228661';
+select * from medicine where code='931002286610';
+select * from medicine where code='9310022866104';
+insert into medicine values('9310022866104','Whiskas Adult Ocean Fish 1.2KG','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='9';
+select * from medicine where code='93';
+select * from medicine where code='931';
+select * from medicine where code='9310';
+select * from medicine where code='93100';
+select * from medicine where code='931002';
+select * from medicine where code='9310022';
+select * from medicine where code='93100228';
+select * from medicine where code='931002286';
+select * from medicine where code='9310022866';
+select * from medicine where code='93100228665';
+select * from medicine where code='931002286650';
+select * from medicine where code='9310022866500';
+insert into medicine values('9310022866500','Whiskas Adult Tuna 480gm','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='9';
+select * from medicine where code='93';
+select * from medicine where code='931';
+select * from medicine where code='9310';
+select * from medicine where code='93100';
+select * from medicine where code='931002';
+select * from medicine where code='9310022';
+select * from medicine where code='93100228';
+select * from medicine where code='931002286';
+select * from medicine where code='9310022866';
+select * from medicine where code='93100228664';
+select * from medicine where code='931002286640';
+select * from medicine where code='9310022866401';
+insert into medicine values('9310022866401','Whiskas Adult Ocean Fish 480gm','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533010';
+select * from medicine where code='885330100';
+select * from medicine where code='8853301002';
+select * from medicine where code='88533010024';
+select * from medicine where code='885330100240';
+select * from medicine where code='8853301002400';
+insert into medicine values('8853301002400','Whiskas Adult Mackerel 480g','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533011';
+select * from medicine where code='885330114';
+select * from medicine where code='8853301140';
+select * from medicine where code='88533011407';
+select * from medicine where code='885330114079';
+select * from medicine where code='8853301140799';
+insert into medicine values('8853301140799','Whiskas Junior Ocean Fish 450gm','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533010';
+select * from medicine where code='885330100';
+select * from medicine where code='8853301001';
+select * from medicine where code='88533010019';
+select * from medicine where code='885330100191';
+select * from medicine where code='8853301001915';
+insert into medicine values('8853301001915','Whiskas Junior Mackerel 450gm','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533010';
+select * from medicine where code='885330100';
+select * from medicine where code='8853301006';
+select * from medicine where code='88533010061';
+select * from medicine where code='885330100618';
+select * from medicine where code='8853301006187';
+insert into medicine values('8853301006187','Whiskas Kitten Ch in Gravy','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533010';
+select * from medicine where code='885330100';
+select * from medicine where code='8853301006';
+select * from medicine where code='88533010062';
+select * from medicine where code='885330100623';
+select * from medicine where code='8853301006231';
+insert into medicine values('8853301006231','Whiskas Kitten Tuna in Jelly','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533010';
+select * from medicine where code='885330100';
+select * from medicine where code='8853301006';
+select * from medicine where code='88533010063';
+select * from medicine where code='885330100633';
+select * from medicine where code='8853301006330';
+insert into medicine values('8853301006330','Whiskas Adult Tuna in Jelly','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533010';
+select * from medicine where code='885330100';
+select * from medicine where code='8853301006';
+select * from medicine where code='88533010062';
+select * from medicine where code='885330100628';
+select * from medicine where code='8853301006286';
+insert into medicine values('8853301006286','Whiskas Adult Salmon in Gravy','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533010';
+select * from medicine where code='885330100';
+select * from medicine where code='8853301006';
+select * from medicine where code='88533010061';
+select * from medicine where code='885330100613';
+select * from medicine where code='8853301006132';
+insert into medicine values('8853301006132','Whiskas Adult Ch in Gravy','Whiskas','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='5';
+select * from medicine where code='59';
+select * from medicine where code='599';
+select * from medicine where code='5998';
+select * from medicine where code='59987';
+select * from medicine where code='599874';
+select * from medicine where code='5998749';
+select * from medicine where code='59987491';
+select * from medicine where code='599874910';
+select * from medicine where code='5998749109';
+select * from medicine where code='59987491091';
+select * from medicine where code='599874910911';
+select * from medicine where code='5998749109113';
+insert into medicine values('5998749109113','Pedigree DentaStix Large 7pcs','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='5';
+select * from medicine where code='50';
+select * from medicine where code='501';
+select * from medicine where code='5010';
+select * from medicine where code='50103';
+select * from medicine where code='501039';
+select * from medicine where code='5010394';
+select * from medicine where code='50103949';
+select * from medicine where code='501039498';
+select * from medicine where code='5010394984';
+select * from medicine where code='50103949845';
+select * from medicine where code='501039498458';
+select * from medicine where code='5010394984584';
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+insert into medicine values('5010394984584','Pedigree DentaStix Med 7pcs','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='5';
+select * from medicine where code='50';
+select * from medicine where code='501';
+select * from medicine where code='5010';
+select * from medicine where code='50103';
+select * from medicine where code='501039';
+select * from medicine where code='5010394';
+select * from medicine where code='50103949';
+select * from medicine where code='501039498';
+select * from medicine where code='5010394984';
+select * from medicine where code='50103949845';
+select * from medicine where code='501039498457';
+select * from medicine where code='5010394984577';
+insert into medicine values('5010394984577','Pedigree DentaStix Small 7pcs','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533012';
+select * from medicine where code='885330120';
+select * from medicine where code='8853301200';
+select * from medicine where code='88533012008';
+select * from medicine where code='885330120089';
+select * from medicine where code='8853301200899';
+insert into medicine values('8853301200899','Pedigree Meat Jerky Grilled Liver','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533012';
+select * from medicine where code='885330120';
+select * from medicine where code='8853301200';
+select * from medicine where code='88533012008';
+select * from medicine where code='885330120088';
+select * from medicine where code='8853301200882';
+insert into medicine values('8853301200882','Pedigree Meat Jerky BBQ Ch','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533012';
+select * from medicine where code='885330120';
+select * from medicine where code='8853301200';
+select * from medicine where code='88533012009';
+select * from medicine where code='885330120090';
+select * from medicine where code='8853301200905';
+insert into medicine values('8853301200905','Pedigree Meat Jerky Roasted Lamb','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533015';
+select * from medicine where code='885330153';
+select * from medicine where code='8853301530';
+select * from medicine where code='88533015307';
+select * from medicine where code='885330153074';
+select * from medicine where code='8853301530743';
+insert into medicine values('8853301530743','Pedigree Ch and Liver Chunks in Gravy','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='8';
+select * from medicine where code='88';
+select * from medicine where code='885';
+select * from medicine where code='8853';
+select * from medicine where code='88533';
+select * from medicine where code='885330';
+select * from medicine where code='8853301';
+select * from medicine where code='88533015';
+select * from medicine where code='885330153';
+select * from medicine where code='8853301530';
+select * from medicine where code='88533015307';
+select * from medicine where code='885330153075';
+select * from medicine where code='8853301530750';
+insert into medicine values('8853301530750','Pedigree Puppy Ch in Gravy','Pedigree','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select batchcode from inventory where batchcode='216G2HYDC2'
+insert into inventory values('216G2HYDC2','8906002480036','2023-7-31',535,535,535,444.32,444.32,444.32,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('01073','8906002480036','216G2HYDC2','S0002','2022-9-9','2023-7-31',1,1,1,0,0,0,535,535,535,444.32,444.32,444.32,0,9,9,0,0,444.32);commit;
+select batchcode from inventory where batchcode='229C1HYDC1'
+insert into inventory values('229C1HYDC1','8906002480012','2023-7-31',505,505,505,419.4,419.4,419.40,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('01073','8906002480012','229C1HYDC1','S0002','2022-9-9','2023-7-31',1,1,1,0,0,0,505,505,505,419.4,419.4,419.40,0,9,9,0,0,419.40);commit;
+select batchcode from inventory where batchcode='229E2HYDC1'
+insert into inventory values('229E2HYDC1','8906002484843','2023-7-31',725,725,725,602.12,602.12,602.12,0,0,0,9,9,0,2,2,2,'GD',false,0);commit;
+insert into purchase values('01073','8906002484843','229E2HYDC1','S0002','2022-9-9','2023-7-31',2,2,2,0,0,0,725,725,725,602.12,602.12,602.12,0,9,9,0,0,1204.24);commit;
+select batchcode from inventory where batchcode='229C3HYDC1'
+insert into inventory values('229C3HYDC1','8906002487745','2023-7-31',725,725,725,602.12,602.12,602.12,0,0,0,9,9,0,2,2,2,'GD',false,0);commit;
+insert into purchase values('01073','8906002487745','229C3HYDC1','S0002','2022-9-9','2023-7-31',2,2,2,0,0,0,725,725,725,602.12,602.12,602.12,0,9,9,0,0,1204.24);commit;
+select batchcode from inventory where batchcode='210D1PCHJ2'
+insert into inventory values('210D1PCHJ2','8853301005203','2023-7-31',710,710,710,589.66,589.66,589.66,0,0,0,9,9,0,2,2,2,'GD',false,0);commit;
+insert into purchase values('01073','8853301005203','210D1PCHJ2','S0002','2022-9-9','2023-7-31',2,2,2,0,0,0,710,710,710,589.66,589.66,589.66,0,9,9,0,0,1179.32);commit;
+select batchcode from inventory where batchcode='227A1HYDB1'
+insert into inventory values('227A1HYDB1','8906002480449','2023-7-31',310,310,310,257.46,257.46,257.46,0,0,0,9,9,0,3,3,3,'GD',false,0);commit;
+insert into purchase values('01073','8906002480449','227A1HYDB1','S0002','2022-9-9','2023-7-31',3,3,3,0,0,0,310,310,310,257.46,257.46,257.46,0,9,9,0,0,772.38);commit;
+select batchcode from inventory where batchcode='224E1HYDB1'
+insert into inventory values('224E1HYDB1','8906002480456','2023-7-31',310,310,310,257.46,257.46,257.46,0,0,0,9,9,0,3,3,3,'GD',false,0);commit;
+insert into purchase values('01073','8906002480456','224E1HYDB1','S0002','2022-9-9','2023-7-31',3,3,3,0,0,0,310,310,310,257.46,257.46,257.46,0,9,9,0,0,772.38);commit;
+select batchcode from inventory where batchcode='224A3HYDB1'
+insert into inventory values('224A3HYDB1','8906002480432','2023-7-31',325,325,325,269.92,269.92,269.92,0,0,0,9,9,0,3,3,3,'GD',false,0);commit;
+insert into purchase values('01073','8906002480432','224A3HYDB1','S0002','2022-9-9','2023-7-31',3,3,3,0,0,0,325,325,325,269.92,269.92,269.92,0,9,9,0,0,809.76);commit;
+select batchcode from inventory where batchcode='230B2HYDB1'
+insert into inventory values('230B2HYDB1','8906002484676','2023-7-31',500,500,500,415.25,415.25,415.25,0,0,0,9,9,0,2,2,2,'GD',false,0);commit;
+insert into purchase values('01073','8906002484676','230B2HYDB1','S0002','2022-9-9','2023-7-31',2,2,2,0,0,0,500,500,500,415.25,415.25,415.25,0,9,9,0,0,830.50);commit;
+select batchcode from inventory where batchcode='227C1HYDB1'
+insert into inventory values('227C1HYDB1','8906002484478','2023-7-31',600,600,600,498.3,498.3,498.30,0,0,0,9,9,0,2,2,2,'GD',false,0);commit;
+insert into purchase values('01073','8906002484478','227C1HYDB1','S0002','2022-9-9','2023-7-31',2,2,2,0,0,0,600,600,600,498.3,498.3,498.30,0,9,9,0,0,996.60);commit;
+select batchcode from inventory where batchcode='229F3HYDD1'
+insert into inventory values('229F3HYDD1','8906002480487','2023-7-31',105,105,105,87.21,87.21,87.21,0,0,0,9,9,0,3,3,3,'GD',false,0);commit;
+insert into purchase values('01073','8906002480487','229F3HYDD1','S0002','2022-9-9','2023-7-31',3,3,3,0,0,0,105,105,105,87.21,87.21,87.21,0,9,9,0,0,261.63);commit;
+select batchcode from inventory where batchcode='231A2HYDD1'
+insert into inventory values('231A2HYDD1','8906002480470','2023-7-31',110,110,110,91.36,91.36,91.36,0,0,0,9,9,0,3,3,3,'GD',false,0);commit;
+insert into purchase values('01073','8906002480470','231A2HYDD1','S0002','2022-9-9','2023-7-31',3,3,3,0,0,0,110,110,110,91.36,91.36,91.36,0,9,9,0,0,274.08);commit;
+select batchcode from inventory where batchcode='229A1HYDC1'
+insert into inventory values('229A1HYDC1','8906002484577','2023-7-31',1220,1220,1220,1013.22,1013.22,1013.22,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('01073','8906002484577','229A1HYDC1','S0002','2022-9-9','2023-7-31',1,1,1,0,0,0,1220,1220,1220,1013.22,1013.22,1013.22,0,9,9,0,0,1013.22);commit;
+select batchcode from inventory where batchcode='213B1PCHD6'
+insert into inventory values('213B1PCHD6','8853301400107','2023-7-31',1060,1060,1060,880.33,880.33,880.33,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('01073','8853301400107','213B1PCHD6','S0002','2022-9-9','2023-7-31',1,1,1,0,0,0,1060,1060,1060,880.33,880.33,880.33,0,9,9,0,0,880.33);commit;
+select batchcode from inventory where batchcode='209D1PCHD3'
+insert into inventory values('209D1PCHD3','8853301141017','2023-7-31',970,970,970,805.6,805.6,805.60,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('01073','8853301141017','209D1PCHD3','S0002','2022-9-9','2023-7-31',1,1,1,0,0,0,970,970,970,805.6,805.6,805.60,0,9,9,0,0,805.60);commit;
+select batchcode from inventory where batchcode='216E1PCHD3'
+insert into inventory values('216E1PCHD3','8853301400084','2023-7-31',1060,1060,1060,880.33,880.33,880.33,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('01073','8853301400084','216E1PCHD3','S0002','2022-9-9','2023-7-31',1,1,1,0,0,0,1060,1060,1060,880.33,880.33,880.33,0,9,9,0,0,880.33);commit;
+select batchcode from inventory where batchcode='220E1PCHD4'
+insert into inventory values('220E1PCHD4','8853301002431','2023-7-31',1100,1100,1100,913.56,913.56,913.56,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('01073','8853301002431','220E1PCHD4','S0002','2022-9-9','2023-7-31',1,1,1,0,0,0,1100,1100,1100,913.56,913.56,913.56,0,9,9,0,0,913.56);commit;
+select batchcode from inventory where batchcode='208F1PCHD5'
+insert into inventory values('208F1PCHD5','8853301140812','2023-7-31',445,445,445,369.57,369.57,369.57,0,0,0,9,9,0,2,2,2,'GD',false,0);commit;
+insert into purchase values('01073','8853301140812','208F1PCHD5','S0002','2022-9-9','2023-7-31',2,2,2,0,0,0,445,445,445,369.57,369.57,369.57,0,9,9,0,0,739.14);commit;
+select batchcode from inventory where batchcode='216E1PCHD5'
+insert into inventory values('216E1PCHD5','9310022866203','2023-7-31',465,465,465,386.18,386.18,386.18,0,0,0,9,9,0,2,2,2,'GD',false,0);commit;
+insert into purchase values('01073','9310022866203','216E1PCHD5','S0002','2022-9-9','2023-7-31',2,2,2,0,0,0,465,465,465,386.18,386.18,386.18,0,9,9,0,0,772.36);commit;
+select batchcode from inventory where batchcode='209E1PCHD5'
+insert into inventory values('209E1PCHD5','8853301140652','2023-7-31',440,440,440,365.43,365.43,365.43,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('01073','8853301140652','209E1PCHD5','S0002','2022-9-9','2023-7-31',1,1,1,0,0,0,440,440,440,365.43,365.43,365.43,0,9,9,0,0,365.43);commit;
+select batchcode from inventory where batchcode='100122'
+insert into inventory values('100122','9310022866104','2023-7-31',440,440,440,365.43,365.43,365.43,0,0,0,9,9,0,2,2,2,'GD',false,0);commit;
+insert into purchase values('01073','9310022866104','100122','S0002','2022-9-9','2023-7-31',2,2,2,0,0,0,440,440,440,365.43,365.43,365.43,0,9,9,0,0,730.86);commit;
+select batchcode from inventory where batchcode='209B1PCHD6'
+insert into inventory values('209B1PCHD6','9310022866500','2023-7-31',200,200,200,166.1,166.1,166.10,0,0,0,9,9,0,2,2,2,'GD',false,0);commit;
+insert into purchase values('01073','9310022866500','209B1PCHD6','S0002','2022-9-9','2023-7-31',2,2,2,0,0,0,200,200,200,166.1,166.1,166.10,0,9,9,0,0,332.20);commit;
+select batchcode from inventory where batchcode='209C1PCHD6'
+insert into inventory values('209C1PCHD6','9310022866401','2023-7-31',200,200,200,166.1,166.1,166.10,0,0,0,9,9,0,2,2,2,'GD',false,0);commit;
+insert into purchase values('01073','9310022866401','209C1PCHD6','S0002','2022-9-9','2023-7-31',2,2,2,0,0,0,200,200,200,166.1,166.1,166.10,0,9,9,0,0,332.20);commit;
+select batchcode from inventory where batchcode='209E1PCHD6'
+insert into inventory values('209E1PCHD6','8853301002400','2023-7-31',200,200,200,166.1,166.1,166.10,0,0,0,9,9,0,2,2,2,'GD',false,0);commit;
+insert into purchase values('01073','8853301002400','209E1PCHD6','S0002','2022-9-9','2023-7-31',2,2,2,0,0,0,200,200,200,166.1,166.1,166.10,0,9,9,0,0,332.20);commit;
+select batchcode from inventory where batchcode='22E1PCHD6'
+insert into inventory values('22E1PCHD6','8853301140799','2023-7-31',215,215,215,178.56,178.56,178.56,0,0,0,9,9,0,2,2,2,'GD',false,0);commit;
+insert into purchase values('01073','8853301140799','22E1PCHD6','S0002','2022-9-9','2023-7-31',2,2,2,0,0,0,215,215,215,178.56,178.56,178.56,0,9,9,0,0,357.12);commit;
+select batchcode from inventory where batchcode='213A1PCHD5'
+insert into inventory values('213A1PCHD5','8853301001915','2023-7-31',215,215,215,178.56,178.56,178.56,0,0,0,9,9,0,2,2,2,'GD',false,0);commit;
+insert into purchase values('01073','8853301001915','213A1PCHD5','S0002','2022-9-9','2023-7-31',2,2,2,0,0,0,215,215,215,178.56,178.56,178.56,0,9,9,0,0,357.12);commit;
+select batchcode from inventory where batchcode='050522'
+insert into inventory values('050522','8853301006187','2024-5-31',40,40,40,33.3,33.3,33.30,0,0,0,9,9,0,12,12,12,'GD',false,0);commit;
+insert into purchase values('01073','8853301006187','050522','S0002','2022-9-9','2024-5-31',12,12,12,0,0,0,40,40,40,33.3,33.3,33.30,0,9,9,0,0,399.60);commit;
+select batchcode from inventory where batchcode='010622'
+insert into inventory values('010622','8853301006231','2024-5-31',40,40,40,33.3,33.3,33.30,0,0,0,9,9,0,12,12,12,'GD',false,0);commit;
+insert into purchase values('01073','8853301006231','010622','S0002','2022-9-9','2024-5-31',12,12,12,0,0,0,40,40,40,33.3,33.3,33.30,0,9,9,0,0,399.60);commit;
+select batchcode from inventory where batchcode='110322'
+insert into inventory values('110322','8853301006330','2024-5-31',40,40,40,33.3,33.3,33.30,0,0,0,9,9,0,24,24,24,'GD',false,0);commit;
+insert into purchase values('01073','8853301006330','110322','S0002','2022-9-9','2024-5-31',24,24,24,0,0,0,40,40,40,33.3,33.3,33.30,0,9,9,0,0,799.20);commit;
+select batchcode from inventory where batchcode='100222'
+insert into inventory values('100222','8853301006286','2024-5-31',40,40,40,33.3,33.3,33.30,0,0,0,9,9,0,24,24,24,'GD',false,0);commit;
+insert into purchase values('01073','8853301006286','100222','S0002','2022-9-9','2024-5-31',24,24,24,0,0,0,40,40,40,33.3,33.3,33.30,0,9,9,0,0,799.20);commit;
+select batchcode from inventory where batchcode='250222'
+insert into inventory values('250222','8853301006132','2024-5-31',40,40,40,33.3,33.3,33.30,0,0,0,9,9,0,24,24,24,'GD',false,0);commit;
+insert into purchase values('01073','8853301006132','250222','S0002','2022-9-9','2024-5-31',24,24,24,0,0,0,40,40,40,33.3,33.3,33.30,0,9,9,0,0,799.20);commit;
+select batchcode from inventory where batchcode='270820'
+insert into inventory values('270820','5998749109113','2023-6-30',270,270,270,224.24,224.24,224.24,0,0,0,9,9,0,6,6,6,'GD',false,0);commit;
+insert into purchase values('01073','5998749109113','270820','S0002','2022-9-9','2023-6-30',6,6,6,0,0,0,270,270,270,224.24,224.24,224.24,0,9,9,0,0,1345.44);commit;
+select batchcode from inventory where batchcode='239820'
+insert into inventory values('239820','5010394984584','2023-4-30',200,200,200,166.1,166.1,166.10,0,0,0,9,9,0,6,6,6,'GD',false,0);commit;
+insert into purchase values('01073','5010394984584','239820','S0002','2022-9-9','2023-4-30',6,6,6,0,0,0,200,200,200,166.1,166.1,166.10,0,9,9,0,0,996.60);commit;
+select batchcode from inventory where batchcode='279720'
+insert into inventory values('279720','5010394984577','2023-6-30',150,150,150,124.57,124.57,124.57,0,0,0,9,9,0,6,6,6,'GD',false,0);commit;
+insert into purchase values('01073','5010394984577','279720','S0002','2022-9-9','2023-6-30',6,6,6,0,0,0,150,150,150,124.57,124.57,124.57,0,9,9,0,0,747.42);commit;
+select batchcode from inventory where batchcode='65822'
+insert into inventory values('65822','8853301200899','2023-9-30',160,160,160,132.88,132.88,132.88,0,0,0,9,9,0,6,6,6,'GD',false,0);commit;
+insert into purchase values('01073','8853301200899','65822','S0002','2022-9-9','2023-9-30',6,6,6,0,0,0,160,160,160,132.88,132.88,132.88,0,9,9,0,0,797.28);commit;
+select batchcode from inventory where batchcode='65822'
+select batchcode from inventory where batchcode='77222'
+insert into inventory values('77222','8853301200905','2023-9-30',160,160,160,132.88,132.88,132.88,0,0,0,9,9,0,5,5,5,'GD',false,0);commit;
+insert into purchase values('01073','8853301200905','77222','S0002','2022-9-9','2023-9-30',5,5,5,0,0,0,160,160,160,132.88,132.88,132.88,0,9,9,0,0,664.40);commit;
+select batchcode from inventory where batchcode='230622'
+insert into inventory values('230622','8853301530743','2024-6-30',40,40,40,33.22,33.22,33.22,0,0,0,9,9,0,30,30,30,'GD',false,0);commit;
+insert into purchase values('01073','8853301530743','230622','S0002','2022-9-9','2024-6-30',30,30,30,0,0,0,40,40,40,33.22,33.22,33.22,0,9,9,0,0,996.60);commit;
+select batchcode from inventory where batchcode='200522'
+insert into inventory values('200522','8853301530750','2024-5-31',40,40,40,33.22,33.22,33.22,0,0,0,9,9,0,30,30,30,'GD',false,0);commit;
+insert into purchase values('01073','8853301530750','200522','S0002','2022-9-9','2024-5-31',30,30,30,0,0,0,40,40,40,33.22,33.22,33.22,0,9,9,0,0,996.60);commit;
+insert into p_payments values('01073','2022-9-9',0,0,'AmEx Credit',27592,'CHQ','',0);commit;
+update supplier set credit=credit+0 where id='S0002';commit;
+select * from medicine
+select * from supplier
+select * from cardtypes
+select id from patient where truncate(credit,2)>0;
+select id from supplier where truncate(credit,2)>0;
+select * from cardtypes
+select credit from supplier where id='S0001'
+insert into scr_payments values(curdate(),0.04,0,'N/A','',0,'AmEx Credit');update supplier set credit=credit-(0.04) where id='S0001';commit;
+select id from patient where truncate(credit,2)>0;
+select id from supplier where truncate(credit,2)>0;
+select * from cardtypes
+select id,name,contact,email,credit from patient
+select * from pdoctor
+select * from medicine
+select * from cardtypes
+select * from inventory where code='8853301530750' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8853301530750' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8853301530750' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8853301530750' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8853301530743' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8853301530743' and expiry>curdate() and stock_pack>0
+select id,name,pwd,post from salesman
+select id,name,contact,email,credit from patient
+select * from pdoctor
+select * from medicine
+select * from cardtypes
+select id,name,contact,email,credit from patient
+select * from pdoctor
+select * from medicine
+select * from cardtypes
+select distinct comp1 from med_test.medicine
+select distinct comp2 from med_test.medicine
+select * from inventory where code='8010276025203' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276025203' and expiry>curdate() and stock_pack>0
+select * from odoctor;
+select * from salesman
+select distinct state from salesman
+select distinct city from salesman
+select distinct post from salesman
+select * from salesman
+select distinct state from salesman
+select distinct city from salesman
+select distinct post from salesman
+select id,name,pwd,post from salesman
