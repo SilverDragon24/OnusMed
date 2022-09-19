@@ -2374,3 +2374,7 @@ select * from medicine where code='PARTCLP';
 select * from medicine where code='PARTCLP1';
 select * from medicine where code='PARTCLP';
 select * from medicine where code='PARTCLP2';
+select * from medtypes;
+insert into medtypes values('Accessories')
+insert into medicine values('PARTCLP2','Aquarium Partition Clips Double Sided','NA','Accessories','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
