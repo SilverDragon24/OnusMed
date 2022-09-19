@@ -2465,3 +2465,7 @@ select * from inventory where code='6925394800002' and expiry>curdate() and stoc
 select * from inventory where code='6925394800002' and expiry>curdate() and stock_pack>0
 select * from inventory where code='6925394800002' and expiry>curdate() and stock_pack>0
 select * from inventory where code='6925394800002' and expiry>curdate() and stock_pack>0
+select * from inventory where code='042055221023' and expiry>curdate() and stock_pack>0
+select * from inventory where code='042055221023' and expiry>curdate() and stock_pack>0
+select * from inventory where code='042055221023' and expiry>curdate() and stock_pack>0
+select * from inventory where code='042055221023' and expiry>curdate() and stock_pack>0
