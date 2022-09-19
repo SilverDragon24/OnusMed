@@ -2502,3 +2502,6 @@ select * from inventory where code='5678920023499' and expiry>curdate() and stoc
 select * from inventory where code='5678920023499' and expiry>curdate() and stock_pack>0
 select * from inventory where code='5678920023499' and expiry>curdate() and stock_pack>0
 select id,name,pwd,post from salesman
+select distinct s.icode,(select m.name from medicine m where m.code=s.icode) from sales s where (s.idate between '2022-08-01' and '2022-09-20')
+select icode,pack_q,stripq,pieceq,amt from sales where icode='8010276030399' and (idate between '2022-08-01' and '2022-09-20')
+select icode,pack_q,stripq,pieceq,(((100-discount)/100)*(pieceq*piece_mrp))+((cgst+sgst+igst+ed)/100)*(pieceq*piece_mrp) from sales_r where icode='8010276030399' and (idate between '2022-08-01' and '2022-09-20')
