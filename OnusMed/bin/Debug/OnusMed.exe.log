@@ -2422,3 +2422,23 @@ select * from cardtypes
 select * from medicine
 select * from supplier
 select * from cardtypes
+select batchcode from inventory where batchcode='762183'
+insert into inventory values('762183','4004218302976','2024-9-30',950,950,950,850,850,850,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('I20220918','4004218302976','762183','S0003','2022-9-18','2024-9-30',1,1,1,0,0,0,950,950,950,850,850,850,0,9,9,0,0,850);commit;
+select batchcode from inventory where batchcode='Z.17'
+insert into inventory values('Z.17','042055221023','2024-9-30',525,525,525,450,450,450,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('I20220918','042055221023','Z.17','S0003','2022-9-18','2024-9-30',1,1,1,0,0,0,525,525,525,450,450,450,0,9,9,0,0,450);commit;
+select batchcode from inventory where batchcode='B20220920035015'
+insert into inventory values('B20220920035015','6925394800002','2034-9-30',499,499,499,220,220,220,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('I20220918','6925394800002','B20220920035015','S0003','2022-9-18','2034-9-30',1,1,1,0,0,0,499,499,499,220,220,220,0,9,9,0,0,220);commit;
+select batchcode from inventory where batchcode='B20220920035109'
+insert into inventory values('B20220920035109','6925394800491','2034-9-30',449,449,449,170,170,170,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('I20220918','6925394800491','B20220920035109','S0003','2022-9-18','2034-9-30',1,1,1,0,0,0,449,449,449,170,170,170,0,9,9,0,0,170);commit;
+select batchcode from inventory where batchcode='B20220920035139'
+insert into inventory values('B20220920035139','6921835521802','2034-9-30',180,180,180,80,80,80,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('I20220918','6921835521802','B20220920035139','S0003','2022-9-18','2034-9-30',1,1,1,0,0,0,180,180,180,80,80,80,0,9,9,0,0,80);commit;
+insert into p_payments values('I20220918','2022-9-18',0,0,'AmEx Credit',0,'N/A','',1770);commit;
+update supplier set credit=credit+1770 where id='S0003';commit;
+select * from medicine
+select * from supplier
+select * from cardtypes
