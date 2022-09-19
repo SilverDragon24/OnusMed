@@ -2397,3 +2397,9 @@ select batchcode from inventory where batchcode='B001'
 insert into p_payments values('I20220918','2022-9-18',2679,0,'AmEx Credit',0,'N/A','',0);commit;
 update supplier set credit=credit+0 where id='S0003';commit;
 select * from medicine
+select * from supplier
+select * from cardtypes
+select id,name,contact,email,credit from patient
+select * from pdoctor
+select * from medicine
+select * from cardtypes
