@@ -2345,3 +2345,6 @@ select distinct comp1 from medicine
 select distinct comp2 from medicine
 select * from medicine where code='5';
 select * from medicine where code='56';
+select * from medicine where code='567';
+select * from medicine where code='5678';
+select * from medicine where code='56789';
