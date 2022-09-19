@@ -2403,3 +2403,7 @@ select id,name,contact,email,credit from patient
 select * from pdoctor
 select * from medicine
 select * from cardtypes
+select * from inventory where code='4004218302976' and expiry>curdate() and stock_pack>0
+select * from inventory where code='4004218302976' and expiry>curdate() and stock_pack>0
+select * from inventory where code='4004218302976' and expiry>curdate() and stock_pack>0
+select * from inventory where code='4004218302976' and expiry>curdate() and stock_pack>0
