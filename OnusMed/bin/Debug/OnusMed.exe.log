@@ -2356,3 +2356,7 @@ select * from medicine where code='5678920023';
 select * from medicine where code='56789200234';
 select * from medicine where code='567892002349';
 select * from medicine where code='5678920023499';
+select * from medtypes;
+insert into medtypes values('Soil')
+insert into medicine values('5678920023499','Wild :Lava Pure Black 1KG','Aquatic Remedies','Soil','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
