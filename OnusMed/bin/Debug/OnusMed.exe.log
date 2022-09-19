@@ -2343,3 +2343,5 @@ select * from medtypes
 select * from schedule
 select distinct comp1 from medicine
 select distinct comp2 from medicine
+select * from medicine where code='5';
+select * from medicine where code='56';
