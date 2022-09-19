@@ -144,6 +144,7 @@ Partial Class PurchaseEntry
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.btnGenBatch = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -218,6 +219,7 @@ Partial Class PurchaseEntry
         '
         'GroupBox9
         '
+        Me.GroupBox9.Controls.Add(Me.btnGenBatch)
         Me.GroupBox9.Controls.Add(Me.chkInterState)
         Me.GroupBox9.Controls.Add(Me.txtItemCode)
         Me.GroupBox9.Controls.Add(Me.numMrpPiece)
@@ -1278,6 +1280,15 @@ Partial Class PurchaseEntry
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'btnGenBatch
+        '
+        Me.btnGenBatch.Location = New System.Drawing.Point(244, 69)
+        Me.btnGenBatch.Name = "btnGenBatch"
+        Me.btnGenBatch.Size = New System.Drawing.Size(20, 23)
+        Me.btnGenBatch.TabIndex = 50
+        Me.btnGenBatch.Text = "+"
+        Me.btnGenBatch.UseVisualStyleBackColor = True
+        '
         'PurchaseEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1449,4 +1460,5 @@ Partial Class PurchaseEntry
     Friend WithEvents numMrpPack As NumericUpDown
     Friend WithEvents txtItemCode As TextBox
     Friend WithEvents chkInterState As CheckBox
+    Friend WithEvents btnGenBatch As Button
 End Class

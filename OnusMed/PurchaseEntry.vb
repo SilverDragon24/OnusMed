@@ -1075,4 +1075,8 @@ Public Class PurchaseEntry
             cmbItemName.Select()
         End If
     End Sub
+
+    Private Sub btnGenBatch_Click(sender As Object, e As EventArgs) Handles btnGenBatch.Click
+        txtBatchCode.Text = String.Concat("B", generateID())
+    End Sub
 End Class
