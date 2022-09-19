@@ -2049,3 +2049,142 @@ select distinct state from salesman
 select distinct city from salesman
 select distinct post from salesman
 select id,name,pwd,post from salesman
+select id,name,pwd,post from salesman
+select id,name,pwd,post from salesman
+select id,name,pwd,post from salesman
+select id,name,pwd,post from salesman
+select id,name,pwd,post from salesman
+select * from medicine
+select * from supplier
+select * from cardtypes
+select distinct city from supplier
+select distinct state from supplier
+select * from supplier where id='s';
+select * from supplier where id='s0';
+select * from supplier where id='s00';
+select * from supplier where id='s003';
+insert into supplier values('s003','Pradhan Aq','Galif Street Hut','','kolkata','WB',700003,8777270284,'xxxx@xxx.xx','.nl','nl','nl',0.00);commit;
+select * from supplier
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='T';
+select * from medicine where code='';
+select * from medicine where code='4';
+select * from medicine where code='40';
+select * from medicine where code='400';
+select * from medicine where code='4004';
+select * from medicine where code='40042';
+select * from medicine where code='400421';
+select * from medicine where code='4004218';
+select * from medicine where code='40042183';
+select * from medicine where code='400421830';
+select * from medicine where code='4004218302';
+select * from medicine where code='40042183029';
+select * from medicine where code='400421830297';
+select * from medicine where code='4004218302976';
+insert into medicine values('4004218302976','TetraBits Complete 1000ml','Tetra','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
+select id,name,contact,email,credit from patient
+select * from pdoctor
+select * from medicine
+select * from cardtypes
+select id,name,contact,email,credit from patient
+select * from pdoctor
+select * from medicine
+select * from cardtypes
+select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
+insert into sales values('SI20220919083115','8010276030399','22046U4113', curdate(),'20220830044224','P Bhattacharya','0','N/A',1,1,1,1900,1900,1900,10,9,9,0,0,1710,'E20220827180818');commit;
+update inventory set stock_pack=stock_pack-(1),stock_strip=stock_strip-(1),stock_piece=stock_piece-(1) where batchcode='22046U4113';commit;
+insert into s_payments values('SI20220919083115', curdate(),0,0,'',1710,'UPI Ref. 226265280871',0,'N/A','N/A',0);commit;
+update patient set credit=credit+(0) where id='20220830044224';commit;
+select * from store
+select * from gstin
+select pid, pname, pdoctor_reg, pdoctor_name from sales where invoice_no='SI20220919083115'
+select id,name,contact,email,credit from patient
+select * from pdoctor
+select * from medicine
+select * from cardtypes
+select id,name,pwd,post from salesman
+select id,name,contact,email,credit from patient
+select * from pdoctor
+select * from medicine
+select * from cardtypes
+select * from inventory where code='8010276022486' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276022486' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276022486' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276022486' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276030368' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276030368' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276030368' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276030368' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276031297' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276031297' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
+select * from inventory where code='8010276030399' and expiry>curdate() and stock_pack>0
+select distinct batchcode from purchase
+select distinct suppl from purchase
+select distinct invoice_no from purchase
+select * from purchase where suppl='S0002'
+select id,name,contact from supplier where id='S0002'
+select code,name,packc,stripc from medicine where code='8906002484843'
+select batchcode,stock_pack,stock_strip,stock_piece from inventory where batchcode='229E2HYDC1'
+select invoice_no,sum(free_pack),sum(free_strip),sum(free_piece) from purchase_r where invoice_no='01073' and batchcode='229E2HYDC1'
+select id,name,contact from supplier where id='S0002'
+select code,name,packc,stripc from medicine where code='8853301005203'
+select batchcode,stock_pack,stock_strip,stock_piece from inventory where batchcode='210D1PCHJ2'
+select invoice_no,sum(free_pack),sum(free_strip),sum(free_piece) from purchase_r where invoice_no='01073' and batchcode='210D1PCHJ2'
+select id,name,contact from supplier where id='S0002'
+select code,name,packc,stripc from medicine where code='8906002484843'
+select batchcode,stock_pack,stock_strip,stock_piece from inventory where batchcode='229E2HYDC1'
+select invoice_no,sum(free_pack),sum(free_strip),sum(free_piece) from purchase_r where invoice_no='01073' and batchcode='229E2HYDC1'
+select id,name,contact from supplier where id='S0002'
+select code,name,packc,stripc from medicine where code='8853301006286'
+select batchcode,stock_pack,stock_strip,stock_piece from inventory where batchcode='100222'
+select invoice_no,sum(free_pack),sum(free_strip),sum(free_piece) from purchase_r where invoice_no='01073' and batchcode='100222'
+select id,name,contact from supplier where id='S0002'
+select code,name,packc,stripc from medicine where code='8853301006330'
+select batchcode,stock_pack,stock_strip,stock_piece from inventory where batchcode='110322'
+select invoice_no,sum(free_pack),sum(free_strip),sum(free_piece) from purchase_r where invoice_no='01073' and batchcode='110322'
+select id,name,contact from supplier where id='S0002'
+select code,name,packc,stripc from medicine where code='5010394984584'
+select batchcode,stock_pack,stock_strip,stock_piece from inventory where batchcode='239820'
+select invoice_no,sum(free_pack),sum(free_strip),sum(free_piece) from purchase_r where invoice_no='01073' and batchcode='239820'
+select id,name,contact from supplier where id='S0002'
+select code,name,packc,stripc from medicine where code='5010394984584'
+select batchcode,stock_pack,stock_strip,stock_piece from inventory where batchcode='239820'
+select invoice_no,sum(free_pack),sum(free_strip),sum(free_piece) from purchase_r where invoice_no='01073' and batchcode='239820'
+select id,name,contact from supplier where id='S0002'
+select code,name,packc,stripc from medicine where code='8853301006330'
+select batchcode,stock_pack,stock_strip,stock_piece from inventory where batchcode='110322'
+select invoice_no,sum(free_pack),sum(free_strip),sum(free_piece) from purchase_r where invoice_no='01073' and batchcode='110322'
+select * from purchase where suppl='S0001'
+select id,name,contact from supplier where id='S0001'
+select code,name,packc,stripc from medicine where code='8010276025227'
+select batchcode,stock_pack,stock_strip,stock_piece from inventory where batchcode='22011U4888'
+select invoice_no,sum(free_pack),sum(free_strip),sum(free_piece) from purchase_r where invoice_no='A002851' and batchcode='22011U4888'
+select id,name,contact from supplier where id='S0001'
+select code,name,packc,stripc from medicine where code='8010276022486'
+select batchcode,stock_pack,stock_strip,stock_piece from inventory where batchcode='22011U0459'
+select invoice_no,sum(free_pack),sum(free_strip),sum(free_piece) from purchase_r where invoice_no='A002851' and batchcode='22011U0459'
+select id,name,contact from supplier where id='S0001'
+select code,name,packc,stripc from medicine where code='8010276030344'
+select batchcode,stock_pack,stock_strip,stock_piece from inventory where batchcode='22011U0446'
+select invoice_no,sum(free_pack),sum(free_strip),sum(free_piece) from purchase_r where invoice_no='A002851' and batchcode='22011U0446'
+select distinct invoice_no from sales where not pid='N/A'
+select distinct pid from sales where not pid='N/A'
+select * from cardtypes
+select * from sales where pid='20220830044224'
+select id from patient where contact='7595833084'
+select * from sales where pid='20220830044224'
+select id,name,pwd,post from salesman
+select * from medicine
+select * from supplier
+select * from cardtypes
+select * from medicine
+select * from supplier
+select * from cardtypes
