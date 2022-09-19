@@ -2277,3 +2277,17 @@ select * from medicine where code='042055213028';
 select * from medtypes;
 insert into medicine values('042055213028','Hikari Algae Wafers 20g','Hikari','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
 select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
+select * from medicine where code='6';
+select * from medicine where code='69';
+select * from medicine where code='692';
+select * from medicine where code='6925';
+select * from medicine where code='69253';
+select * from medicine where code='692539';
+select * from medicine where code='6925394';
+select * from medicine where code='69253948';
+select * from medicine where code='692539480';
+select * from medicine where code='6925394800';
