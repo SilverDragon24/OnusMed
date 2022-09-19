@@ -2262,3 +2262,15 @@ select * from medtypes
 select * from schedule
 select distinct comp1 from medicine
 select distinct comp2 from medicine
+select * from medicine where code='0';
+select * from medicine where code='04';
+select * from medicine where code='042';
+select * from medicine where code='0420';
+select * from medicine where code='04205';
+select * from medicine where code='042055';
+select * from medicine where code='0420552';
+select * from medicine where code='04205521';
+select * from medicine where code='042055213';
+select * from medicine where code='0420552130';
+select * from medicine where code='04205521302';
+select * from medicine where code='042055213028';
