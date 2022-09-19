@@ -2214,3 +2214,4 @@ select * from medicine where code='69253948000';
 select * from medicine where code='692539480000';
 select * from medicine where code='6925394800002';
 select * from medicine
+select id,name,pwd,post from salesman
