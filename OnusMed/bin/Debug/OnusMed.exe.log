@@ -2477,3 +2477,6 @@ select * from inventory where code='5678920023499' and expiry>curdate() and stoc
 select * from inventory where code='5678920023499' and expiry>curdate() and stock_pack>0
 select * from inventory where code='5678920023499' and expiry>curdate() and stock_pack>0
 select * from inventory where code='5678920023499' and expiry>curdate() and stock_pack>0
+select * from medicine
+select * from supplier
+select * from cardtypes
