@@ -2318,3 +2318,7 @@ select * from medtypes;
 insert into medtypes values('Aquarium Filter')
 insert into medicine values('6921835521802','Xinyou XY-180','Xinyou','Aquarium Filter','OTC',1,1,1,'NA','NA','23091000',18);commit;
 select * from medicine
+select * from medtypes
+select * from schedule
+select distinct comp1 from medicine
+select distinct comp2 from medicine
