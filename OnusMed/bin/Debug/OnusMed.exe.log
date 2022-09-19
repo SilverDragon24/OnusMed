@@ -2335,3 +2335,7 @@ select * from medicine where code='5678920379';
 select * from medicine where code='56789203793';
 select * from medicine where code='567892037933';
 select * from medicine where code='5678920379336';
+select * from medtypes;
+insert into medtypes values('Suplement')
+insert into medicine values('5678920379336','Stori K++ 220ml','Stori','Suplement','OTC',1,1,1,'Potassium','Manganese','23091000',18);commit;
+select * from medicine
