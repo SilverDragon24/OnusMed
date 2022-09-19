@@ -2415,3 +2415,4 @@ delete from purchase where invoice_no='I20220918';
 delete from p_payments where invoice_no='I20220918';
 delete from inventory where batchcode='762183' or batchcode='Z.17' or batchcode='B001' or code='5678920379336';
 commit;
+select id,name,pwd,post from salesman
