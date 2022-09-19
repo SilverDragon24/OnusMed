@@ -2378,3 +2378,22 @@ select * from medtypes;
 insert into medtypes values('Accessories')
 insert into medicine values('PARTCLP2','Aquarium Partition Clips Double Sided','NA','Accessories','OTC',1,1,1,'NA','NA','23091000',18);commit;
 select * from medicine
+select batchcode from inventory where batchcode='762183'
+insert into inventory values('762183','4004218302976','2024-9-30',950,950,950,850,850,850,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('I20220918','4004218302976','762183','S0003','2022-9-18','2024-9-30',1,1,1,0,0,0,950,950,950,850,850,850,0,9,9,0,0,850);commit;
+select batchcode from inventory where batchcode='Z.17'
+insert into inventory values('Z.17','042055221023','2023-10-31',525,525,525,450,450,450,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('I20220918','042055221023','Z.17','S0003','2022-9-18','2023-10-31',1,1,1,0,0,0,525,525,525,450,450,450,0,9,9,0,0,450);commit;
+select batchcode from inventory where batchcode='B001'
+insert into inventory values('B001','6925394800002','2033-10-31',499,499,499,220,220,220,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('I20220918','6925394800002','B001','S0003','2022-9-18','2033-10-31',1,1,1,0,0,0,499,499,499,220,220,220,0,9,9,0,0,220);commit;
+select batchcode from inventory where batchcode='B001'
+select batchcode from inventory where batchcode='B001'
+select batchcode from inventory where batchcode='20220918'
+insert into inventory values('20220918','5678920379336','2024-3-31',500,500,500,380,380,380,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('I20220918','5678920379336','20220918','S0003','2022-9-18','2024-3-31',1,1,1,0,0,0,500,500,500,380,380,380,0,9,9,0,0,380);commit;
+select batchcode from inventory where batchcode='B001'
+select batchcode from inventory where batchcode='B001'
+insert into p_payments values('I20220918','2022-9-18',2679,0,'AmEx Credit',0,'N/A','',0);commit;
+update supplier set credit=credit+0 where id='S0003';commit;
+select * from medicine
