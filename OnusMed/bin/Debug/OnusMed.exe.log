@@ -2255,3 +2255,6 @@ select * from medicine where code='042055221';
 select * from medicine where code='0420552210';
 select * from medicine where code='04205522102';
 select * from medicine where code='042055221023';
+select * from medtypes;
+insert into medicine values('042055221023','Hikari Fancy Guppy 22g','Hikari','Food','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
