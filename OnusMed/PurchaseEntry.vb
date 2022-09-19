@@ -901,7 +901,7 @@ Public Class PurchaseEntry
             For i As Integer = 0 To count1 Step 1
                 cmbSuppID.Items.Add(ds0.Tables(0).Rows(i)(0).ToString())
                 cmbSuppName.Items.Add(ds0.Tables(0).Rows(i)(1).ToString())
-                credit = Convert.ToDouble(Convert.ToDecimal(ds0.Tables(0).Rows(i)(12).ToString()))
+                credit = Convert.ToDouble(Convert.ToDouble(ds0.Tables(0).Rows(i)(12).ToString()))
             Next
 
         End If
