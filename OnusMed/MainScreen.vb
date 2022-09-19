@@ -94,4 +94,8 @@ Public Class MainScreen
         CloseDB()
         Application.Exit()
     End Sub
+
+    Private Sub btnSalesReport_Click(sender As Object, e As EventArgs) Handles btnSalesReport.Click
+        SalesReport.Show()
+    End Sub
 End Class
