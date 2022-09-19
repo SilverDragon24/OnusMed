@@ -2480,3 +2480,14 @@ select * from inventory where code='5678920023499' and expiry>curdate() and stoc
 select * from medicine
 select * from supplier
 select * from cardtypes
+select batchcode from inventory where batchcode='B20220920035921'
+insert into inventory values('B20220920035921','5678920023499','2038-9-30',250,250,250,150,150,150,0,0,0,9,9,0,1,1,1,'GD',false,0);commit;
+insert into purchase values('I2022091800','5678920023499','B20220920035921','S0003','2022-9-20','2038-9-30',1,1,1,0,0,0,250,250,250,150,150,150,0,9,9,0,0,150);commit;
+select batchcode from inventory where batchcode='B20220920040110'
+insert into inventory values('B20220920040110','PARTCLP2','2038-9-30',60,60,60,25,25,25,0,0,0,9,9,0,4,4,4,'GD',false,0);commit;
+insert into purchase values('I2022091800','PARTCLP2','B20220920040110','S0003','2022-9-20','2038-9-30',4,4,4,0,0,0,60,60,60,25,25,25,0,9,9,0,0,100);commit;
+insert into p_payments values('I2022091800','2022-9-20',0,0,'AmEx Credit',0,'N/A','',250);commit;
+update supplier set credit=credit+250 where id='S0003';commit;
+select * from medicine
+select * from supplier
+select * from cardtypes
