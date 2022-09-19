@@ -26,10 +26,24 @@ Public Class NewItem
             Dim num As Decimal = Math.Round(numGST.Value)
             str(23) = num.ToString()
             str(24) = ");commit;"
-            If (manipulateData(String.Concat(str)) = 1) Then
-                Me.Dispose()
+            Dim tds As DataSet = New DataSet
+            Dim fexist As Boolean = True
+            selectData("select * from medtypes;", tds)
+            For i As Integer = 0 To tds.Tables(0).Rows.Count - 1
+                If cmbType.Text = tds.Tables(0).Rows(i).Item(0).ToString Then
+                    fexist = True
+                    Exit For
+                Else
+                    fexist = False
+                End If
+            Next
+            If fexist = False Then
+                manipulateData(String.Concat("insert into medtypes values('", cmbType.Text, "')"))
             End If
-        End If
+            If (manipulateData(String.Concat(str)) = 1) Then
+                    Me.Dispose()
+                End If
+            End If
     End Sub
 
     Private Sub NewItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
