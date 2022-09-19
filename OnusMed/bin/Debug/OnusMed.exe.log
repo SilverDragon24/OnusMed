@@ -2291,3 +2291,6 @@ select * from medicine where code='6925394';
 select * from medicine where code='69253948';
 select * from medicine where code='692539480';
 select * from medicine where code='6925394800';
+select * from medicine where code='69253948004';
+select * from medicine where code='692539480049';
+select * from medicine where code='6925394800491';
