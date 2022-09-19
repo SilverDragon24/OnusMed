@@ -2294,3 +2294,6 @@ select * from medicine where code='6925394800';
 select * from medicine where code='69253948004';
 select * from medicine where code='692539480049';
 select * from medicine where code='6925394800491';
+select * from medtypes;
+insert into medicine values('6925394800491','Sobo WP-850F','Sobo','Electronics','OTC',1,1,1,'NA','NA','23091000',18);commit;
+select * from medicine
