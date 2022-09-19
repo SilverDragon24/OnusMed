@@ -2474,3 +2474,5 @@ select * from inventory where code='4004218302976' and expiry>curdate() and stoc
 select * from inventory where code='4004218302976' and expiry>curdate() and stock_pack>0
 select * from inventory where code='4004218302976' and expiry>curdate() and stock_pack>0
 select * from inventory where code='5678920023499' and expiry>curdate() and stock_pack>0
+select * from inventory where code='5678920023499' and expiry>curdate() and stock_pack>0
+select * from inventory where code='5678920023499' and expiry>curdate() and stock_pack>0
