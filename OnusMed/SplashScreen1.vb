@@ -15,6 +15,7 @@
         ElseIf ProgressBar1.Value = ProgressBar1.Maximum Then
             Timer1.Stop()
             Me.Hide()
+            Login.Select()
         End If
     End Sub
 End Class

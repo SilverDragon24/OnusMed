@@ -184,4 +184,8 @@ Public Class CreditPayment
             btnSuppPay.Enabled = False
         End If
     End Sub
+
+    Private Sub CreditPayment_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Me.Dispose()
+    End Sub
 End Class

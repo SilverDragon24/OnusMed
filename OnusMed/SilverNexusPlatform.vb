@@ -347,7 +347,13 @@ Public Module SilverNexusPlatform
 
     Public Function selectData(query As String, ds As DataSet) As Integer
         Dim num As Integer
+        Dim qtemp As String = ""
         Try
+            If query.EndsWith(";") = False Then
+                qtemp = String.Concat(query, ";")
+            Else
+                qtemp = query
+            End If
             Dim lfs As FileStream = Nothing
             Dim lfilepath As String = String.Concat(Application.ExecutablePath.ToString(), ".log")
             If (Not File.Exists(lfilepath)) Then
@@ -356,13 +362,13 @@ Public Module SilverNexusPlatform
             Using lfs
             End Using
             Dim lfile As StreamWriter = New StreamWriter(lfilepath, True)
-            lfile.WriteLine(query)
+            lfile.WriteLine(qtemp)
             lfile.Close()
             If (conn IsNot Nothing) Then
                 Dim mySqlCommand As MySqlCommand = New MySqlCommand()
                 ds.Clear()
-                    ds.Tables.Clear()
-                    mySqlCommand.CommandType = CommandType.Text
+                ds.Tables.Clear()
+                mySqlCommand.CommandType = CommandType.Text
                 mySqlCommand.CommandText = query
                 mySqlCommand.Connection = conn
                 da = New MySqlDataAdapter(mySqlCommand)
@@ -372,8 +378,8 @@ Public Module SilverNexusPlatform
                 ConnectDB(db)
                 Dim cmd As MySqlCommand = New MySqlCommand()
                 ds.Clear()
-                    ds.Tables.Clear()
-                    cmd.CommandType = CommandType.Text
+                ds.Tables.Clear()
+                cmd.CommandType = CommandType.Text
                 cmd.CommandText = query
                 cmd.Connection = conn
                 da = New MySqlDataAdapter(cmd)
