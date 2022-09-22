@@ -154,6 +154,12 @@
     <Compile Include="InventoryManual.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="InvSearch.Designer.vb">
+      <DependentUpon>InvSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InvSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -337,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InventoryManual.resx">
       <DependentUpon>InventoryManual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvSearch.resx">
+      <DependentUpon>InvSearch.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

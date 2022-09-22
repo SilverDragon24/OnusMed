@@ -2523,3 +2523,31 @@ select * from cardtypes
 select id,name,pwd,post from salesman
 select id,name,pwd,post from salesman
 select id,name,pwd,post from salesman;
+select id,name,pwd,post from salesman;
+select q.code,q.name,q.batchcode,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0 and q.name like '%vet%';
+select q.code,q.name,q.batchcode,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0;
+select q.code,q.name,q.batchcode,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0;
+select q.code,q.name,q.batchcode,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0;
+select id,name,pwd,post from salesman;
+select q.code,q.name,q.batchcode,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0;
+select q.code,q.name,q.batchcode,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0 and q.name like '%pedi%';
+select id,name,pwd,post from salesman;
+select q.code,q.name,q.batchcode,q,expiry,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0;
+select q.code,q.name,q.batchcode,q,expiry,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0;
+select id,name,pwd,post from salesman;
+select q.code,q.name,q.batchcode,q.expiry,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0;
+select q.code,q.name,q.batchcode,q.expiry,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0;
+select id,name,pwd,post from salesman;
+select q.code,q.name,q.batchcode,q.expiry,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0;
+select id,name,pwd,post from salesman;
+select q.code,q.name,q.batchcode,q.expiry,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0;
+select q.code,q.name,q.batchcode,q.expiry,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0 and q.name like '%vet%';
+select q.code,q.name,q.batchcode,q.expiry,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0 and q.name like '%jun%';
+select q.code,q.name,q.batchcode,q.expiry,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0 and q.name like '%kit%';
+select id,name,pwd,post from salesman;
+select q.code,q.name,q.batchcode,q.expiry,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0;
+select q.code,q.name,q.batchcode,q.expiry,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0 and q.name like '%vet%';
+select id,name,pwd,post from salesman;
+select q.code,q.name,q.batchcode,q.expiry,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0;
+select q.code,q.name,q.batchcode,q.expiry,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0 and q.name like '%vet%';
+select q.code,q.name,q.batchcode,q.expiry,q.stock_piece,q.mrp_piece from (select (select m.name from medicine m where code=i.code) name,i.* from inventory i) q where q.stock_piece>0;

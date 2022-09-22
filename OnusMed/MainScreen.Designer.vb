@@ -49,6 +49,7 @@ Partial Class MainScreen
         Me.btnPayCredit = New System.Windows.Forms.Button()
         Me.btnStockTransfer = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.btnLookup = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -169,6 +170,7 @@ Partial Class MainScreen
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.btnLookup)
         Me.GroupBox2.Controls.Add(Me.Button5)
         Me.GroupBox2.Controls.Add(Me.btnPurchaseOrder)
         Me.GroupBox2.Controls.Add(Me.btnSret)
@@ -297,6 +299,15 @@ Partial Class MainScreen
         Me.btnStockTransfer.Text = "Stock Transfer"
         Me.btnStockTransfer.UseVisualStyleBackColor = True
         '
+        'btnLookup
+        '
+        Me.btnLookup.Location = New System.Drawing.Point(12, 163)
+        Me.btnLookup.Name = "btnLookup"
+        Me.btnLookup.Size = New System.Drawing.Size(127, 42)
+        Me.btnLookup.TabIndex = 9
+        Me.btnLookup.Text = "Inventory Lookup"
+        Me.btnLookup.UseVisualStyleBackColor = True
+        '
         'MainScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -349,4 +360,5 @@ Partial Class MainScreen
     Friend WithEvents btnH1Filter As Button
     Friend WithEvents btnSchedPurchase As Button
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents btnLookup As Button
 End Class

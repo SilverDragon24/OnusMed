@@ -98,4 +98,8 @@ Public Class MainScreen
     Private Sub btnSalesReport_Click(sender As Object, e As EventArgs) Handles btnSalesReport.Click
         SalesReport.Show()
     End Sub
+
+    Private Sub btnLookup_Click(sender As Object, e As EventArgs) Handles btnLookup.Click
+        InvSearch.Show()
+    End Sub
 End Class
