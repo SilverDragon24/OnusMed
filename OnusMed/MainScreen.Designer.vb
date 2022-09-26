@@ -35,6 +35,7 @@ Partial Class MainScreen
         Me.btnSalesReport = New System.Windows.Forms.Button()
         Me.btnPurchaseReport = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnLookup = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.btnPurchaseOrder = New System.Windows.Forms.Button()
         Me.btnSret = New System.Windows.Forms.Button()
@@ -49,7 +50,9 @@ Partial Class MainScreen
         Me.btnPayCredit = New System.Windows.Forms.Button()
         Me.btnStockTransfer = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.btnLookup = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.rtbNews = New System.Windows.Forms.RichTextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -185,6 +188,15 @@ Partial Class MainScreen
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "GroupBox2"
         '
+        'btnLookup
+        '
+        Me.btnLookup.Location = New System.Drawing.Point(12, 163)
+        Me.btnLookup.Name = "btnLookup"
+        Me.btnLookup.Size = New System.Drawing.Size(127, 42)
+        Me.btnLookup.TabIndex = 9
+        Me.btnLookup.Text = "Inventory Lookup"
+        Me.btnLookup.UseVisualStyleBackColor = True
+        '
         'Button5
         '
         Me.Button5.Location = New System.Drawing.Point(145, 115)
@@ -241,6 +253,9 @@ Partial Class MainScreen
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.rtbNews)
+        Me.GroupBox3.Controls.Add(Me.btnRefresh)
+        Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.StatusStrip1)
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.btnPayCredit)
@@ -299,14 +314,35 @@ Partial Class MainScreen
         Me.btnStockTransfer.Text = "Stock Transfer"
         Me.btnStockTransfer.UseVisualStyleBackColor = True
         '
-        'btnLookup
+        'Timer1
         '
-        Me.btnLookup.Location = New System.Drawing.Point(12, 163)
-        Me.btnLookup.Name = "btnLookup"
-        Me.btnLookup.Size = New System.Drawing.Size(127, 42)
-        Me.btnLookup.TabIndex = 9
-        Me.btnLookup.Text = "Inventory Lookup"
-        Me.btnLookup.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(3, 64)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(67, 13)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Stock Alerts:"
+        '
+        'btnRefresh
+        '
+        Me.btnRefresh.Location = New System.Drawing.Point(155, 253)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(93, 23)
+        Me.btnRefresh.TabIndex = 5
+        Me.btnRefresh.Text = "Refresh Feed"
+        Me.btnRefresh.UseVisualStyleBackColor = True
+        '
+        'rtbNews
+        '
+        Me.rtbNews.Location = New System.Drawing.Point(6, 80)
+        Me.rtbNews.Name = "rtbNews"
+        Me.rtbNews.ReadOnly = True
+        Me.rtbNews.Size = New System.Drawing.Size(242, 167)
+        Me.rtbNews.TabIndex = 6
+        Me.rtbNews.Text = ""
         '
         'MainScreen
         '
@@ -361,4 +397,7 @@ Partial Class MainScreen
     Friend WithEvents btnSchedPurchase As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents btnLookup As Button
+    Friend WithEvents rtbNews As RichTextBox
+    Friend WithEvents btnRefresh As Button
+    Friend WithEvents Label2 As Label
 End Class

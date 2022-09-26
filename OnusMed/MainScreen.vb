@@ -87,7 +87,8 @@ Public Class MainScreen
     End Sub
 
     Private Sub MainScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Timer1.Interval = 600000
+        Timer1.Start()
     End Sub
 
     Private Sub MainScreen_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
@@ -101,5 +102,57 @@ Public Class MainScreen
 
     Private Sub btnLookup_Click(sender As Object, e As EventArgs) Handles btnLookup.Click
         InvSearch.Show()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Try
+            rtbNews.Text = ""
+            Dim inv As DataSet = New DataSet
+            selectData("select code,batchcode,date_format(expiry,'%Y-%m-%d'),stock_piece from inventory;", inv)
+            For i As Integer = 0 To inv.Tables(0).Rows.Count - 1 Step 1
+                Dim itm As DataSet = New DataSet
+                selectData("select code,minstock from medicine where code='" + inv.Tables(0).Rows(i).Item(0).ToString + "'", itm)
+                Dim stck As Integer = 0
+                stck = Integer.Parse(inv.Tables(0).Rows(i).Item(3).ToString)
+                Dim mstck As Integer = 0
+                mstck = Integer.Parse(itm.Tables(0).Rows(0).Item(1).ToString)
+                If (stck <= mstck Or stck = 0) Then
+                    Dim name As DataSet = New DataSet
+                    selectData("select name from medicine where code='" + itm.Tables(0).Rows(0).Item(0).ToString + "';", name)
+                    Dim str As String = name.Tables(0).Rows(0).Item(0).ToString
+                    Dim bat As String = inv.Tables(0).Rows(i).Item(1).ToString
+                    If (stck = mstck) Then
+                        rtbNews.AppendText("Stock of " + str + " with Batch Code " + bat + " is Low" + Environment.NewLine)
+                    ElseIf (stck < mstck) Then
+                        rtbNews.AppendText("Stock of " + str + " with Batch Code " + bat + " is Critically Low" + Environment.NewLine)
+                    ElseIf (stck = 0) Then
+                    Else
+                    End If
+                End If
+            Next
+            For i As Integer = 0 To inv.Tables(0).Rows.Count - 1 Step 1
+                Dim itm As DataSet = New DataSet
+                Dim exp As String = inv.Tables(0).Rows(i).Item(2).ToString
+                Dim stck As Integer = inv.Tables(0).Rows(i).Item(3).ToString
+                If stck > 0 Then
+                    selectData("select datediff('" + exp + "',curdate());", itm)
+                    Dim dif As Integer = Integer.Parse(itm.Tables(0).Rows(0).Item(0).ToString)
+                    If dif <= 30 Then
+                        Dim name As DataSet = New DataSet
+                        selectData("select name from medicine where code='" + inv.Tables(0).Rows(i).Item(0).ToString + "'", name)
+                        Dim bat As String = inv.Tables(0).Rows(i).Item(1).ToString
+                        Dim nam As String = name.Tables(0).Rows(0).Item(0).ToString
+                        rtbNews.AppendText("Stock of " + nam + " with Batch Code " + bat + " will expire in " + dif.ToString + " days." + Environment.NewLine)
+                    End If
+                End If
+            Next
+        Catch ex As Exception
+            rtbNews.Text = ""
+            rtbNews.Text = ex.ToString + Environment.NewLine
+        End Try
+    End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        Timer1_Tick(sender, e)
     End Sub
 End Class

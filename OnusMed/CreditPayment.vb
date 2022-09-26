@@ -176,9 +176,9 @@ Public Class CreditPayment
         Else
             btnPatPay.Enabled = False
         End If
-        If (CShort((-radioSuppNA.Checked)) = 1 And Decimal.Compare(Math.Round(numSuppBank.Value, 2), Decimal.Zero) > 0) Then
+        If radioSuppNA.Checked = True And numSuppBank.Value > 0 Then
             btnSuppPay.Enabled = False
-        ElseIf (Not ((radioSuppCHQ.Checked Or radioSuppDD.Checked) And (Decimal.Compare(numSuppBank.Value, Decimal.Zero) = 0 Or txtSuppInstru.Text.Length = 0))) Then
+        ElseIf (radioSuppCHQ.Checked = True Or radioSuppDD.Checked = True) And numSuppBank.Value > 0 And txtsuppinstru.text.length > 0 Then
             btnSuppPay.Enabled = True
         Else
             btnSuppPay.Enabled = False

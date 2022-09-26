@@ -345,7 +345,7 @@ Public Module SilverNexusPlatform
         Return flag
     End Function
 
-    Public Function selectData(query As String, ds As DataSet) As Integer
+    Public Function selectDataLogged(query As String, ds As DataSet) As Integer
         Dim num As Integer
         Dim qtemp As String = ""
         Try
@@ -364,6 +364,38 @@ Public Module SilverNexusPlatform
             Dim lfile As StreamWriter = New StreamWriter(lfilepath, True)
             lfile.WriteLine(qtemp)
             lfile.Close()
+            If (conn IsNot Nothing) Then
+                Dim mySqlCommand As MySqlCommand = New MySqlCommand()
+                ds.Clear()
+                ds.Tables.Clear()
+                mySqlCommand.CommandType = CommandType.Text
+                mySqlCommand.CommandText = query
+                mySqlCommand.Connection = conn
+                da = New MySqlDataAdapter(mySqlCommand)
+                da.Fill(ds)
+                num = 1
+            Else
+                ConnectDB(db)
+                Dim cmd As MySqlCommand = New MySqlCommand()
+                ds.Clear()
+                ds.Tables.Clear()
+                cmd.CommandType = CommandType.Text
+                cmd.CommandText = query
+                cmd.Connection = conn
+                da = New MySqlDataAdapter(cmd)
+                da.Fill(ds)
+                num = 1
+            End If
+        Catch exception As System.Exception
+            MsgBox(exception.ToString(), MsgBoxStyle.OkOnly, Nothing)
+            num = 0
+        End Try
+        Return num
+    End Function
+
+    Public Function selectData(query As String, ds As DataSet) As Integer
+        Dim num As Integer
+        Try
             If (conn IsNot Nothing) Then
                 Dim mySqlCommand As MySqlCommand = New MySqlCommand()
                 ds.Clear()
