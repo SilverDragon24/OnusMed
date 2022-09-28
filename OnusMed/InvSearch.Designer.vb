@@ -43,7 +43,7 @@ Partial Class InvSearch
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(780, 418)
+        Me.DataGridView1.Size = New System.Drawing.Size(872, 418)
         Me.DataGridView1.TabIndex = 0
         '
         'Label1
@@ -84,7 +84,7 @@ Partial Class InvSearch
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(780, 450)
+        Me.ClientSize = New System.Drawing.Size(872, 450)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.txtKeyword)
