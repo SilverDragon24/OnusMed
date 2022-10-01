@@ -7,6 +7,7 @@ Imports System.Drawing
 Imports System.IO
 Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms
+Imports System.Threading
 
 Public Class StockReport
     Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
@@ -21,29 +22,29 @@ Public Class StockReport
         Dim filepath As String = String.Concat(folderpath, "\StockReport_", now.ToString("MM.dd.yyyy_HH.mm.ss"), ".html")
         Using fileStream As System.IO.FileStream = System.IO.File.Create(filepath)
         End Using
-        Dim file As StreamWriter = New StreamWriter(filepath)
-        file.WriteLine("<html>")
+        Dim ofile As StreamWriter = New StreamWriter(filepath)
+        ofile.WriteLine("<html>")
         now = DateTime.Today
-        file.WriteLine(String.Concat("<title>Stock Report for ", now.ToString("MM-dd-yyyy"), "</title>"))
-        file.WriteLine("<head>")
-        file.WriteLine("<style media=""screen"" type=""text/css"">")
-        file.WriteLine("@media print {")
-        file.WriteLine("thead {display: table-header-group;}")
-        file.WriteLine("}")
-        file.WriteLine("</style>")
-        file.WriteLine("</head>")
-        file.WriteLine("<body>")
+        ofile.WriteLine(String.Concat("<title>Stock Report for ", now.ToString("MM-dd-yyyy"), "</title>"))
+        ofile.WriteLine("<head>")
+        ofile.WriteLine("<style media=""screen"" type=""text/css"">")
+        ofile.WriteLine("@media print {")
+        ofile.WriteLine("thead {display: table-header-group;}")
+        ofile.WriteLine("}")
+        ofile.WriteLine("</style>")
+        ofile.WriteLine("</head>")
+        ofile.WriteLine("<body>")
         now = DateTime.Today
-        file.WriteLine(String.Concat("<center><h1>Stock Report for ", now.ToString("MM-dd-yyyy"), "</h1></center>"))
-        file.WriteLine("<table border=1 width=100%>")
+        ofile.WriteLine(String.Concat("<center><h1>Stock Report for ", now.ToString("MM-dd-yyyy"), "</h1></center>"))
+        ofile.WriteLine("<table border=1 width=100%>")
         If (radioItem.Checked) Then
-            file.WriteLine("<tr>")
-            file.Write("<th>Item Code</th>")
-            file.Write("<th>Item Name</th>")
-            file.Write("<th>Available Packs</th>")
-            file.Write("<th>Available Strips</th>")
-            file.WriteLine("<th>Available Pieces</th>")
-            file.WriteLine("</tr>")
+            ofile.WriteLine("<tr>")
+            ofile.Write("<th>Item Code</th>")
+            ofile.Write("<th>Item Name</th>")
+            ofile.Write("<th>Available Packs</th>")
+            ofile.Write("<th>Available Strips</th>")
+            ofile.WriteLine("<th>Available Pieces</th>")
+            ofile.WriteLine("</tr>")
             Dim dataSet As DataSet = New DataSet()
             Dim str As String = "select i.code,(select m.name from medicine m where m.code=i.code),sum(i.stock_pack),sum(i.stock_strip),sum(i.stock_piece) from inventory i"
             If (radioGD.Checked) Then
@@ -61,31 +62,31 @@ Public Class StockReport
                     selectData(str1, dataSet1)
                     flag = If(Decimal.Compare(Convert.ToDecimal(dataSet.Tables(0).Rows(num)(2)), Convert.ToDecimal(dataSet1.Tables(0).Rows(0)(0))) > 0, False, True)
                     If (flag) Then
-                        file.WriteLine("<font color=0xFF0000>")
+                        ofile.WriteLine("<font color=0xFF0000>")
                     End If
-                    file.WriteLine("<tr>")
-                    file.Write(String.Concat("<td>", dataSet.Tables(0).Rows(num)(0).ToString(), "</td>"))
-                    file.Write(String.Concat("<td>", dataSet.Tables(0).Rows(num)(1).ToString(), "</td>"))
-                    file.Write(String.Concat("<td>", dataSet.Tables(0).Rows(num)(2).ToString(), "</td>"))
-                    file.Write(String.Concat("<td>", dataSet.Tables(0).Rows(num)(3).ToString(), "</td>"))
-                    file.WriteLine(String.Concat("<td>", dataSet.Tables(0).Rows(num)(4).ToString(), "</td>"))
-                    file.WriteLine("</tr>")
+                    ofile.WriteLine("<tr>")
+                    ofile.Write(String.Concat("<td>", dataSet.Tables(0).Rows(num)(0).ToString(), "</td>"))
+                    ofile.Write(String.Concat("<td>", dataSet.Tables(0).Rows(num)(1).ToString(), "</td>"))
+                    ofile.Write(String.Concat("<td>", dataSet.Tables(0).Rows(num)(2).ToString(), "</td>"))
+                    ofile.Write(String.Concat("<td>", dataSet.Tables(0).Rows(num)(3).ToString(), "</td>"))
+                    ofile.WriteLine(String.Concat("<td>", dataSet.Tables(0).Rows(num)(4).ToString(), "</td>"))
+                    ofile.WriteLine("</tr>")
                     If (flag) Then
-                        file.WriteLine("</font>")
+                        ofile.WriteLine("</font>")
                     End If
                 Next
 
             End If
         ElseIf (radioBatch.Checked) Then
-            file.WriteLine("<tr>")
-            file.Write("<th>Batch Code</th>")
-            file.Write("<th>Item Code</th>")
-            file.Write("<th>Item Name</th>")
-            file.Write("<th>Expiry</th>")
-            file.Write("<th>Available Packs</th>")
-            file.Write("<th>Available Strips</th>")
-            file.WriteLine("<th>Available Pieces</th>")
-            file.WriteLine("</tr>")
+            ofile.WriteLine("<tr>")
+            ofile.Write("<th>Batch Code</th>")
+            ofile.Write("<th>Item Code</th>")
+            ofile.Write("<th>Item Name</th>")
+            ofile.Write("<th>Expiry</th>")
+            ofile.Write("<th>Available Packs</th>")
+            ofile.Write("<th>Available Strips</th>")
+            ofile.WriteLine("<th>Available Pieces</th>")
+            ofile.WriteLine("</tr>")
             Dim report As DataSet = New DataSet()
             Dim query As String = "select i.batchcode,i.code,(select m.name from medicine m where m.code=i.code),date_format(i.expiry,'%m-%Y'),sum(i.stock_pack),sum(i.stock_strip),sum(i.stock_piece) from inventory i"
             If (radioGD.Checked) Then
@@ -103,28 +104,30 @@ Public Class StockReport
                     selectData(min, minstock)
                     red = If(Decimal.Compare(Convert.ToDecimal(report.Tables(0).Rows(i)(4)), Convert.ToDecimal(minstock.Tables(0).Rows(0)(0))) > 0, False, True)
                     If (red) Then
-                        file.WriteLine("<font color=0xFF0000>")
+                        ofile.WriteLine("<font color=0xFF0000>")
                     End If
-                    file.WriteLine("<tr>")
-                    file.Write(String.Concat("<td>", report.Tables(0).Rows(i)(0).ToString(), "</td>"))
-                    file.Write(String.Concat("<td>", report.Tables(0).Rows(i)(1).ToString(), "</td>"))
-                    file.Write(String.Concat("<td>", report.Tables(0).Rows(i)(2).ToString(), "</td>"))
-                    file.Write(String.Concat("<td>", report.Tables(0).Rows(i)(3).ToString(), "</td>"))
-                    file.Write(String.Concat("<td>", report.Tables(0).Rows(i)(4).ToString(), "</td>"))
-                    file.Write(String.Concat("<td>", report.Tables(0).Rows(i)(5).ToString(), "</td>"))
-                    file.WriteLine(String.Concat("<td>", report.Tables(0).Rows(i)(6).ToString(), "</td>"))
-                    file.WriteLine("</tr>")
+                    ofile.WriteLine("<tr>")
+                    ofile.Write(String.Concat("<td>", report.Tables(0).Rows(i)(0).ToString(), "</td>"))
+                    ofile.Write(String.Concat("<td>", report.Tables(0).Rows(i)(1).ToString(), "</td>"))
+                    ofile.Write(String.Concat("<td>", report.Tables(0).Rows(i)(2).ToString(), "</td>"))
+                    ofile.Write(String.Concat("<td>", report.Tables(0).Rows(i)(3).ToString(), "</td>"))
+                    ofile.Write(String.Concat("<td>", report.Tables(0).Rows(i)(4).ToString(), "</td>"))
+                    ofile.Write(String.Concat("<td>", report.Tables(0).Rows(i)(5).ToString(), "</td>"))
+                    ofile.WriteLine(String.Concat("<td>", report.Tables(0).Rows(i)(6).ToString(), "</td>"))
+                    ofile.WriteLine("</tr>")
                     If (red) Then
-                        file.WriteLine("</font>")
+                        ofile.WriteLine("</font>")
                     End If
                 Next
 
             End If
         End If
-        file.WriteLine("</table>")
-        file.WriteLine("</body>")
-        file.WriteLine("</html>")
-        file.Close()
-        Process.Start(filepath)
+        ofile.WriteLine("</table>")
+        ofile.WriteLine("</body>")
+        ofile.WriteLine("</html>")
+        ofile.Close()
+        If ConvertToPdf(filepath) = False Then
+            Process.Start(filepath)
+        End If
     End Sub
 End Class

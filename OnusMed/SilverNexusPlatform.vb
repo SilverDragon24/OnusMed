@@ -10,6 +10,7 @@ Imports System.IO
 Imports System.Security.Cryptography
 Imports System.Text
 Imports System.Windows.Forms
+'Imports HiQPdf
 
 Public Module SilverNexusPlatform
     Public server As String = ""
@@ -464,5 +465,24 @@ Public Module SilverNexusPlatform
             num = 1
         End If
         Return num
+    End Function
+
+    Public Function GetCurrentDirectory() As String
+        Return Application.ExecutablePath.Substring(0, Application.ExecutablePath.Length - 11)
+    End Function
+
+    Public Function ConvertToPdf(infile As String) As Boolean
+        Try
+            'Dim dir As String = GetCurrentDirectory()
+            'Dim outfile As String = (infile.Substring(0, infile.Length - 5) + ".pdf")
+            'Dim htd As HtmlToPdf = New HtmlToPdf
+            'htd.ConvertUrlToFile(infile, outfile)
+            'Process.Start(outfile)
+            'Return True
+            Return False
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+            Return False
+        End Try
     End Function
 End Module

@@ -50,3 +50,7 @@ C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\obj\Debug\On
 C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\obj\Debug\OnusMed.SaleEntry.resources
 C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\Redist\db_code.sql
 C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\obj\Debug\OnusMed.InvSearch.resources
+C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\wkhtmltoimage.exe
+C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\wkhtmltopdf.exe
+C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\wkhtmltox.dll
+C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\libwkhtmltox.a

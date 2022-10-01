@@ -23,12 +23,12 @@ Partial Class StockReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.radioBoth = New System.Windows.Forms.RadioButton()
-        Me.radioSTO = New System.Windows.Forms.RadioButton()
         Me.radioGD = New System.Windows.Forms.RadioButton()
+        Me.radioSTO = New System.Windows.Forms.RadioButton()
+        Me.radioBoth = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.radioBatch = New System.Windows.Forms.RadioButton()
         Me.radioItem = New System.Windows.Forms.RadioButton()
+        Me.radioBatch = New System.Windows.Forms.RadioButton()
         Me.btnReport = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -46,16 +46,16 @@ Partial Class StockReport
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
-        'radioBoth
+        'radioGD
         '
-        Me.radioBoth.AutoSize = True
-        Me.radioBoth.Location = New System.Drawing.Point(164, 12)
-        Me.radioBoth.Name = "radioBoth"
-        Me.radioBoth.Size = New System.Drawing.Size(73, 17)
-        Me.radioBoth.TabIndex = 2
-        Me.radioBoth.TabStop = True
-        Me.radioBoth.Text = "From Both"
-        Me.radioBoth.UseVisualStyleBackColor = True
+        Me.radioGD.AutoSize = True
+        Me.radioGD.Location = New System.Drawing.Point(12, 12)
+        Me.radioGD.Name = "radioGD"
+        Me.radioGD.Size = New System.Drawing.Size(67, 17)
+        Me.radioGD.TabIndex = 0
+        Me.radioGD.TabStop = True
+        Me.radioGD.Text = "From GD"
+        Me.radioGD.UseVisualStyleBackColor = True
         '
         'radioSTO
         '
@@ -68,16 +68,16 @@ Partial Class StockReport
         Me.radioSTO.Text = "From STO"
         Me.radioSTO.UseVisualStyleBackColor = True
         '
-        'radioGD
+        'radioBoth
         '
-        Me.radioGD.AutoSize = True
-        Me.radioGD.Location = New System.Drawing.Point(12, 12)
-        Me.radioGD.Name = "radioGD"
-        Me.radioGD.Size = New System.Drawing.Size(67, 17)
-        Me.radioGD.TabIndex = 0
-        Me.radioGD.TabStop = True
-        Me.radioGD.Text = "From GD"
-        Me.radioGD.UseVisualStyleBackColor = True
+        Me.radioBoth.AutoSize = True
+        Me.radioBoth.Location = New System.Drawing.Point(164, 12)
+        Me.radioBoth.Name = "radioBoth"
+        Me.radioBoth.Size = New System.Drawing.Size(73, 17)
+        Me.radioBoth.TabIndex = 2
+        Me.radioBoth.TabStop = True
+        Me.radioBoth.Text = "From Both"
+        Me.radioBoth.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -90,17 +90,6 @@ Partial Class StockReport
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         '
-        'radioBatch
-        '
-        Me.radioBatch.AutoSize = True
-        Me.radioBatch.Location = New System.Drawing.Point(78, 16)
-        Me.radioBatch.Name = "radioBatch"
-        Me.radioBatch.Size = New System.Drawing.Size(68, 17)
-        Me.radioBatch.TabIndex = 1
-        Me.radioBatch.TabStop = True
-        Me.radioBatch.Text = "By Batch"
-        Me.radioBatch.UseVisualStyleBackColor = True
-        '
         'radioItem
         '
         Me.radioItem.AutoSize = True
@@ -111,6 +100,17 @@ Partial Class StockReport
         Me.radioItem.TabStop = True
         Me.radioItem.Text = "By Item"
         Me.radioItem.UseVisualStyleBackColor = True
+        '
+        'radioBatch
+        '
+        Me.radioBatch.AutoSize = True
+        Me.radioBatch.Location = New System.Drawing.Point(78, 16)
+        Me.radioBatch.Name = "radioBatch"
+        Me.radioBatch.Size = New System.Drawing.Size(68, 17)
+        Me.radioBatch.TabIndex = 1
+        Me.radioBatch.TabStop = True
+        Me.radioBatch.Text = "By Batch"
+        Me.radioBatch.UseVisualStyleBackColor = True
         '
         'btnReport
         '
