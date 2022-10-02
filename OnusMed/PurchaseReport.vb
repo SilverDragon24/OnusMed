@@ -326,7 +326,9 @@ Public Class PurchaseReport
         file.WriteLine("</body>")
         file.WriteLine("</html>")
         file.Close()
-        Process.Start(filepath)
+        If ConvertToPdf(filepath) = False Then
+            Process.Start(filepath)
+        End If
     End Sub
 
     Private Sub btnToday_Click(sender As Object, e As EventArgs) Handles btnToday.Click
@@ -562,7 +564,9 @@ Public Class PurchaseReport
         file.WriteLine("</body>")
         file.WriteLine("</html>")
         file.Close()
-        Process.Start(filepath)
+        If ConvertToPdf(filepath) = False Then
+            Process.Start(filepath)
+        End If
     End Sub
 
     Private Sub PurchaseReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load

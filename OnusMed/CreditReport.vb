@@ -54,7 +54,9 @@ Public Class CreditReport
             streamWriter.WriteLine("</body>")
             streamWriter.WriteLine("</html>")
             streamWriter.Close()
-            Process.Start(str2)
+            If ConvertToPdf(str2) = False Then
+                Process.Start(str2)
+            End If
         ElseIf (radioPatient.Checked) Then
             Dim docpath As String = Environment.GetFolderPath(Environment.SpecialFolder.Personal).ToString()
             Dim folderpath As String = String.Concat(docpath, "\CreditReports")
@@ -98,7 +100,9 @@ Public Class CreditReport
             file.WriteLine("</body>")
             file.WriteLine("</html>")
             file.Close()
-            Process.Start(filepath)
+            If ConvertToPdf(filepath) = False Then
+                Process.Start(filepath)
+            End If
         End If
     End Sub
 End Class

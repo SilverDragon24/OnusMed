@@ -133,7 +133,9 @@ Public Class GSTReport
         file.WriteLine("</body>")
         file.WriteLine("</html>")
         file.Close()
-        Process.Start(filepath)
+        If ConvertToPdf(filepath) = False Then
+            Process.Start(filepath)
+        End If
     End Sub
 
     Private Sub btnQReport_Click(sender As Object, e As EventArgs) Handles btnQReport.Click
@@ -730,7 +732,9 @@ Public Class GSTReport
             file.WriteLine("</body>")
             file.WriteLine("</html>")
             file.Close()
-            Process.Start(filepath)
+            If ConvertToPdf(filepath) = False Then
+                Process.Start(filepath)
+            End If
         End If
     End Sub
 

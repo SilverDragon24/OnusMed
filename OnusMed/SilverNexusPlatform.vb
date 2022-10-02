@@ -6,10 +6,12 @@ Imports System.Collections.Generic
 Imports System.Data
 Imports System.Data.Common
 Imports System.Drawing
+Imports System.Drawing.Printing
 Imports System.IO
 Imports System.Security.Cryptography
 Imports System.Text
 Imports System.Windows.Forms
+Imports System.Diagnostics
 'Imports HiQPdf
 
 Public Module SilverNexusPlatform
@@ -467,19 +469,18 @@ Public Module SilverNexusPlatform
         Return num
     End Function
 
-    Public Function GetCurrentDirectory() As String
-        Return Application.ExecutablePath.Substring(0, Application.ExecutablePath.Length - 11)
-    End Function
-
     Public Function ConvertToPdf(infile As String) As Boolean
         Try
-            'Dim dir As String = GetCurrentDirectory()
-            'Dim outfile As String = (infile.Substring(0, infile.Length - 5) + ".pdf")
-            'Dim htd As HtmlToPdf = New HtmlToPdf
-            'htd.ConvertUrlToFile(infile, outfile)
-            'Process.Start(outfile)
-            'Return True
-            Return False
+            Dim outfile As String = infile.Substring(0, infile.Length - 5) + ".pdf"
+            Dim exe As String = My.Application.Info.DirectoryPath.ToString + "\wkhtmltopdf.exe"
+            Dim pdfProc As ProcessStartInfo = New ProcessStartInfo()
+            pdfProc.UseShellExecute = False
+            pdfProc.WorkingDirectory = My.Application.Info.DirectoryPath.ToString
+            pdfProc.FileName = "wkhtmltopdf.exe"
+            pdfProc.Arguments = infile + " " + outfile
+            Process.Start(pdfProc).WaitForExit()
+            Process.Start(outfile)
+            Return True
         Catch ex As Exception
             MsgBox(ex.ToString)
             Return False

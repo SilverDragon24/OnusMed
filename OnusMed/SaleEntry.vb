@@ -232,7 +232,8 @@ Public Class SaleEntry
             file.Write(String.Concat("Name: ", pat.Tables(0).Rows(0)(1).ToString(), "<br><br><br>"))
             file.Write(String.Concat("Prescribing Doctor: ", pat.Tables(0).Rows(0)(3).ToString(), "<br>"))
             file.Write(String.Concat("Registration: ", pat.Tables(0).Rows(0)(2).ToString(), "<br><br>"))
-            file.Write(String.Concat("Invoice No.: ", invoice))
+            file.Write(String.Concat("Invoice No.: ", invoice, "<br>"))
+            file.Write(String.Concat("Invoice Date/Time: "), DateFromInv(invoice))
             file.Write("</p>")
             file.Write("</td>")
             file.WriteLine("</tr>")
@@ -419,9 +420,11 @@ Public Class SaleEntry
                 file.Write("Authorized Signatory/Stamp")
                 file.WriteLine("</body>")
                 file.WriteLine("</html>")
-                file.Close()
+            file.Close()
+            If ConvertToPdf(filepath) = False Then
                 Process.Start(filepath)
             End If
+        End If
             selling = True
         MyBase.Dispose()
     End Sub
@@ -1159,4 +1162,15 @@ Public Class SaleEntry
     Private Sub numDiscount_ValueChanged(sender As Object, e As EventArgs) Handles numDiscount.ValueChanged
         numNet.Value = ((100 - numDiscount.Value) / 100) * numGross.Value
     End Sub
+
+    Private Function DateFromInv(s As String) As String
+        Dim yr As String = s.Substring(2, 4)
+        Dim tmp As Date = New Date(1900, Integer.Parse(s.Substring(6, 2)), 1)
+        Dim mon As String = tmp.ToString("MMM")
+        Dim day As String = s.Substring(8, 2)
+        Dim hr As String = s.Substring(10, 2)
+        Dim min As String = s.Substring(12, 2)
+        Dim sec As String = s.Substring(14, 2)
+        Return String.Concat(day, "-", mon, "-", yr, " ", hr, ":", min, ":", sec)
+    End Function
 End Class
