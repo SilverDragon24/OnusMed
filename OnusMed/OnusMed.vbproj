@@ -222,6 +222,7 @@
     <Compile Include="ODocManager.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="OnuMedCommon.vb" />
     <Compile Include="PatInfoManager.Designer.vb">
       <DependentUpon>PatInfoManager.vb</DependentUpon>
     </Compile>

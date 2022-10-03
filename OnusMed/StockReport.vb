@@ -35,48 +35,61 @@ Public Class StockReport
         ofile.WriteLine("</head>")
         ofile.WriteLine("<body>")
         now = DateTime.Today
-        ofile.WriteLine(String.Concat("<center><h1>Stock Report for ", now.ToString("MM-dd-yyyy"), "</h1></center>"))
+        ofile.WriteLine(String.Concat("<center><h1>Stock Report for ", now.ToString("dd-MMM-yyyy"), "</h1></center>"))
         ofile.WriteLine("<table border=1 width=100%>")
         If (radioItem.Checked) Then
-            ofile.WriteLine("<tr>")
+            ofile.WriteLine("<thead><tr>")
             ofile.Write("<th>Item Code</th>")
             ofile.Write("<th>Item Name</th>")
-            ofile.Write("<th>Available Packs</th>")
-            ofile.Write("<th>Available Strips</th>")
-            ofile.WriteLine("<th>Available Pieces</th>")
-            ofile.WriteLine("</tr>")
-            Dim dataSet As DataSet = New DataSet()
-            Dim str As String = "select i.code,(select m.name from medicine m where m.code=i.code),sum(i.stock_pack),sum(i.stock_strip),sum(i.stock_piece) from inventory i"
-            If (radioGD.Checked) Then
-                str = String.Concat(str, " where location='GD'")
-            ElseIf (radioSTO.Checked) Then
-                str = String.Concat(str, " where location='STO'")
-            End If
-            str = String.Concat(str, " group by i.code;")
-            selectData(str, dataSet)
-            If (dataSet.Tables(0).Rows.Count > 0) Then
-                Dim count As Integer = dataSet.Tables(0).Rows.Count - 1
-                For num As Integer = 0 To count Step 1
-                    Dim dataSet1 As DataSet = New DataSet()
-                    Dim str1 As String = String.Concat("select minstock from medicine where code='", dataSet.Tables(0).Rows(num)(0).ToString(), "'")
-                    selectData(str1, dataSet1)
-                    flag = If(Decimal.Compare(Convert.ToDecimal(dataSet.Tables(0).Rows(num)(2)), Convert.ToDecimal(dataSet1.Tables(0).Rows(0)(0))) > 0, False, True)
-                    If (flag) Then
-                        ofile.WriteLine("<font color=0xFF0000>")
-                    End If
-                    ofile.WriteLine("<tr>")
-                    ofile.Write(String.Concat("<td>", dataSet.Tables(0).Rows(num)(0).ToString(), "</td>"))
-                    ofile.Write(String.Concat("<td>", dataSet.Tables(0).Rows(num)(1).ToString(), "</td>"))
-                    ofile.Write(String.Concat("<td>", dataSet.Tables(0).Rows(num)(2).ToString(), "</td>"))
-                    ofile.Write(String.Concat("<td>", dataSet.Tables(0).Rows(num)(3).ToString(), "</td>"))
-                    ofile.WriteLine(String.Concat("<td>", dataSet.Tables(0).Rows(num)(4).ToString(), "</td>"))
-                    ofile.WriteLine("</tr>")
-                    If (flag) Then
-                        ofile.WriteLine("</font>")
+            ofile.Write("<th>Batch Code</th>")
+            ofile.Write("<th>Expiry</th>")
+            ofile.Write("<th>Type</th>")
+            ofile.Write("<th>Available</th>")
+            ofile.Write("<th>M.R.P</th>")
+            ofile.WriteLine("</tr></thead>")
+            ofile.Write("<tbody>")
+            Dim types As DataSet = New DataSet
+            selectData("select distinct type from medicine;", types)
+            If types.Tables(0).Rows.Count > 0 Then
+                For i As Integer = 0 To types.Tables(0).Rows.Count - 1
+                    Dim ids As DataSet = New DataSet
+                    selectData("select distinct code from medicine where type='" + types.Tables(0).Rows(i).Item(0).ToString + "';", ids)
+                    If ids.Tables(0).Rows.Count > 0 Then
+                        For j As Integer = 0 To ids.Tables(0).Rows.Count - 1
+                            Dim items As DataSet = New DataSet
+                            selectData("select code,batchcode,date_format(expiry,'%d-%b-%Y'),stock_piece,concat(mrp_piece,' INR') from inventory where code='" + ids.Tables(0).Rows(j).Item(0).ToString + "' and stock_piece>0;", items)
+                            If items.Tables(0).Rows.Count > 0 Then
+                                For k As Integer = 0 To items.Tables(0).Rows.Count - 1
+                                    ofile.Write("<tr>")
+                                    ofile.Write("<td>")
+                                    ofile.Write(items.Tables(0).Rows(k).Item(0).ToString)
+                                    ofile.Write("</td>")
+                                    ofile.Write("<td>")
+                                    ofile.Write(getName(items.Tables(0).Rows(k).Item(0).ToString))
+                                    ofile.Write("</td>")
+                                    ofile.Write("<td>")
+                                    ofile.Write(items.Tables(0).Rows(k).Item(1).ToString)
+                                    ofile.Write("</td>")
+                                    ofile.Write("<td>")
+                                    ofile.Write(items.Tables(0).Rows(k).Item(2).ToString)
+                                    ofile.Write("</td>")
+                                    ofile.Write("<td>")
+                                    ofile.Write(types.Tables(0).Rows(i).Item(0).ToString)
+                                    ofile.Write("</td>")
+                                    ofile.Write("<td>")
+                                    ofile.Write(items.Tables(0).Rows(k).Item(3).ToString)
+                                    ofile.Write("</td>")
+                                    ofile.Write("<td>")
+                                    ofile.Write(items.Tables(0).Rows(k).Item(4).ToString)
+                                    ofile.Write("</td>")
+                                    ofile.Write("</tr>")
+                                Next
+                            End If
+                        Next
                     End If
                 Next
-
             End If
+            ofile.Write("</tbody>")
         ElseIf (radioBatch.Checked) Then
             ofile.WriteLine("<tr>")
             ofile.Write("<th>Batch Code</th>")
