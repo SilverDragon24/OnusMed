@@ -54,3 +54,4 @@ C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\wk
 C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\wkhtmltopdf.exe
 C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\wkhtmltox.dll
 C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\libwkhtmltox.a
+C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\obj\Debug\OnusMed.ReprintInvoice.resources

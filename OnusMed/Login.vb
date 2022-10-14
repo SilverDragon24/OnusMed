@@ -9,8 +9,35 @@ Imports System.Diagnostics
 Imports System.Drawing
 Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms
+Imports System.Runtime.InteropServices
+
 
 Public Class Login
+    Dim cWnd As IntPtr = IntPtr.Zero
+    Dim devId As Integer = 0 '0 will be the first capture device found
+    Dim picnumber As Integer = 0
+    Dim tmppic As String = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Temp.dib")
+
+    Private Const WS_CHILD As Integer = &H40000000
+    Private Const WS_VISIBLE As Integer = &H10000000
+    Private Const WM_USER As Integer = &H400
+    Private Const WM_CAP_DRIVER_CONNECT As Integer = WM_USER + 10
+    Private Const WM_CAP_DRIVER_DISCONNECT As Integer = WM_USER + 11
+    Private Const WM_CAP_SET_PREVIEW As Integer = WM_USER + 50
+    Private Const WM_CAP_SET_PREVIEWRATE As Integer = WM_USER + 52
+    Private Const WM_CAP_SET_SCALE As Integer = WM_USER + 53
+    Private Const WM_CAP_SAVEDIB As Integer = WM_USER + 25
+    Private Const WM_CAP_DLG_VIDEOFORMAT As Integer = WM_USER + 41
+
+    <DllImport("user32.dll", SetLastError:=True, CharSet:=CharSet.Ansi)> Private Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As Integer, ByVal wParam As Integer, ByVal lParam As String) As IntPtr
+    End Function
+
+    <DllImport("avicap32.dll", SetLastError:=True, CharSet:=CharSet.Auto)> Private Shared Function capCreateCaptureWindowA(ByVal lpszWindowName As String, ByVal dwStyle As Integer, ByVal x As Integer, ByVal y As Integer, ByVal nWidth As Integer, ByVal nHeight As Integer, ByVal hWndParent As IntPtr, ByVal nID As Integer) As IntPtr
+    End Function
+
+    <DllImport("user32.dll", SetLastError:=True, CharSet:=CharSet.Unicode)> Private Shared Function DestroyWindow(ByVal hwnd As IntPtr) As <MarshalAs(UnmanagedType.Bool)> Boolean
+    End Function
+
     Private users As DataSet = New DataSet
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Application.Exit()
@@ -36,12 +63,14 @@ Public Class Login
                     MyProject.Forms.MainScreen.Show()
                     employee = users.Tables(0).Rows(log)(0).ToString()
                     post = users.Tables(0).Rows(log)(3).ToString()
+                    Timer2.Stop()
                     MyBase.Hide()
                 Else
                     MyProject.Forms.AdminMenu.Show()
                     MyProject.Forms.MainScreen.Show()
                     employee = users.Tables(0).Rows(log)(0).ToString()
                     post = users.Tables(0).Rows(log)(3).ToString()
+                    Timer2.Stop()
                     MyBase.Hide()
                 End If
             End If
@@ -80,7 +109,7 @@ Public Class Login
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If readConfig() = False Then
             Interaction.MsgBox("Config Does Not Exist", MsgBoxStyle.Critical, Nothing)
-            MyProject.Forms.CreateConfig.Show()
+            MyProject.Forms.CreateConfig.ShowDialog()
         ElseIf (ConnectDB(db) = 1) Then
             selectData("select id,name,pwd,post from salesman", users)
             cmbID.Items.Clear()
@@ -99,5 +128,22 @@ Public Class Login
             Interaction.MsgBox("connection Failed", MsgBoxStyle.ApplicationModal, Nothing)
             Application.Exit()
         End If
+        cWnd = capCreateCaptureWindowA(devId.ToString, WS_VISIBLE Or WS_CHILD, 0, 0, picOut.Width, picOut.Height, picOut.Handle, 0)
+        If Not SendMessage(cWnd, WM_CAP_DRIVER_CONNECT, devId, Nothing) = IntPtr.Zero Then
+            SendMessage(cWnd, WM_CAP_SET_SCALE, 1, Nothing)
+            SendMessage(cWnd, WM_CAP_SET_PREVIEWRATE, 66, Nothing)
+            SendMessage(cWnd, WM_CAP_SET_PREVIEW, 1, Nothing)
+            Timer2.Interval = 1
+            Timer2.Start()
+        Else
+            cWnd = IntPtr.Zero
+        End If
+    End Sub
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs)
+        SendMessage(cWnd, WM_CAP_SAVEDIB, 0, tmppic)
+        Dim bmp As New Bitmap(tmppic)
+        picOut.Image = bmp
+        bmp.Dispose()
     End Sub
 End Class

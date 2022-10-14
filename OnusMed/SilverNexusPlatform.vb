@@ -486,4 +486,8 @@ Public Module SilverNexusPlatform
             Return False
         End Try
     End Function
+	
+	Public Function SNPCheck() as Boolean
+		Return True
+	End Function
 End Module

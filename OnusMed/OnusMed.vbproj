@@ -266,6 +266,12 @@
     <Compile Include="PurchaseReturnReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReprintInvoice.Designer.vb">
+      <DependentUpon>ReprintInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReprintInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SaleEntry.Designer.vb">
       <DependentUpon>SaleEntry.vb</DependentUpon>
     </Compile>
@@ -400,6 +406,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PurchaseReturnReport.resx">
       <DependentUpon>PurchaseReturnReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReprintInvoice.resx">
+      <DependentUpon>ReprintInvoice.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SaleEntry.resx">
       <DependentUpon>SaleEntry.vb</DependentUpon>

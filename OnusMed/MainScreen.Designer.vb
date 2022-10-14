@@ -43,6 +43,9 @@ Partial Class MainScreen
         Me.btnSale = New System.Windows.Forms.Button()
         Me.btnPurchase = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.rtbNews = New System.Windows.Forms.RichTextBox()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lblTrial = New System.Windows.Forms.ToolStripStatusLabel()
         Me.progressTrial = New System.Windows.Forms.ToolStripProgressBar()
@@ -50,9 +53,7 @@ Partial Class MainScreen
         Me.btnPayCredit = New System.Windows.Forms.Button()
         Me.btnStockTransfer = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnRefresh = New System.Windows.Forms.Button()
-        Me.rtbNews = New System.Windows.Forms.RichTextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -173,6 +174,7 @@ Partial Class MainScreen
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.btnLookup)
         Me.GroupBox2.Controls.Add(Me.Button5)
         Me.GroupBox2.Controls.Add(Me.btnPurchaseOrder)
@@ -268,6 +270,33 @@ Partial Class MainScreen
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "GroupBox3"
         '
+        'rtbNews
+        '
+        Me.rtbNews.Location = New System.Drawing.Point(6, 80)
+        Me.rtbNews.Name = "rtbNews"
+        Me.rtbNews.ReadOnly = True
+        Me.rtbNews.Size = New System.Drawing.Size(242, 167)
+        Me.rtbNews.TabIndex = 6
+        Me.rtbNews.Text = ""
+        '
+        'btnRefresh
+        '
+        Me.btnRefresh.Location = New System.Drawing.Point(155, 253)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(93, 23)
+        Me.btnRefresh.TabIndex = 5
+        Me.btnRefresh.Text = "Refresh Feed"
+        Me.btnRefresh.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(3, 64)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(67, 13)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Stock Alerts:"
+        '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblTrial, Me.progressTrial})
@@ -317,32 +346,14 @@ Partial Class MainScreen
         'Timer1
         '
         '
-        'Label2
+        'Button1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(3, 64)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(67, 13)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Stock Alerts:"
-        '
-        'btnRefresh
-        '
-        Me.btnRefresh.Location = New System.Drawing.Point(155, 253)
-        Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(93, 23)
-        Me.btnRefresh.TabIndex = 5
-        Me.btnRefresh.Text = "Refresh Feed"
-        Me.btnRefresh.UseVisualStyleBackColor = True
-        '
-        'rtbNews
-        '
-        Me.rtbNews.Location = New System.Drawing.Point(6, 80)
-        Me.rtbNews.Name = "rtbNews"
-        Me.rtbNews.ReadOnly = True
-        Me.rtbNews.Size = New System.Drawing.Size(242, 167)
-        Me.rtbNews.TabIndex = 6
-        Me.rtbNews.Text = ""
+        Me.Button1.Location = New System.Drawing.Point(145, 163)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(127, 42)
+        Me.Button1.TabIndex = 10
+        Me.Button1.Text = "Reprint Invoice"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'MainScreen
         '
@@ -400,4 +411,5 @@ Partial Class MainScreen
     Friend WithEvents rtbNews As RichTextBox
     Friend WithEvents btnRefresh As Button
     Friend WithEvents Label2 As Label
+    Friend WithEvents Button1 As Button
 End Class

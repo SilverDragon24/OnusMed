@@ -33,8 +33,11 @@ Partial Class Login
         Me.txtPwd = New System.Windows.Forms.TextBox()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.picOut = New System.Windows.Forms.PictureBox()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.btnScan = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picOut, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -52,7 +55,7 @@ Partial Class Login
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(211, 359)
+        Me.Label1.Location = New System.Drawing.Point(211, 367)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(184, 13)
         Me.Label1.TabIndex = 7
@@ -122,21 +125,32 @@ Partial Class Login
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
-        'ListBox1
+        'picOut
         '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(99, 204)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(158, 121)
-        Me.ListBox1.TabIndex = 12
+        Me.picOut.Location = New System.Drawing.Point(78, 214)
+        Me.picOut.Name = "picOut"
+        Me.picOut.Size = New System.Drawing.Size(200, 150)
+        Me.picOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picOut.TabIndex = 13
+        Me.picOut.TabStop = False
+        '
+        'btnScan
+        '
+        Me.btnScan.Location = New System.Drawing.Point(167, 185)
+        Me.btnScan.Name = "btnScan"
+        Me.btnScan.Size = New System.Drawing.Size(75, 23)
+        Me.btnScan.TabIndex = 12
+        Me.btnScan.Text = "Scan"
+        Me.btnScan.UseVisualStyleBackColor = True
         '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(407, 381)
+        Me.ClientSize = New System.Drawing.Size(407, 386)
         Me.ControlBox = False
-        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.picOut)
+        Me.Controls.Add(Me.btnScan)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.txtPwd)
@@ -153,6 +167,7 @@ Partial Class Login
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "OnusMed Login"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picOut, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -168,5 +183,7 @@ Partial Class Login
     Friend WithEvents txtPwd As TextBox
     Friend WithEvents btnLogin As Button
     Friend WithEvents btnExit As Button
-    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents picOut As PictureBox
+    Friend WithEvents Timer2 As Timer
+    Friend WithEvents btnScan As Button
 End Class

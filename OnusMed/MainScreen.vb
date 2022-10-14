@@ -155,4 +155,8 @@ Public Class MainScreen
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         Timer1_Tick(sender, e)
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ReprintInvoice.Show()
+    End Sub
 End Class
