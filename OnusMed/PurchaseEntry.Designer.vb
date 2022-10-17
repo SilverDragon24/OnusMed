@@ -27,6 +27,7 @@ Partial Class PurchaseEntry
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.btnGenBatch = New System.Windows.Forms.Button()
         Me.chkInterState = New System.Windows.Forms.CheckBox()
         Me.txtItemCode = New System.Windows.Forms.TextBox()
         Me.numMrpPiece = New System.Windows.Forms.NumericUpDown()
@@ -144,7 +145,6 @@ Partial Class PurchaseEntry
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.btnGenBatch = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -276,6 +276,15 @@ Partial Class PurchaseEntry
         Me.GroupBox9.TabIndex = 3
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "Item Details"
+        '
+        'btnGenBatch
+        '
+        Me.btnGenBatch.Location = New System.Drawing.Point(244, 69)
+        Me.btnGenBatch.Name = "btnGenBatch"
+        Me.btnGenBatch.Size = New System.Drawing.Size(20, 23)
+        Me.btnGenBatch.TabIndex = 50
+        Me.btnGenBatch.Text = "+"
+        Me.btnGenBatch.UseVisualStyleBackColor = True
         '
         'chkInterState
         '
@@ -445,7 +454,7 @@ Partial Class PurchaseEntry
         '
         'dateExpiry
         '
-        Me.dateExpiry.CustomFormat = "MM/yyyy"
+        Me.dateExpiry.CustomFormat = "dd/MM/yyyy"
         Me.dateExpiry.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.dateExpiry.Location = New System.Drawing.Point(634, 19)
         Me.dateExpiry.Name = "dateExpiry"
@@ -1279,15 +1288,6 @@ Partial Class PurchaseEntry
         'ErrorProvider1
         '
         Me.ErrorProvider1.ContainerControl = Me
-        '
-        'btnGenBatch
-        '
-        Me.btnGenBatch.Location = New System.Drawing.Point(244, 69)
-        Me.btnGenBatch.Name = "btnGenBatch"
-        Me.btnGenBatch.Size = New System.Drawing.Size(20, 23)
-        Me.btnGenBatch.TabIndex = 50
-        Me.btnGenBatch.Text = "+"
-        Me.btnGenBatch.UseVisualStyleBackColor = True
         '
         'PurchaseEntry
         '
