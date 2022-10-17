@@ -14,6 +14,7 @@ Imports ZXing
 Imports ZXing.QrCode.Internal
 Imports System.Drawing.Imaging
 Imports ZXing.Common
+Imports System.Security.Cryptography
 'Imports WebCam_Capture
 'Imports MessagingToolkit.QRCode.Codec
 
@@ -129,12 +130,7 @@ Public Class Login
             'StopWebCam()
             'qrreader = New QRCodeDecoder
             'cmbID.Text = qrreader.decode(New Data.QRCodeBitmapImage(picOut.Image))
-            'Dim bmp As New Bitmap(tmppic)
-            'SendMessage(cWnd, WM_CAP_SAVEDIB, 0, tmppic)
-            'System.IO.File.Delete("temp.bmp")
-            'bmp.Save("temp.bmp", ImageFormat.Bmp)
-            'PictureBox1.Image = Image.FromFile("temp.bmp")
-            'bmp.Dispose()
+
             'Dim qrreader As BarcodeReader = New BarcodeReader()
             'Dim qr As Bitmap = New Bitmap(vbNull)
             'Dim qrresult = qrreader.Decode(qr)
@@ -173,6 +169,16 @@ Public Class Login
             End If
             Timer1.Interval = 100
             Timer1.Start()
+            'Timer2.Interval = 1000
+            'Timer2.Start()
+            cWnd = capCreateCaptureWindowA(devId.ToString, WS_VISIBLE Or WS_CHILD, 0, 0, picOut.Width, picOut.Height, picOut.Handle, 0)
+            If Not SendMessage(cWnd, WM_CAP_DRIVER_CONNECT, devId, Nothing) = IntPtr.Zero Then
+                SendMessage(cWnd, WM_CAP_SET_SCALE, 1, Nothing)
+                SendMessage(cWnd, WM_CAP_SET_PREVIEWRATE, 66, Nothing)
+                SendMessage(cWnd, WM_CAP_SET_PREVIEW, 1, Nothing)
+            Else
+                cWnd = IntPtr.Zero
+            End If
         Else
             Interaction.MsgBox("connection Failed", MsgBoxStyle.ApplicationModal, Nothing)
             Application.Exit()
@@ -181,17 +187,32 @@ Public Class Login
         'StartWebCam()
 
 
-        cWnd = capCreateCaptureWindowA(devId.ToString, WS_VISIBLE Or WS_CHILD, 0, 0, picOut.Width, picOut.Height, picOut.Handle, 0)
-        If Not SendMessage(cWnd, WM_CAP_DRIVER_CONNECT, devId, Nothing) = IntPtr.Zero Then
-            SendMessage(cWnd, WM_CAP_SET_SCALE, 1, Nothing)
-            SendMessage(cWnd, WM_CAP_SET_PREVIEWRATE, 66, Nothing)
-            SendMessage(cWnd, WM_CAP_SET_PREVIEW, 1, Nothing)
-        Else
-            cWnd = IntPtr.Zero
-        End If
+
     End Sub
 
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs)
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        Try
+            'picOut.Image = Nothing
+            'System.IO.File.Delete(tmppic)
+            picOut.Image = Nothing
+            'System.IO.File.Delete(tmppic)
+            SendMessage(cWnd, WM_CAP_SAVEDIB, 0, tmppic)
+            'Dim bmp As New Bitmap(tmppic)
+            Dim md As MD5CryptoServiceProvider = New MD5CryptoServiceProvider
+            Dim bytetohashmd() As Byte = System.IO.File.ReadAllBytes(tmppic)
+            Dim mds As String = ""
+            bytetohashmd = md.ComputeHash(bytetohashmd)
+            For Each item As Byte In bytetohashmd
+                mds += item.ToString("x2")
+            Next
+            Label1.Text = mds
+            'bmp.Save("temp.bmp", ImageFormat.Bmp)
+            'SendMessage(cWnd, WM_CAP_DRIVER_DISCONNECT, devId, Nothing)
+            'picOut.Image = Image.FromFile(tmppic)
+            'bmp.Dispose()
+        Catch ex As Exception
+            Label1.Text = ex.ToString
+        End Try
     End Sub
 
     Private Sub btnScan_Click(sender As Object, e As EventArgs) Handles btnScan.Click

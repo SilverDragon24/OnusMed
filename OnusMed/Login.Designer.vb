@@ -36,8 +36,10 @@ Partial Class Login
         Me.picOut = New System.Windows.Forms.PictureBox()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.btnScan = New System.Windows.Forms.Button()
+        Me.picHide = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picOut, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picHide, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -134,6 +136,9 @@ Partial Class Login
         Me.picOut.TabIndex = 13
         Me.picOut.TabStop = False
         '
+        'Timer2
+        '
+        '
         'btnScan
         '
         Me.btnScan.Location = New System.Drawing.Point(167, 185)
@@ -143,12 +148,21 @@ Partial Class Login
         Me.btnScan.Text = "Scan"
         Me.btnScan.UseVisualStyleBackColor = True
         '
+        'picHide
+        '
+        Me.picHide.Location = New System.Drawing.Point(295, 214)
+        Me.picHide.Name = "picHide"
+        Me.picHide.Size = New System.Drawing.Size(100, 50)
+        Me.picHide.TabIndex = 14
+        Me.picHide.TabStop = False
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(407, 386)
         Me.ControlBox = False
+        Me.Controls.Add(Me.picHide)
         Me.Controls.Add(Me.picOut)
         Me.Controls.Add(Me.btnScan)
         Me.Controls.Add(Me.btnExit)
@@ -168,6 +182,7 @@ Partial Class Login
         Me.Text = "OnusMed Login"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picOut, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picHide, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -186,4 +201,5 @@ Partial Class Login
     Friend WithEvents picOut As PictureBox
     Friend WithEvents Timer2 As Timer
     Friend WithEvents btnScan As Button
+    Friend WithEvents picHide As PictureBox
 End Class
