@@ -93,12 +93,16 @@ Public Class Login
                     employee = users.Tables(0).Rows(log)(0).ToString()
                     post = users.Tables(0).Rows(log)(3).ToString()
                     'StopWebCam()
+                    SendMessage(cWnd, WM_CAP_DRIVER_DISCONNECT, devId, Nothing)
+                    cWnd = IntPtr.Zero
                     MyBase.Hide()
                 Else
                     MyProject.Forms.AdminMenu.Show()
                     MyProject.Forms.MainScreen.Show()
                     employee = users.Tables(0).Rows(log)(0).ToString()
                     post = users.Tables(0).Rows(log)(3).ToString()
+                    SendMessage(cWnd, WM_CAP_DRIVER_DISCONNECT, devId, Nothing)
+                    cWnd = IntPtr.Zero
                     MyBase.Hide()
                 End If
             End If
