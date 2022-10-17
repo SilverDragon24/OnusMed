@@ -10,13 +10,42 @@ Imports System.Drawing
 Imports System.Runtime.CompilerServices
 Imports System.Windows.Forms
 Imports System.Runtime.InteropServices
+Imports ZXing
+Imports ZXing.QrCode.Internal
+Imports System.Drawing.Imaging
+Imports ZXing.Common
+'Imports WebCam_Capture
+'Imports MessagingToolkit.QRCode.Codec
 
 
 Public Class Login
+    'WithEvents MyWebCam As WebCamCapture = New WebCamCapture
+    'Dim qrreader As QRCodeDecoder
+    'Private Sub StartWebCam()
+    '    Try
+    '        StopWebCam()
+    '        MyWebCam = New WebCamCapture
+    '        MyWebCam.Start(0)
+    '        MyWebCam.Start(0)
+
+    '    Catch ex As Exception
+
+    '    End Try
+    'End Sub
+
+    'Private Sub StopWebCam()
+    '    Try
+    '        MyWebCam.Stop()
+    '        MyWebCam.Dispose()
+    '    Catch ex As Exception
+
+    '    End Try
+    'End Sub
+
     Dim cWnd As IntPtr = IntPtr.Zero
     Dim devId As Integer = 0 '0 will be the first capture device found
     Dim picnumber As Integer = 0
-    Dim tmppic As String = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Temp.dib")
+    Dim tmppic As String = ("Temp.dib")
 
     Private Const WS_CHILD As Integer = &H40000000
     Private Const WS_VISIBLE As Integer = &H10000000
@@ -63,14 +92,13 @@ Public Class Login
                     MyProject.Forms.MainScreen.Show()
                     employee = users.Tables(0).Rows(log)(0).ToString()
                     post = users.Tables(0).Rows(log)(3).ToString()
-                    Timer2.Stop()
+                    'StopWebCam()
                     MyBase.Hide()
                 Else
                     MyProject.Forms.AdminMenu.Show()
                     MyProject.Forms.MainScreen.Show()
                     employee = users.Tables(0).Rows(log)(0).ToString()
                     post = users.Tables(0).Rows(log)(3).ToString()
-                    Timer2.Stop()
                     MyBase.Hide()
                 End If
             End If
@@ -92,6 +120,23 @@ Public Class Login
                 End If
             End While
         End If
+        Try
+
+            'StopWebCam()
+            'qrreader = New QRCodeDecoder
+            'cmbID.Text = qrreader.decode(New Data.QRCodeBitmapImage(picOut.Image))
+            'Dim bmp As New Bitmap(tmppic)
+            'SendMessage(cWnd, WM_CAP_SAVEDIB, 0, tmppic)
+            'System.IO.File.Delete("temp.bmp")
+            'bmp.Save("temp.bmp", ImageFormat.Bmp)
+            'PictureBox1.Image = Image.FromFile("temp.bmp")
+            'bmp.Dispose()
+            'Dim qrreader As BarcodeReader = New BarcodeReader()
+            'Dim qr As Bitmap = New Bitmap(vbNull)
+            'Dim qrresult = qrreader.Decode(qr)
+            'cmbID.Text = qrresult.Text
+        Catch ex As Exception
+        End Try
     End Sub
 
     Private Sub txtPwd_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPwd.KeyDown
@@ -128,22 +173,27 @@ Public Class Login
             Interaction.MsgBox("connection Failed", MsgBoxStyle.ApplicationModal, Nothing)
             Application.Exit()
         End If
+
+        'StartWebCam()
+
+
         cWnd = capCreateCaptureWindowA(devId.ToString, WS_VISIBLE Or WS_CHILD, 0, 0, picOut.Width, picOut.Height, picOut.Handle, 0)
         If Not SendMessage(cWnd, WM_CAP_DRIVER_CONNECT, devId, Nothing) = IntPtr.Zero Then
             SendMessage(cWnd, WM_CAP_SET_SCALE, 1, Nothing)
             SendMessage(cWnd, WM_CAP_SET_PREVIEWRATE, 66, Nothing)
             SendMessage(cWnd, WM_CAP_SET_PREVIEW, 1, Nothing)
-            Timer2.Interval = 1
-            Timer2.Start()
         Else
             cWnd = IntPtr.Zero
         End If
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs)
-        SendMessage(cWnd, WM_CAP_SAVEDIB, 0, tmppic)
-        Dim bmp As New Bitmap(tmppic)
-        picOut.Image = bmp
-        bmp.Dispose()
     End Sub
+
+    Private Sub btnScan_Click(sender As Object, e As EventArgs) Handles btnScan.Click
+    End Sub
+
+    'Private Sub MyWebCam_ImageCaptured(source As Object, e As WebcamEventArgs) Handles MyWebCam.ImageCaptured
+    '    picOut.Image = e.WebCamImage
+    'End Sub
 End Class

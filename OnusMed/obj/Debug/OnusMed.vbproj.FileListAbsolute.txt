@@ -55,3 +55,9 @@ C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\wk
 C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\wkhtmltox.dll
 C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\libwkhtmltox.a
 C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\obj\Debug\OnusMed.ReprintInvoice.resources
+C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\zxing.dll
+C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\zxing.presentation.dll
+C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\zxing.xml
+C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\zxing.presentation.xml
+C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\MessagingToolkit.QRCode.dll
+C:\Users\IonT\Documents\Visual Studio 2017\Projects\OnusMed\OnusMed\bin\Debug\WebCam_Capture.dll

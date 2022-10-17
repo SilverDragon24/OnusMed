@@ -534,14 +534,14 @@ Public Class PurchaseEntry
     End Sub
 
     Private Sub dateExpiry_ValueChanged(sender As Object, e As EventArgs) Handles dateExpiry.ValueChanged
-        If (DateAndTime.DateDiff(DateInterval.Month, DateTime.Today, dateExpiry.Value, FirstDayOfWeek.Sunday, FirstWeekOfYear.Jan1) < CLng(6)) Then
+        If (DateAndTime.DateDiff(DateInterval.Month, DateTime.Today, dateExpiry.Value, FirstDayOfWeek.Sunday, FirstWeekOfYear.Jan1) < 1) Then
             valid(13) = False
             ErrorProvider1.Clear()
             ErrorProvider1.BlinkRate = 0
             ErrorProvider1.BlinkStyle = ErrorBlinkStyle.AlwaysBlink
             ErrorProvider1.SetError(dateExpiry, "Invalid Date")
             Debug.WriteLine(String.Concat("dateExpiry: ", valid(13).ToString()))
-        ElseIf (DateAndTime.DateDiff(DateInterval.Month, DateTime.Today, dateExpiry.Value, FirstDayOfWeek.Sunday, FirstWeekOfYear.Jan1) >= CLng(6)) Then
+        ElseIf (DateAndTime.DateDiff(DateInterval.Month, DateTime.Today, dateExpiry.Value, FirstDayOfWeek.Sunday, FirstWeekOfYear.Jan1) >= 1) Then
             valid(13) = True
             ErrorProvider1.Clear()
         End If
