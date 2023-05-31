@@ -25,7 +25,7 @@ Public Class SaleEntry
 
     Private cards As DataSet = New DataSet
 
-    Private invoice As String
+    Private invoice As String = String.Concat("SI", generateID())
 
     Private instru As String
 
@@ -130,7 +130,6 @@ Public Class SaleEntry
             Dim inventory As String = ""
             Dim payment As String = ""
             Dim credit As String = ""
-            Dim invoice As String = String.Concat("SI", generateID())
             Dim count As Integer = DataGridView1.Rows.Count - 1
             Dim num As Integer = 0
             Do
@@ -1171,6 +1170,8 @@ Public Class SaleEntry
         Dim hr As String = s.Substring(10, 2)
         Dim min As String = s.Substring(12, 2)
         Dim sec As String = s.Substring(14, 2)
-        Return String.Concat(day, "-", mon, "-", yr, " ", hr, ":", min, ":", sec)
+        Dim out As String = String.Concat(day, "-", mon, "-", yr, " ", hr, ":", min, ":", sec)
+        MsgBox(out)
+        Return out
     End Function
 End Class
